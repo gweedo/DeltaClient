@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6b939be9-923e-4814-aae9-cb0ea8e3449a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceManager.xsd" MetadataType="Schema" ID="8f0ec266-e2c3-42f2-a7af-9afca787544f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd0" />
+    <MetadataFile FileName="ServiceManager.wsdl" MetadataType="Wsdl" ID="87b5e3ab-9809-4030-a650-40bf8ae571fa" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?wsdl" />
+    <MetadataFile FileName="ServiceManager1.xsd" MetadataType="Schema" ID="8c2bdf80-7941-4e05-b002-973ad02a2281" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd2" />
+    <MetadataFile FileName="ServiceManager2.xsd" MetadataType="Schema" ID="124ed4bb-620e-4b73-9673-929fe696eebd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd1" />
+    <MetadataFile FileName="ServiceManager1.wsdl" MetadataType="Wsdl" ID="22c1e784-1ec8-4d90-a474-a652477403f4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?wsdl=wsdl0" />
+    <MetadataFile FileName="ServiceManager3.xsd" MetadataType="Schema" ID="828240ff-9f57-4dad-89cf-da4cb15c3254" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd3" />
+    <MetadataFile FileName="ServiceManager.disco" MetadataType="Disco" ID="2e5db349-99e1-4a99-a297-973dd5efd049" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?disco" />
+    <MetadataFile FileName="ServiceManager4.xsd" MetadataType="Schema" ID="b79af0d5-4ebd-4bc6-bc45-8ed6bb22b50b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd5" />
+    <MetadataFile FileName="ServiceManager5.xsd" MetadataType="Schema" ID="ecb843d2-f33d-423b-a80c-36406cce3e51" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

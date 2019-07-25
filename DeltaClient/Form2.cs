@@ -15,8 +15,8 @@ namespace DeltaClient
         public Form2()
         {
             InitializeComponent();
-            listBox1.Text = "acv";
-            listBox1.a
+            //listBox1.Text = "acv";
+            //listBox1.a
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)

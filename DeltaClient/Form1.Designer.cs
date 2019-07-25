@@ -32,7 +32,7 @@
             this.EmailBoxLogin = new System.Windows.Forms.TextBox();
             this.PasswordBoxLogin = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
-            this.PaswordBoxSignUp = new System.Windows.Forms.TextBox();
+            this.PasswordBoxSignUp = new System.Windows.Forms.TextBox();
             this.EmailBoxSignUp = new System.Windows.Forms.TextBox();
             this.NameBoxSignUp = new System.Windows.Forms.TextBox();
             this.SignUpButton = new System.Windows.Forms.Button();
@@ -47,10 +47,12 @@
             this.EmailBoxLogin.Location = new System.Drawing.Point(44, 226);
             this.EmailBoxLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.EmailBoxLogin.Name = "EmailBoxLogin";
-            this.EmailBoxLogin.Size = new System.Drawing.Size(286, 47);
+            this.EmailBoxLogin.Size = new System.Drawing.Size(286, 55);
             this.EmailBoxLogin.TabIndex = 0;
             this.EmailBoxLogin.Text = "Email";
             this.EmailBoxLogin.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.EmailBoxLogin.Enter += new System.EventHandler(this.deactivateHint);
+            this.EmailBoxLogin.Leave += new System.EventHandler(this.activateHint);
             // 
             // PasswordBoxLogin
             // 
@@ -59,9 +61,11 @@
             this.PasswordBoxLogin.Location = new System.Drawing.Point(44, 327);
             this.PasswordBoxLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.PasswordBoxLogin.Name = "PasswordBoxLogin";
-            this.PasswordBoxLogin.Size = new System.Drawing.Size(286, 47);
+            this.PasswordBoxLogin.Size = new System.Drawing.Size(286, 55);
             this.PasswordBoxLogin.TabIndex = 1;
             this.PasswordBoxLogin.Text = "Password";
+            this.PasswordBoxLogin.Enter += new System.EventHandler(this.deactivateHint);
+            this.PasswordBoxLogin.Leave += new System.EventHandler(this.activateHint);
             // 
             // LoginButton
             // 
@@ -72,17 +76,20 @@
             this.LoginButton.TabIndex = 2;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.login);
             // 
-            // PaswordBoxSignUp
+            // PasswordBoxSignUp
             // 
-            this.PaswordBoxSignUp.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaswordBoxSignUp.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.PaswordBoxSignUp.Location = new System.Drawing.Point(605, 380);
-            this.PaswordBoxSignUp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.PaswordBoxSignUp.Name = "PaswordBoxSignUp";
-            this.PaswordBoxSignUp.Size = new System.Drawing.Size(286, 47);
-            this.PaswordBoxSignUp.TabIndex = 3;
-            this.PaswordBoxSignUp.Text = "Password";
+            this.PasswordBoxSignUp.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordBoxSignUp.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.PasswordBoxSignUp.Location = new System.Drawing.Point(605, 380);
+            this.PasswordBoxSignUp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.PasswordBoxSignUp.Name = "PasswordBoxSignUp";
+            this.PasswordBoxSignUp.Size = new System.Drawing.Size(286, 55);
+            this.PasswordBoxSignUp.TabIndex = 3;
+            this.PasswordBoxSignUp.Text = "Password";
+            this.PasswordBoxSignUp.Enter += new System.EventHandler(this.deactivateHint);
+            this.PasswordBoxSignUp.Leave += new System.EventHandler(this.activateHint);
             // 
             // EmailBoxSignUp
             // 
@@ -91,9 +98,11 @@
             this.EmailBoxSignUp.Location = new System.Drawing.Point(605, 279);
             this.EmailBoxSignUp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.EmailBoxSignUp.Name = "EmailBoxSignUp";
-            this.EmailBoxSignUp.Size = new System.Drawing.Size(286, 47);
+            this.EmailBoxSignUp.Size = new System.Drawing.Size(286, 55);
             this.EmailBoxSignUp.TabIndex = 4;
             this.EmailBoxSignUp.Text = "Email";
+            this.EmailBoxSignUp.Enter += new System.EventHandler(this.deactivateHint);
+            this.EmailBoxSignUp.Leave += new System.EventHandler(this.activateHint);
             // 
             // NameBoxSignUp
             // 
@@ -102,9 +111,11 @@
             this.NameBoxSignUp.Location = new System.Drawing.Point(605, 180);
             this.NameBoxSignUp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.NameBoxSignUp.Name = "NameBoxSignUp";
-            this.NameBoxSignUp.Size = new System.Drawing.Size(286, 47);
+            this.NameBoxSignUp.Size = new System.Drawing.Size(286, 55);
             this.NameBoxSignUp.TabIndex = 5;
             this.NameBoxSignUp.Text = "Nome";
+            this.NameBoxSignUp.Enter += new System.EventHandler(this.deactivateHint);
+            this.NameBoxSignUp.Leave += new System.EventHandler(this.activateHint);
             // 
             // SignUpButton
             // 
@@ -115,6 +126,7 @@
             this.SignUpButton.TabIndex = 6;
             this.SignUpButton.Text = "Registrati";
             this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.signUp);
             // 
             // label1
             // 
@@ -123,7 +135,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 26F);
             this.label1.Location = new System.Drawing.Point(112, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 60);
+            this.label1.Size = new System.Drawing.Size(151, 70);
             this.label1.TabIndex = 8;
             this.label1.Text = "Login";
             // 
@@ -134,13 +146,13 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 26F);
             this.label2.Location = new System.Drawing.Point(609, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 60);
+            this.label2.Size = new System.Drawing.Size(321, 70);
             this.label2.TabIndex = 9;
             this.label2.Text = "Registrazione";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -150,7 +162,7 @@
             this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.NameBoxSignUp);
             this.Controls.Add(this.EmailBoxSignUp);
-            this.Controls.Add(this.PaswordBoxSignUp);
+            this.Controls.Add(this.PasswordBoxSignUp);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordBoxLogin);
             this.Controls.Add(this.EmailBoxLogin);
@@ -169,7 +181,7 @@
         private System.Windows.Forms.TextBox EmailBoxLogin;
         private System.Windows.Forms.TextBox PasswordBoxLogin;
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.TextBox PaswordBoxSignUp;
+        private System.Windows.Forms.TextBox PasswordBoxSignUp;
         private System.Windows.Forms.TextBox EmailBoxSignUp;
         private System.Windows.Forms.TextBox NameBoxSignUp;
         private System.Windows.Forms.Button SignUpButton;
