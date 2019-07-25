@@ -15,13 +15,20 @@ namespace DeltaClient
         public Form2()
         {
             InitializeComponent();
-            listBox1.Text = "acv";
-            listBox1.a
+            //listBox1.Text = "acv";
+            //listBox1.a
         }
 
-        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void OnClickLabel(object sender, EventArgs e)
         {
-            
+            Label label = sender as Label;
+            string name = label.Name;
+            //UsersCarslistView.Bounds = nome ;
+        }
+
+        public void ExitOnClickLabel(object sender, EventArgs e)
+        {
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -29,12 +36,8 @@ namespace DeltaClient
 
         }
 
-        private void ToolStripButton1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void ToolStripLabel2_Click(object sender, EventArgs e)
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
