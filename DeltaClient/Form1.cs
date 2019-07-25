@@ -47,6 +47,9 @@ namespace DeltaClient
             this.tempHint = box.Text;
             box.Text = "";
             box.ForeColor = Color.Black;
+            if (box.Name=="PasswordBoxLogin" || box.Name == "PasswordBoxSignUp"){
+                box.PasswordChar = '*';
+            }
         }
 
         private void activateHint (object sender, EventArgs e)
@@ -56,6 +59,7 @@ namespace DeltaClient
             {
                 box.Text = this.tempHint;
                 box.ForeColor = Color.Gray;
+                box.PasswordChar='\0';
             }
         }
 
@@ -63,8 +67,10 @@ namespace DeltaClient
         {
             UserManagerClient userManager = new UserManagerClient();
             if (userManager.LoginChecker(EmailBoxLogin.Text, EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text)))
-                Application.Run(new Form2());
-            else
+            {
+                Form2 main = new Form2(EmailBoxLogin.Text, EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text));
+                main.Show();
+            }else
                 MessageBox.Show("Utente/Password errati.", "Non è così che si fa.", MessageBoxButtons.OK);
         }
 
