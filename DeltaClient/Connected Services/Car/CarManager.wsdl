@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Delta.DeltaManager.CarNS" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Delta.DeltaManager.CarNS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Delta.DeltaManager.CarNS/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?xsd=xsd0" namespace="Delta.DeltaManager.CarNS" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICarManager_AddCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCar" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_AddCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_AddCar_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q1:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_DeleteCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCar" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_DeleteCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_DeleteCar_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q2:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_GetAvailableCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableCars" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_GetAvailableCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_GetAvailableCars_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q3:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_GetCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCars" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_GetCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_GetCars_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q4:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_UpdateCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCar" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_UpdateCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_UpdateCar_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q5:ManagerFault" />
+  </wsdl:message>
+  <wsdl:portType name="ICarManager">
+    <wsdl:operation name="AddCar">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/AddCar" message="tns:ICarManager_AddCar_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/AddCarResponse" message="tns:ICarManager_AddCar_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/AddCarManagerFaultFault" name="ManagerFaultFault" message="tns:ICarManager_AddCar_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCar">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/DeleteCar" message="tns:ICarManager_DeleteCar_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/DeleteCarResponse" message="tns:ICarManager_DeleteCar_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/DeleteCarManagerFaultFault" name="ManagerFaultFault" message="tns:ICarManager_DeleteCar_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableCars">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetAvailableCars" message="tns:ICarManager_GetAvailableCars_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetAvailableCarsResponse" message="tns:ICarManager_GetAvailableCars_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetAvailableCarsManagerFaultFault" name="ManagerFaultFault" message="tns:ICarManager_GetAvailableCars_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCars">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetCars" message="tns:ICarManager_GetCars_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetCarsResponse" message="tns:ICarManager_GetCars_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetCarsManagerFaultFault" name="ManagerFaultFault" message="tns:ICarManager_GetCars_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCar">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/UpdateCar" message="tns:ICarManager_UpdateCar_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/UpdateCarResponse" message="tns:ICarManager_UpdateCar_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/UpdateCarManagerFaultFault" name="ManagerFaultFault" message="tns:ICarManager_UpdateCar_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

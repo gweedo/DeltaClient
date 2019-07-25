@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Delta.DeltaManager.BookingNS" elementFormDefault="qualified" targetNamespace="Delta.DeltaManager.BookingNS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.BookingNS" />
+  <xs:element name="BookCar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="BookedCar" nillable="true" type="q1:Car" />
+        <xs:element minOccurs="0" name="Start" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="End" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookCarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BookCarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.BookingNS" minOccurs="0" name="DeletableBooking" nillable="true" type="q2:Booking" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBookingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBookingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.BookingNS" minOccurs="0" name="EndedBooking" nillable="true" type="q3:Booking" />
+        <xs:element minOccurs="0" name="NewKilometers" type="xs:int" />
+        <xs:element minOccurs="0" name="Liters" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndBookingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EndBookingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

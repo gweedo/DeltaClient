@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Delta.DeltaManager.UserNS" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Delta.DeltaManager.UserNS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Delta.DeltaManager.UserNS/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.UserNS/UserManager?xsd=xsd0" namespace="Delta.DeltaManager.UserNS" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.UserNS/UserManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.UserNS/UserManager?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.UserNS/UserManager?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.UserNS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserManager_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_CreateUser_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q1:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_DeleteUser_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q2:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_GetUsers_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q3:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_IsAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_IsAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_IsAdmin_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q4:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_LoginChecker_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginChecker" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_LoginChecker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginCheckerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_LoginChecker_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q5:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_UpdateUser_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q6:ManagerFault" />
+  </wsdl:message>
+  <wsdl:portType name="IUserManager">
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/CreateUser" message="tns:IUserManager_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/CreateUserResponse" message="tns:IUserManager_CreateUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/CreateUserManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_CreateUser_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/DeleteUser" message="tns:IUserManager_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/DeleteUserResponse" message="tns:IUserManager_DeleteUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/DeleteUserManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_DeleteUser_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUsers" message="tns:IUserManager_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUsersResponse" message="tns:IUserManager_GetUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUsersManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_GetUsers_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAdmin">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/IsAdmin" message="tns:IUserManager_IsAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/IsAdminResponse" message="tns:IUserManager_IsAdmin_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/IsAdminManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_IsAdmin_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginChecker">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/LoginChecker" message="tns:IUserManager_LoginChecker_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/LoginCheckerResponse" message="tns:IUserManager_LoginChecker_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/LoginCheckerManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_LoginChecker_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/UpdateUser" message="tns:IUserManager_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/UpdateUserResponse" message="tns:IUserManager_UpdateUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/UpdateUserManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_UpdateUser_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

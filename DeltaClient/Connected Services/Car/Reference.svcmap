@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="df85695b-5381-4751-be47-47c93afad579" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CarManager.wsdl" MetadataType="Wsdl" ID="2bf78ead-c05c-41f3-97f8-ae056b63cd8e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?wsdl=wsdl0" />
+    <MetadataFile FileName="CarManager1.wsdl" MetadataType="Wsdl" ID="069c4bd4-5121-4ae4-950a-4f45679e5b80" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?wsdl" />
+    <MetadataFile FileName="CarManager1.xsd" MetadataType="Schema" ID="8e01cdd3-6bba-4c24-a6f2-5b019704ccff" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?xsd=xsd2" />
+    <MetadataFile FileName="CarManager2.xsd" MetadataType="Schema" ID="f8814b96-c016-4111-86e9-c3dcdf8c2868" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?xsd=xsd0" />
+    <MetadataFile FileName="CarManager3.xsd" MetadataType="Schema" ID="547f324b-1311-4626-bb42-a532e1bd7fc3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?xsd=xsd3" />
+    <MetadataFile FileName="CarManager4.xsd" MetadataType="Schema" ID="9d9273a5-6cc3-4330-985f-d20dfcb917b5" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?xsd=xsd1" />
+    <MetadataFile FileName="CarManager.disco" MetadataType="Disco" ID="f5968b8e-34a4-444e-a1a5-2c8323fce0f1" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.CarNS/CarManager?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

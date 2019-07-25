@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="732af9bb-4595-4ea3-84b9-f9337bbd23d2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BookingManager.wsdl" MetadataType="Wsdl" ID="2b1ec74a-40cc-4a04-8ed9-80fee069e203" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?wsdl" />
+    <MetadataFile FileName="BookingManager.xsd" MetadataType="Schema" ID="44af9126-79c3-4813-b8c8-cf54e9e38a7a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?xsd=xsd0" />
+    <MetadataFile FileName="BookingManager6.xsd" MetadataType="Schema" ID="f474065d-f898-4e90-b419-9b070a4c5264" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?xsd=xsd5" />
+    <MetadataFile FileName="BookingManager2.xsd" MetadataType="Schema" ID="897dd7ae-571b-49db-af82-8ffc03e1ba17" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?xsd=xsd4" />
+    <MetadataFile FileName="BookingManager3.xsd" MetadataType="Schema" ID="0b4bcd2d-4d2d-45a9-8900-bb84a207e7cd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?xsd=xsd2" />
+    <MetadataFile FileName="BookingManager5.xsd" MetadataType="Schema" ID="c805cf5c-bc98-454f-9472-3e06f21c0b29" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?xsd=xsd1" />
+    <MetadataFile FileName="BookingManager1.wsdl" MetadataType="Wsdl" ID="f73042c8-a61b-407f-980e-92a794d3d254" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?wsdl=wsdl0" />
+    <MetadataFile FileName="BookingManager.disco" MetadataType="Disco" ID="5d298f69-f1e8-4e4b-bd42-332c3edd639b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?disco" />
+    <MetadataFile FileName="BookingManager1.xsd" MetadataType="Schema" ID="d1861bda-f8ba-4cec-b803-636701e03e56" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

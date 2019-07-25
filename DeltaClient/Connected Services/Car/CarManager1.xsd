@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Car">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BurnedLiters" type="xs:int" />
+      <xs:element minOccurs="0" name="Kilometers" type="xs:int" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Car" nillable="true" type="tns:Car" />
+  <xs:complexType name="ArrayOfCar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Car" nillable="true" type="tns:Car" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCar" nillable="true" type="tns:ArrayOfCar" />
+</xs:schema>

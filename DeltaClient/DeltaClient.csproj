@@ -48,6 +48,8 @@
       <HintPath>..\packages\System.Data.HashFunction.Interfaces.2.0.0\lib\net45\System.Data.HashFunction.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,11 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddChangeUser.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Connected Services\Booking\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="AddChangeUser.Designer.cs">
-      <DependentUpon>AddChangeUser.cs</DependentUpon>
+    <Compile Include="Connected Services\Car\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Report\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\User\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -79,9 +100,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddChangeUser.resx">
-      <DependentUpon>AddChangeUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +115,106 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\Booking\BookingManager.wsdl" />
+    <None Include="Connected Services\Booking\BookingManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Booking\BookingManager1.wsdl" />
+    <None Include="Connected Services\Booking\BookingManager1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Booking\BookingManager2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Booking\BookingManager3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Booking\BookingManager5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Booking\BookingManager6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Car\CarManager.wsdl" />
+    <None Include="Connected Services\Car\CarManager1.wsdl" />
+    <None Include="Connected Services\Car\CarManager1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Car\CarManager2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Car\CarManager3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Car\CarManager4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Car\DeltaClient.Car.Car.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Report\ReportManager.wsdl" />
+    <None Include="Connected Services\Report\ReportManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Report\ReportManager1.wsdl" />
+    <None Include="Connected Services\Report\ReportManager1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Report\ReportManager2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Report\ReportManager3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Report\ReportManager4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Report\ReportManager5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Report\ReportManager6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Report\ReportManager7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\ServiceManager.wsdl" />
+    <None Include="Connected Services\Service\ServiceManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\ServiceManager1.wsdl" />
+    <None Include="Connected Services\Service\ServiceManager1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\ServiceManager2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\ServiceManager3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\ServiceManager4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\ServiceManager5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\User\DeltaClient.User.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\User\UserManager.wsdl" />
+    <None Include="Connected Services\User\UserManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\User\UserManager1.wsdl" />
+    <None Include="Connected Services\User\UserManager1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\User\UserManager3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\User\UserManager4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -113,6 +231,88 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Booking\" />
+    <WCFMetadataStorage Include="Connected Services\Car\" />
+    <WCFMetadataStorage Include="Connected Services\Report\" />
+    <WCFMetadataStorage Include="Connected Services\Service\" />
+    <WCFMetadataStorage Include="Connected Services\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Booking\BookingManager.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Booking\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Booking\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Booking\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Car\CarManager.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Car\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Car\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Car\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\User\UserManager.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\User\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\User\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\User\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\ServiceManager.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Report\ReportManager.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Report\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Report\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Report\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
