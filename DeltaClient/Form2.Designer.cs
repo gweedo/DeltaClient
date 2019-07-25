@@ -90,9 +90,9 @@
             // 
             // UsersCarslistView
             // 
-            this.UsersCarslistView.Location = new System.Drawing.Point(605, 52);
+            this.UsersCarslistView.Location = new System.Drawing.Point(169, 82);
             this.UsersCarslistView.Name = "UsersCarslistView";
-            this.UsersCarslistView.Size = new System.Drawing.Size(121, 97);
+            this.UsersCarslistView.Size = new System.Drawing.Size(815, 360);
             this.UsersCarslistView.TabIndex = 12;
             this.UsersCarslistView.UseCompatibleStateImageBehavior = false;
             this.UsersCarslistView.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
