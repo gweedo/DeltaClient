@@ -19,17 +19,24 @@ namespace DeltaClient
             //listBox1.a
         }
 
-        public void OnClickLabel(object sender, EventArgs e)
+        private void OnClickLabel(object sender, EventArgs e)
         {
             Label label = sender as Label;
             string name = label.Name;
             //UsersCarslistView.Bounds = nome ;
         }
 
-        public void ExitOnClickLabel(object sender, EventArgs e)
+        private void ExitOnClickLabel(object sender, EventArgs e)
         {
 
         }
+
+        private void AddElementOnClickButton(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
