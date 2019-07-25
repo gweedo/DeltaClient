@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeltaClient", "DeltaClient\DeltaClient.csproj", "{DF8B7372-EBD3-4290-BD39-7086EA1FBA35}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF8B7372-EBD3-4290-BD39-7086EA1FBA35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8B7372-EBD3-4290-BD39-7086EA1FBA35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8B7372-EBD3-4290-BD39-7086EA1FBA35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8B7372-EBD3-4290-BD39-7086EA1FBA35}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96F752F4-372C-4161-9BCA-CB32FC92BA68}
+	EndGlobalSection
+EndGlobal
