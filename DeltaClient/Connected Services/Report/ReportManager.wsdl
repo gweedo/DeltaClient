@@ -3,13 +3,12 @@
   <wsdl:types>
     <xsd:schema targetNamespace="Delta.DeltaManager.ReportNS/Imports">
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd0" namespace="Delta.DeltaManager.ReportNS" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.BookingNS" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.UserNS" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.BookingNS" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.UserNS" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IReportManager_AddReport_InputMessage">

@@ -15,99 +15,6 @@ namespace DeltaClient.Report {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS")]
-    [System.SerializableAttribute()]
-    public partial class Report : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DeltaClient.Report.Booking ReportedBookingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SubjectField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DeltaClient.Report.Booking ReportedBooking {
-            get {
-                return this.ReportedBookingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportedBookingField, value) != true)) {
-                    this.ReportedBookingField = value;
-                    this.RaisePropertyChanged("ReportedBooking");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Subject {
-            get {
-                return this.SubjectField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubjectField, value) != true)) {
-                    this.SubjectField = value;
-                    this.RaisePropertyChanged("Subject");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Booking", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.BookingNS")]
     [System.SerializableAttribute()]
     public partial class Booking : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -542,30 +449,117 @@ namespace DeltaClient.Report {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS")]
+    [System.SerializableAttribute()]
+    public partial class Report : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DeltaClient.Report.Booking ReportedBookingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubjectField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DeltaClient.Report.Booking ReportedBooking {
+            get {
+                return this.ReportedBookingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportedBookingField, value) != true)) {
+                    this.ReportedBookingField = value;
+                    this.RaisePropertyChanged("ReportedBooking");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Subject {
+            get {
+                return this.SubjectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubjectField, value) != true)) {
+                    this.SubjectField = value;
+                    this.RaisePropertyChanged("Subject");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="Delta.DeltaManager.ReportNS", ConfigurationName="Report.IReportManager")]
     public interface IReportManager {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/AddReport", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/AddReportResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Report.ManagerFault), Action="Delta.DeltaManager.ReportNS/IReportManager/AddReportManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
-        bool AddReport(DeltaClient.Report.Report report, string Email, string MD5PassHash);
+        bool AddReport(string Message, string Subject, DeltaClient.Report.Booking ReportedBooking, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/AddReport", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/AddReportResponse")]
-        System.Threading.Tasks.Task<bool> AddReportAsync(DeltaClient.Report.Report report, string Email, string MD5PassHash);
+        System.Threading.Tasks.Task<bool> AddReportAsync(string Message, string Subject, DeltaClient.Report.Booking ReportedBooking, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCar", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCarResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Report.ManagerFault), Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCarManagerFaultFault" +
             "", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeltaClient.Report.Report))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeltaClient.Report.Booking))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeltaClient.Report.Car))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeltaClient.Report.User))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeltaClient.Report.ManagerFault))]
-        object[] retrieveReportsForCar(DeltaClient.Report.Car car, string Email, string MD5PassHash);
+        DeltaClient.Report.Report[] retrieveReportsForCar(DeltaClient.Report.Car car, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCar", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCarResponse")]
-        System.Threading.Tasks.Task<object[]> retrieveReportsForCarAsync(DeltaClient.Report.Car car, string Email, string MD5PassHash);
+        System.Threading.Tasks.Task<DeltaClient.Report.Report[]> retrieveReportsForCarAsync(DeltaClient.Report.Car car, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -595,19 +589,19 @@ namespace DeltaClient.Report {
                 base(binding, remoteAddress) {
         }
         
-        public bool AddReport(DeltaClient.Report.Report report, string Email, string MD5PassHash) {
-            return base.Channel.AddReport(report, Email, MD5PassHash);
+        public bool AddReport(string Message, string Subject, DeltaClient.Report.Booking ReportedBooking, string Email, string MD5PassHash) {
+            return base.Channel.AddReport(Message, Subject, ReportedBooking, Email, MD5PassHash);
         }
         
-        public System.Threading.Tasks.Task<bool> AddReportAsync(DeltaClient.Report.Report report, string Email, string MD5PassHash) {
-            return base.Channel.AddReportAsync(report, Email, MD5PassHash);
+        public System.Threading.Tasks.Task<bool> AddReportAsync(string Message, string Subject, DeltaClient.Report.Booking ReportedBooking, string Email, string MD5PassHash) {
+            return base.Channel.AddReportAsync(Message, Subject, ReportedBooking, Email, MD5PassHash);
         }
         
-        public object[] retrieveReportsForCar(DeltaClient.Report.Car car, string Email, string MD5PassHash) {
+        public DeltaClient.Report.Report[] retrieveReportsForCar(DeltaClient.Report.Car car, string Email, string MD5PassHash) {
             return base.Channel.retrieveReportsForCar(car, Email, MD5PassHash);
         }
         
-        public System.Threading.Tasks.Task<object[]> retrieveReportsForCarAsync(DeltaClient.Report.Car car, string Email, string MD5PassHash) {
+        public System.Threading.Tasks.Task<DeltaClient.Report.Report[]> retrieveReportsForCarAsync(DeltaClient.Report.Car car, string Email, string MD5PassHash) {
             return base.Channel.retrieveReportsForCarAsync(car, Email, MD5PassHash);
         }
     }

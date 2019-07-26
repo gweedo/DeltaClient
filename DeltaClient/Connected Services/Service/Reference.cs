@@ -15,99 +15,6 @@ namespace DeltaClient.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Service", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ServiceNS")]
-    [System.SerializableAttribute()]
-    public partial class Service : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int KilometersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DeltaClient.Service.Car ServicedCarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float TotalSpentField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Kilometers {
-            get {
-                return this.KilometersField;
-            }
-            set {
-                if ((this.KilometersField.Equals(value) != true)) {
-                    this.KilometersField = value;
-                    this.RaisePropertyChanged("Kilometers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DeltaClient.Service.Car ServicedCar {
-            get {
-                return this.ServicedCarField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ServicedCarField, value) != true)) {
-                    this.ServicedCarField = value;
-                    this.RaisePropertyChanged("ServicedCar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float TotalSpent {
-            get {
-                return this.TotalSpentField;
-            }
-            set {
-                if ((this.TotalSpentField.Equals(value) != true)) {
-                    this.TotalSpentField = value;
-                    this.RaisePropertyChanged("TotalSpent");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Car", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS")]
     [System.SerializableAttribute()]
     public partial class Car : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -276,28 +183,117 @@ namespace DeltaClient.Service {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Service", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ServiceNS")]
+    [System.SerializableAttribute()]
+    public partial class Service : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int KilometersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DeltaClient.Service.Car ServicedCarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float TotalSpentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Kilometers {
+            get {
+                return this.KilometersField;
+            }
+            set {
+                if ((this.KilometersField.Equals(value) != true)) {
+                    this.KilometersField = value;
+                    this.RaisePropertyChanged("Kilometers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DeltaClient.Service.Car ServicedCar {
+            get {
+                return this.ServicedCarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServicedCarField, value) != true)) {
+                    this.ServicedCarField = value;
+                    this.RaisePropertyChanged("ServicedCar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float TotalSpent {
+            get {
+                return this.TotalSpentField;
+            }
+            set {
+                if ((this.TotalSpentField.Equals(value) != true)) {
+                    this.TotalSpentField = value;
+                    this.RaisePropertyChanged("TotalSpent");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="Delta.DeltaManager.ServiceNS", ConfigurationName="Service.IServiceManager")]
     public interface IServiceManager {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/addCarService", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/addCarServiceResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Service.ManagerFault), Action="Delta.DeltaManager.ServiceNS/IServiceManager/addCarServiceManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
-        bool addCarService(DeltaClient.Service.Service ServiceDone, string Email, string MD5PassHash);
+        bool addCarService(int Kilometers, DeltaClient.Service.Car ServicedCar, int TotalSpent, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/addCarService", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/addCarServiceResponse")]
-        System.Threading.Tasks.Task<bool> addCarServiceAsync(DeltaClient.Service.Service ServiceDone, string Email, string MD5PassHash);
+        System.Threading.Tasks.Task<bool> addCarServiceAsync(int Kilometers, DeltaClient.Service.Car ServicedCar, int TotalSpent, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCar", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCarResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Service.ManagerFault), Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCarManagerFaultFaul" +
             "t", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeltaClient.Service.Service))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeltaClient.Service.Car))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeltaClient.Service.ManagerFault))]
-        object[] GetCarServicesForCar(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash);
+        DeltaClient.Service.Service[] GetCarServicesForCar(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCar", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCarResponse")]
-        System.Threading.Tasks.Task<object[]> GetCarServicesForCarAsync(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash);
+        System.Threading.Tasks.Task<DeltaClient.Service.Service[]> GetCarServicesForCarAsync(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -327,19 +323,19 @@ namespace DeltaClient.Service {
                 base(binding, remoteAddress) {
         }
         
-        public bool addCarService(DeltaClient.Service.Service ServiceDone, string Email, string MD5PassHash) {
-            return base.Channel.addCarService(ServiceDone, Email, MD5PassHash);
+        public bool addCarService(int Kilometers, DeltaClient.Service.Car ServicedCar, int TotalSpent, string Email, string MD5PassHash) {
+            return base.Channel.addCarService(Kilometers, ServicedCar, TotalSpent, Email, MD5PassHash);
         }
         
-        public System.Threading.Tasks.Task<bool> addCarServiceAsync(DeltaClient.Service.Service ServiceDone, string Email, string MD5PassHash) {
-            return base.Channel.addCarServiceAsync(ServiceDone, Email, MD5PassHash);
+        public System.Threading.Tasks.Task<bool> addCarServiceAsync(int Kilometers, DeltaClient.Service.Car ServicedCar, int TotalSpent, string Email, string MD5PassHash) {
+            return base.Channel.addCarServiceAsync(Kilometers, ServicedCar, TotalSpent, Email, MD5PassHash);
         }
         
-        public object[] GetCarServicesForCar(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash) {
+        public DeltaClient.Service.Service[] GetCarServicesForCar(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash) {
             return base.Channel.GetCarServicesForCar(ServicedCar, Email, MD5PassHash);
         }
         
-        public System.Threading.Tasks.Task<object[]> GetCarServicesForCarAsync(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash) {
+        public System.Threading.Tasks.Task<DeltaClient.Service.Service[]> GetCarServicesForCarAsync(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash) {
             return base.Channel.GetCarServicesForCarAsync(ServicedCar, Email, MD5PassHash);
         }
     }

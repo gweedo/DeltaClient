@@ -37,6 +37,24 @@
   <wsdl:message name="IBookingManager_EndBooking_ManagerFaultFault_FaultMessage">
     <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q3:ManagerFault" />
   </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookings" />
+  </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookings_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q4:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookingsForCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingsForCar" />
+  </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookingsForCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingsForCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookingsForCar_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q5:ManagerFault" />
+  </wsdl:message>
   <wsdl:portType name="IBookingManager">
     <wsdl:operation name="BookCar">
       <wsdl:input wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/BookCar" message="tns:IBookingManager_BookCar_InputMessage" />
@@ -52,6 +70,16 @@
       <wsdl:input wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/EndBooking" message="tns:IBookingManager_EndBooking_InputMessage" />
       <wsdl:output wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/EndBookingResponse" message="tns:IBookingManager_EndBooking_OutputMessage" />
       <wsdl:fault wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/EndBookingManagerFaultFault" name="ManagerFaultFault" message="tns:IBookingManager_EndBooking_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookings">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookings" message="tns:IBookingManager_GetBookings_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsResponse" message="tns:IBookingManager_GetBookings_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsManagerFaultFault" name="ManagerFaultFault" message="tns:IBookingManager_GetBookings_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingsForCar">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCar" message="tns:IBookingManager_GetBookingsForCar_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCarResponse" message="tns:IBookingManager_GetBookingsForCar_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCarManagerFaultFault" name="ManagerFaultFault" message="tns:IBookingManager_GetBookingsForCar_ManagerFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

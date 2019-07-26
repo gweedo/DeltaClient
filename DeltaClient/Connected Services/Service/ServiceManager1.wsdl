@@ -3,11 +3,10 @@
   <wsdl:types>
     <xsd:schema targetNamespace="Delta.DeltaManager.ServiceNS/Imports">
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd0" namespace="Delta.DeltaManager.ServiceNS" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ServiceNS" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ServiceNS" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServiceManager_addCarService_InputMessage">

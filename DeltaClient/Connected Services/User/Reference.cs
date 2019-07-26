@@ -244,6 +244,13 @@ namespace DeltaClient.User {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.UserNS/IUserManager/UpdateUser", ReplyAction="Delta.DeltaManager.UserNS/IUserManager/UpdateUserResponse")]
         System.Threading.Tasks.Task<bool> UpdateUserAsync(DeltaClient.User.User UpdatableUser, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmail", ReplyAction="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmailResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.User.ManagerFault), Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmailManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.User.User GetUserByEmail(string SearchedEmail, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmail", ReplyAction="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmailResponse")]
+        System.Threading.Tasks.Task<DeltaClient.User.User> GetUserByEmailAsync(string SearchedEmail, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -319,6 +326,14 @@ namespace DeltaClient.User {
         
         public System.Threading.Tasks.Task<bool> UpdateUserAsync(DeltaClient.User.User UpdatableUser, string Email, string MD5PassHash) {
             return base.Channel.UpdateUserAsync(UpdatableUser, Email, MD5PassHash);
+        }
+        
+        public DeltaClient.User.User GetUserByEmail(string SearchedEmail, string Email, string MD5PassHash) {
+            return base.Channel.GetUserByEmail(SearchedEmail, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.User.User> GetUserByEmailAsync(string SearchedEmail, string Email, string MD5PassHash) {
+            return base.Channel.GetUserByEmailAsync(SearchedEmail, Email, MD5PassHash);
         }
     }
 }

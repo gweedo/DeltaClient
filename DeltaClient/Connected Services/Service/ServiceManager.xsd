@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="Delta.DeltaManager.ServiceNS" elementFormDefault="qualified" targetNamespace="Delta.DeltaManager.ServiceNS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ServiceNS" />
-  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
-  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ServiceNS/ServiceManager?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ServiceNS" />
   <xs:element name="addCarService">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ServiceNS" minOccurs="0" name="ServiceDone" nillable="true" type="q1:Service" />
+        <xs:element minOccurs="0" name="Kilometers" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="ServicedCar" nillable="true" type="q1:Car" />
+        <xs:element minOccurs="0" name="TotalSpent" type="xs:int" />
         <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -31,7 +32,7 @@
   <xs:element name="GetCarServicesForCarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCarServicesForCarResult" nillable="true" type="q3:ArrayOfanyType" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ServiceNS" minOccurs="0" name="GetCarServicesForCarResult" nillable="true" type="q3:ArrayOfService" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

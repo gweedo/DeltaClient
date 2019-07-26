@@ -15,20 +15,21 @@ namespace DeltaClient
     {
         private string Email;
         private string PassHash;
+        private UserManagerClient userManager;
         public UserForm(string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
             InitializeComponent();            
             usersListView.Clear();
-            UserManagerClient userManager = new UserManagerClient();
+            this.userManager = new UserManagerClient();
             usersListView.View = View.Details;
             usersListView.Columns.Add("Email", 230, HorizontalAlignment.Left);
             usersListView.Columns.Add("Nome", 200, HorizontalAlignment.Left);
             usersListView.Columns.Add("Scadenza", 150, HorizontalAlignment.Left);
             usersListView.Columns.Add("Punti", 50, HorizontalAlignment.Left);
             usersListView.Columns.Add("Admin", 50, HorizontalAlignment.Left);
-            var users = userManager.GetUsers(this.Email, this.PassHash);
+            var users = this.userManager.GetUsers(this.Email, this.PassHash);
             var AdminString = "";
             foreach (var SingleUser in users)
             {
@@ -55,6 +56,15 @@ namespace DeltaClient
         private void usersListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void UsersListView_DoubleClick(object sender, EventArgs e)
+        {
+            if (usersListView.SelectedItems.Count == 1)
+            {
+                var selectedUser = this.userManager.GetUserByEmail(usersListView.SelectedItems[0].Text, this.Email, this.PassHash);
+                MessageBox.Show("User", selectedUser.Email, MessageBoxButtons.OK);
+            }
         }
     }
 }
