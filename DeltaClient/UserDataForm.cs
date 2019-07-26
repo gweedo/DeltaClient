@@ -18,6 +18,8 @@ namespace DeltaClient
         protected string License = null;
         protected short LicensePoints = 0;
         protected DateTime LicenseExpiration = new DateTime(0,0,0);
+
+        protected string Temp;
         public UserDataForm(string name, string email, string license, short licensePoints, DateTime licenseExpiration)
         {
             Name = name;
@@ -36,12 +38,14 @@ namespace DeltaClient
             InitializeComponent();
         }
 
-        private void SendSaveButton()
+
+        private void SendSaveButton() 
         {
             if(Name != NameUsertextBox.Text || Email != EmailUserTextBox.Text || LicensePoints.ToString() != LicensePointsUserTextBox.Text || LicenseExpiration.ToString() != LicenseExpirationUserTextBox.Text)
             {
                 UserManagerClient userManager = new UserManagerClient();
-                if (userManager.)  
+                User.User Update = userManager.
+                    if (userManager.UpdateUser())
             }
             
         }

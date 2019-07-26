@@ -44,6 +44,7 @@
             this.LicenseUserLabel = new System.Windows.Forms.Label();
             this.NameUserLabel = new System.Windows.Forms.Label();
             this.UserLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SaveUserButton
@@ -192,11 +193,22 @@
             this.UserLabel.TabIndex = 21;
             this.UserLabel.Text = "label1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 18F);
+            this.label1.Location = new System.Drawing.Point(46, 392);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 41);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "label1";
+            // 
             // UserDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.SaveUserButton);
             this.Controls.Add(this.LicenseUserTextBox);
             this.Controls.Add(this.ConfirmPasswordTextBox);
@@ -238,5 +250,6 @@
         private System.Windows.Forms.Label LicenseUserLabel;
         private System.Windows.Forms.Label NameUserLabel;
         private System.Windows.Forms.Label UserLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
