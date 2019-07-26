@@ -14,51 +14,32 @@ namespace DeltaClient
 {
     public partial class Form2 : Form
     {
-        private string Email;
-        private string PassHash;
+        protected string Email;
+        protected string PassHash;
         public Form2( string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
+            IsMdiContainer = true;
             InitializeComponent();
-            //listBox1.Text = "acv";
-            //listBox1.a
         }
 
         private void ShowUsers(object sender, EventArgs e)
         {
-            UsersCarslistView.Clear();
-            UserManagerClient userManager = new UserManagerClient();
-            Label label = sender as Label;
-            UsersCarslistView.View = View.Details;
-            UsersCarslistView.Columns.Add("Email", 230, HorizontalAlignment.Left);
-            UsersCarslistView.Columns.Add("Nome", 200, HorizontalAlignment.Left);
-            UsersCarslistView.Columns.Add("Scadenza", 150, HorizontalAlignment.Left);
-            var users = userManager.GetUsers(this.Email, this.PassHash);
-            foreach (var SingleUser in users)
-            {
-                UsersCarslistView.Items.Add(new ListViewItem(new string[] { SingleUser.Email, SingleUser.Name, SingleUser.LicenseExpiration.ToShortDateString()}));
-            }
-            UsersCarslistView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            UserForm userFormChild = new UserForm(this.Email, this.PassHash);
+            userFormChild.MdiParent = this;
+            userFormChild.FormBorderStyle = FormBorderStyle.None;
+            userFormChild.Dock = DockStyle.Fill;
+            userFormChild.Show();
+            
         }
         private void ShowCars(object sender, EventArgs e)
         {
-            UsersCarslistView.Clear();
-            CarManagerClient carManager = new CarManagerClient();
-            Label label = sender as Label;
-            UsersCarslistView.View = View.Details;
-            UsersCarslistView.Columns.Add("Targa", 230, HorizontalAlignment.Left);
-            UsersCarslistView.Columns.Add("Marca", 200, HorizontalAlignment.Left);
-            UsersCarslistView.Columns.Add("Modello", 150, HorizontalAlignment.Left);
-            UsersCarslistView.Columns.Add("Anno", 150, HorizontalAlignment.Left);
-            UsersCarslistView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            var cars = carManager.GetCars(this.Email, this.PassHash);
-            foreach (var SingleCar in cars)
-            {
-                UsersCarslistView.Items.Add(new ListViewItem(new string[] { SingleCar.PlateNumber, SingleCar.Make, SingleCar.Model, SingleCar.Year.ToString() }));
-            }
-            UsersCarslistView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-
+            CarForm carFormChild = new CarForm(this.Email, this.PassHash);
+            carFormChild.MdiParent = this;
+            carFormChild.FormBorderStyle = FormBorderStyle.None;
+            carFormChild.Dock = DockStyle.Fill;
+            carFormChild.Show();
         }
 
         private void ExitOnClickLabel(object sender, EventArgs e)
