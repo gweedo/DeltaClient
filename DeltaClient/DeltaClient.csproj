@@ -124,6 +124,12 @@
     <Compile Include="SimpleUserForm.Designer.cs">
       <DependentUpon>SimpleUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDataForm.Designer.cs">
+      <DependentUpon>UserDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
