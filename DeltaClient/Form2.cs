@@ -47,22 +47,11 @@ namespace DeltaClient
 
         }
 
-        private void AddElementOnClickButton(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
         }
 
-
-        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
