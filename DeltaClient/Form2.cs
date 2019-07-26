@@ -16,11 +16,14 @@ namespace DeltaClient
     {
         protected string Email;
         protected string PassHash;
+        private bool loggedOut;
         public Form2( string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
+            this.loggedOut = false;
             IsMdiContainer = true;
+
             InitializeComponent();
         }
 
@@ -41,10 +44,21 @@ namespace DeltaClient
             carFormChild.Dock = DockStyle.Fill;
             carFormChild.Show();
         }
+        private void ShowBookings (object sender, EventArgs e)
+        {
+            BookingsForm bookingFormChild = new BookingsForm(this.Email, this.PassHash);
+            bookingFormChild.MdiParent = this;
+            bookingFormChild.FormBorderStyle = FormBorderStyle.None;
+            bookingFormChild.Dock = DockStyle.Fill;
+            bookingFormChild.Show();
+        }
 
         private void ExitOnClickLabel(object sender, EventArgs e)
         {
-
+            loggedOut = true;
+            Form1 login = new Form1();
+            login.Show();
+            this.Close();
         }
 
 
@@ -52,6 +66,16 @@ namespace DeltaClient
         {
 
         }
+        private void killDelta(object sender, FormClosedEventArgs e)
+        {
+            if(this.loggedOut!=true)
+                Application.Exit();
+        }
 
+
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
