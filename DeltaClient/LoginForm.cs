@@ -13,11 +13,11 @@ using System.Collections;
 
 namespace DeltaClient
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
         private string tempHint;
         private bool loggingIn;
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
             this.loggingIn = false;
@@ -69,12 +69,22 @@ namespace DeltaClient
             UserManagerClient userManager = new UserManagerClient();
             try
             {
-                if (userManager.LoginChecker(EmailBoxLogin.Text, EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text)))
+                string UserMail = EmailBoxLogin.Text;
+                string PassHash= EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text);
+                if (userManager.LoginChecker(UserMail,PassHash))
                 {
                     loggingIn = true;
                     this.Hide();
-                    Form2 main = new Form2(EmailBoxLogin.Text, EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text));
-                    main.Show();
+                    if (userManager.IsAdmin(UserMail, PassHash))
+                    {
+                        AdminDashboard main = new AdminDashboard(UserMail, PassHash);
+                        main.Show();
+                    }
+                    else
+                    {
+                        SimpleUserForm main = new SimpleUserForm(UserMail, PassHash);
+                        main.Show();
+                    }
                     this.Close();
                 }
                 else

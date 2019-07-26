@@ -13,42 +13,48 @@ namespace DeltaClient
 {
     public partial class UserDataForm : Form
     {
-        protected string Name = null;
-        protected string Email = null;
-        protected string License = null;
-        protected short LicensePoints = 0;
-        protected DateTime LicenseExpiration = new DateTime(0,0,0);
-
-        protected string Temp;
-        public UserDataForm(string name, string email, string license, short licensePoints, DateTime licenseExpiration)
+        private User.User editingUser;
+        private string Email;
+        private string PassHash;
+        public UserDataForm(User.User user, string Email, string PassHash)
         {
-            Name = name;
-            UserLabel.Text = Name;
-            Email = email;
-            License = license;
-            LicensePoints = licensePoints;
-            LicenseExpiration = licenseExpiration;
-
-            PasswordUserLabel.Visible = false;
-            PasswordUserTextBox.Visible = false;
-            PasswordUserLabel.Enabled = false;
-            ConfirmPasswordLabel.Visible = false;
-            ConfirmPasswordTextBox.Visible = false;
-            ConfirmPasswordTextBox.Enabled = false;
             InitializeComponent();
+            this.editingUser = user;
+            this.Email = Email;
+            this.PassHash = PassHash;
+            UserLabel.Text = user.Email;
+            NameUsertextBox.Text = user.Name;
+            EmailUserTextBox.Text = user.Email;
+            EmailUserTextBox.ReadOnly = true;
+            LicenseUserTextBox.Text = user.License;
+            expirationPicker.Value = user.LicenseExpiration;
+            LicensePointsUserTextBox.Text = user.LicensePoints.ToString();
         }
 
 
         private void SendSaveButton() 
         {
-            if(Name != NameUsertextBox.Text || Email != EmailUserTextBox.Text || LicensePoints.ToString() != LicensePointsUserTextBox.Text || LicenseExpiration.ToString() != LicenseExpirationUserTextBox.Text)
+            if(editingUser.Name != NameUsertextBox.Text || editingUser.LicensePoints.ToString() != LicensePointsUserTextBox.Text || editingUser.LicenseExpiration != expirationPicker.Value || PasswordUserTextBox.Text!="")
             {
                 UserManagerClient userManager = new UserManagerClient();
-                User.User Update = userManager.
-                    if (userManager.UpdateUser())
+                User.User updatingUser = new User.User();
+
+                updatingUser.Name = NameUsertextBox.Text;
+                updatingUser.LicensePoints = Convert.ToInt16(LicensePointsUserTextBox.Text);
+                updatingUser.License = LicenseUserTextBox.Text;
+                updatingUser.LicenseExpiration = expirationPicker.Value;
+                if (PasswordUserTextBox.Text == ConfirmPasswordTextBox.Text)
+                    updatingUser.PasswordHash = EasyEncryption.MD5.ComputeMD5Hash(PasswordUserTextBox.Text);
+                else
+                    MessageBox.Show("Le due password non corrispondono", "Controlla bene.", MessageBoxButtons.OK);
+                userManager.UpdateUser(updatingUser, this.Email, this.PassHash);
             }
             
         }
 
+        private void UserDataForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

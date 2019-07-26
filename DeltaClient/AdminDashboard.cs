@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class Form2 : Form
+    public partial class AdminDashboard : Form
     {
         protected string Email;
         protected string PassHash;
         private bool loggedOut;
-        public Form2( string Email, string PassHash)
+        public AdminDashboard( string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
@@ -56,7 +56,7 @@ namespace DeltaClient
         private void ExitOnClickLabel(object sender, EventArgs e)
         {
             loggedOut = true;
-            Form1 login = new Form1();
+            LoginForm login = new LoginForm();
             login.Show();
             this.Close();
         }

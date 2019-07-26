@@ -63,7 +63,13 @@ namespace DeltaClient
             if (usersListView.SelectedItems.Count == 1)
             {
                 var selectedUser = this.userManager.GetUserByEmail(usersListView.SelectedItems[0].Text, this.Email, this.PassHash);
-                MessageBox.Show("User", selectedUser.Email, MessageBoxButtons.OK);
+
+                UserDataForm bookingFormChild = new UserDataForm(selectedUser, this.Email, this.PassHash);
+                bookingFormChild.MdiParent = this.ParentForm;
+                bookingFormChild.FormBorderStyle = FormBorderStyle.None;
+                bookingFormChild.Dock = DockStyle.Fill;
+                bookingFormChild.Show();
+
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class Form2
+    partial class AdminDashboard
     {
         /// <summary>
         /// Required designer variable.
