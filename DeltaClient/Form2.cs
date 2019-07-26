@@ -61,6 +61,12 @@ namespace DeltaClient
             this.Close();
         }
 
+        private void AddElementOnClickButton(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -71,7 +77,6 @@ namespace DeltaClient
             if(this.loggedOut!=true)
                 Application.Exit();
         }
-
 
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {

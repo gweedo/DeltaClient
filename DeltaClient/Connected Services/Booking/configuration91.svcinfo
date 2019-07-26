@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="+SQ2yKm26DDDy8bpYl/GjeuLgI8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="VYw89e6UO9ybBiKd2M7k42S6pKo=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IBookingManager7">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IBookingManager7" contract="Booking.IBookingManager" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager" bindingConfiguration="BasicHttpBinding_IBookingManager7">
+    <endpoint name="BasicHttpBinding_IBookingManager1" contract="Booking.IBookingManager" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager" bindingConfiguration="BasicHttpBinding_IBookingManager7">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.BookingNS/BookingManager</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_IBookingManager7</serializedValue>
+          <serializedValue>BasicHttpBinding_IBookingManager1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

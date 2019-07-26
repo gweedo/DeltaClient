@@ -62,6 +62,15 @@
   <wsdl:message name="IUserManager_UpdateUser_ManagerFaultFault_FaultMessage">
     <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q6:ManagerFault" />
   </wsdl:message>
+  <wsdl:message name="IUserManager_GetUserByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_GetUserByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_GetUserByEmail_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q7:ManagerFault" />
+  </wsdl:message>
   <wsdl:portType name="IUserManager">
     <wsdl:operation name="CreateUser">
       <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/CreateUser" message="tns:IUserManager_CreateUser_InputMessage" />
@@ -92,6 +101,11 @@
       <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/UpdateUser" message="tns:IUserManager_UpdateUser_InputMessage" />
       <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/UpdateUserResponse" message="tns:IUserManager_UpdateUser_OutputMessage" />
       <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/UpdateUserManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_UpdateUser_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByEmail">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmail" message="tns:IUserManager_GetUserByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmailResponse" message="tns:IUserManager_GetUserByEmail_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmailManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_GetUserByEmail_ManagerFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

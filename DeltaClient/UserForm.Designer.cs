@@ -44,6 +44,7 @@
             this.usersListView.TabIndex = 0;
             this.usersListView.UseCompatibleStateImageBehavior = false;
             this.usersListView.SelectedIndexChanged += new System.EventHandler(this.usersListView_SelectedIndexChanged);
+            this.usersListView.DoubleClick += new System.EventHandler(this.UsersListView_DoubleClick);
             // 
             // addUser
             // 

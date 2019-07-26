@@ -473,6 +473,20 @@ namespace DeltaClient.Booking {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/EndBooking", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/EndBookingResponse")]
         System.Threading.Tasks.Task<bool> EndBookingAsync(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookings", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Booking.ManagerFault), Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Booking.Booking[] GetBookings(string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookings", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsAsync(string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCar", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCarResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Booking.ManagerFault), Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCarManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Booking.Booking[] GetBookingsForCar(DeltaClient.Booking.Car car, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCar", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCarResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsForCarAsync(DeltaClient.Booking.Car car, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -524,6 +538,22 @@ namespace DeltaClient.Booking {
         
         public System.Threading.Tasks.Task<bool> EndBookingAsync(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters) {
             return base.Channel.EndBookingAsync(EndedBooking, NewKilometers, Liters);
+        }
+        
+        public DeltaClient.Booking.Booking[] GetBookings(string Email, string MD5PassHash) {
+            return base.Channel.GetBookings(Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsAsync(string Email, string MD5PassHash) {
+            return base.Channel.GetBookingsAsync(Email, MD5PassHash);
+        }
+        
+        public DeltaClient.Booking.Booking[] GetBookingsForCar(DeltaClient.Booking.Car car, string Email, string MD5PassHash) {
+            return base.Channel.GetBookingsForCar(car, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsForCarAsync(DeltaClient.Booking.Car car, string Email, string MD5PassHash) {
+            return base.Channel.GetBookingsForCarAsync(car, Email, MD5PassHash);
         }
     }
 }

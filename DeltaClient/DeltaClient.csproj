@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingsForm.Designer.cs">
+      <DependentUpon>BookingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarBooker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarBooker.Designer.cs">
+      <DependentUpon>CarBooker.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BookingsForm.resx">
+      <DependentUpon>BookingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarBooker.resx">
+      <DependentUpon>CarBooker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CarForm.resx">
       <DependentUpon>CarForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +180,9 @@
     <None Include="Connected Services\Booking\BookingManager6.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\Booking\DeltaClient.Booking.Booking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Car\CarManager.wsdl" />
     <None Include="Connected Services\Car\CarManager1.wsdl" />
     <None Include="Connected Services\Car\CarManager1.xsd">
@@ -177,6 +198,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Car\DeltaClient.Car.Car.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Report\DeltaClient.Report.Report.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Report\ReportManager.wsdl" />
@@ -199,11 +223,11 @@
     <None Include="Connected Services\Report\ReportManager5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Report\ReportManager6.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\Report\ReportManager7.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\DeltaClient.Service.Service.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Service\ServiceManager.wsdl" />
     <None Include="Connected Services\Service\ServiceManager.xsd">
@@ -217,9 +241,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Service\ServiceManager3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\Service\ServiceManager4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Service\ServiceManager5.xsd">

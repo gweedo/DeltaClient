@@ -26,6 +26,15 @@
   <wsdl:message name="ICarManager_DeleteCar_ManagerFaultFault_FaultMessage">
     <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q2:ManagerFault" />
   </wsdl:message>
+  <wsdl:message name="ICarManager_GetCarByPlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarByPlate" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_GetCarByPlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarByPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarManager_GetCarByPlate_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q3:ManagerFault" />
+  </wsdl:message>
   <wsdl:message name="ICarManager_GetAvailableCars_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAvailableCars" />
   </wsdl:message>
@@ -33,7 +42,7 @@
     <wsdl:part name="parameters" element="tns:GetAvailableCarsResponse" />
   </wsdl:message>
   <wsdl:message name="ICarManager_GetAvailableCars_ManagerFaultFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q3:ManagerFault" />
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q4:ManagerFault" />
   </wsdl:message>
   <wsdl:message name="ICarManager_GetCars_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCars" />
@@ -42,7 +51,7 @@
     <wsdl:part name="parameters" element="tns:GetCarsResponse" />
   </wsdl:message>
   <wsdl:message name="ICarManager_GetCars_ManagerFaultFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q4:ManagerFault" />
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q5:ManagerFault" />
   </wsdl:message>
   <wsdl:message name="ICarManager_UpdateCar_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateCar" />
@@ -51,7 +60,7 @@
     <wsdl:part name="parameters" element="tns:UpdateCarResponse" />
   </wsdl:message>
   <wsdl:message name="ICarManager_UpdateCar_ManagerFaultFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q5:ManagerFault" />
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q6:ManagerFault" />
   </wsdl:message>
   <wsdl:portType name="ICarManager">
     <wsdl:operation name="AddCar">
@@ -63,6 +72,11 @@
       <wsdl:input wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/DeleteCar" message="tns:ICarManager_DeleteCar_InputMessage" />
       <wsdl:output wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/DeleteCarResponse" message="tns:ICarManager_DeleteCar_OutputMessage" />
       <wsdl:fault wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/DeleteCarManagerFaultFault" name="ManagerFaultFault" message="tns:ICarManager_DeleteCar_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarByPlate">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlate" message="tns:ICarManager_GetCarByPlate_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlateResponse" message="tns:ICarManager_GetCarByPlate_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlateManagerFaultFault" name="ManagerFaultFault" message="tns:ICarManager_GetCarByPlate_ManagerFaultFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAvailableCars">
       <wsdl:input wsaw:Action="Delta.DeltaManager.CarNS/ICarManager/GetAvailableCars" message="tns:ICarManager_GetAvailableCars_InputMessage" />

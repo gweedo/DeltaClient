@@ -28,6 +28,18 @@
         <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="GetCarByPlate">
+      <soap:operation soapAction="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="GetAvailableCars">
       <soap:operation soapAction="Delta.DeltaManager.CarNS/ICarManager/GetAvailableCars" style="document" />
       <wsdl:input>
