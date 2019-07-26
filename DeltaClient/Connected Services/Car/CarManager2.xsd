@@ -33,6 +33,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCarByPlate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Plate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarByPlateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="GetCarByPlateResult" nillable="true" type="q3:Car" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAvailableCars">
     <xs:complexType>
       <xs:sequence>
@@ -46,7 +62,7 @@
   <xs:element name="GetAvailableCarsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="GetAvailableCarsResult" nillable="true" type="q3:ArrayOfCar" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="GetAvailableCarsResult" nillable="true" type="q4:ArrayOfCar" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -61,14 +77,14 @@
   <xs:element name="GetCarsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="GetCarsResult" nillable="true" type="q4:ArrayOfCar" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="GetCarsResult" nillable="true" type="q5:ArrayOfCar" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateCar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="UpdatableCar" nillable="true" type="q5:Car" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="UpdatableCar" nillable="true" type="q6:Car" />
         <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
       </xs:sequence>

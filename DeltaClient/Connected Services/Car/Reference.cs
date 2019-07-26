@@ -201,6 +201,13 @@ namespace DeltaClient.Car {
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.CarNS/ICarManager/DeleteCar", ReplyAction="Delta.DeltaManager.CarNS/ICarManager/DeleteCarResponse")]
         System.Threading.Tasks.Task<bool> DeleteCarAsync(DeltaClient.Car.Car car, string Email, string MD5PassHash);
         
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlate", ReplyAction="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlateResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Car.ManagerFault), Action="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlateManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Car.Car GetCarByPlate(string Plate, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlate", ReplyAction="Delta.DeltaManager.CarNS/ICarManager/GetCarByPlateResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Car.Car> GetCarByPlateAsync(string Plate, string Email, string MD5PassHash);
+        
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.CarNS/ICarManager/GetAvailableCars", ReplyAction="Delta.DeltaManager.CarNS/ICarManager/GetAvailableCarsResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Car.ManagerFault), Action="Delta.DeltaManager.CarNS/ICarManager/GetAvailableCarsManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
         DeltaClient.Car.Car[] GetAvailableCars(System.DateTime Start, System.DateTime End, string Email, string MD5PassHash);
@@ -264,6 +271,14 @@ namespace DeltaClient.Car {
         
         public System.Threading.Tasks.Task<bool> DeleteCarAsync(DeltaClient.Car.Car car, string Email, string MD5PassHash) {
             return base.Channel.DeleteCarAsync(car, Email, MD5PassHash);
+        }
+        
+        public DeltaClient.Car.Car GetCarByPlate(string Plate, string Email, string MD5PassHash) {
+            return base.Channel.GetCarByPlate(Plate, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.Car.Car> GetCarByPlateAsync(string Plate, string Email, string MD5PassHash) {
+            return base.Channel.GetCarByPlateAsync(Plate, Email, MD5PassHash);
         }
         
         public DeltaClient.Car.Car[] GetAvailableCars(System.DateTime Start, System.DateTime End, string Email, string MD5PassHash) {
