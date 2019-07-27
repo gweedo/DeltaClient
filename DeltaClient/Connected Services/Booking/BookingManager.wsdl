@@ -64,6 +64,18 @@
         <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="GetBookingsForUser">
+      <soap:operation soapAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="BookingManager">
     <wsdl:port name="BasicHttpBinding_IBookingManager" binding="tns:BasicHttpBinding_IBookingManager">

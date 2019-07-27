@@ -29,7 +29,7 @@ namespace DeltaClient
 
         private void ShowUsers(object sender, EventArgs e)
         {
-            UserForm userFormChild = new UserForm(this.Email, this.PassHash);
+            UserListForm userFormChild = new UserListForm(this.Email, this.PassHash);
             userFormChild.MdiParent = this;
             userFormChild.FormBorderStyle = FormBorderStyle.None;
             userFormChild.Dock = DockStyle.Fill;

@@ -22,13 +22,13 @@ namespace DeltaClient
             this.editingUser = user;
             this.Email = Email;
             this.PassHash = PassHash;
-            UserLabel.Text = user.Email;
             NameUsertextBox.Text = user.Name;
             EmailUserTextBox.Text = user.Email;
             EmailUserTextBox.ReadOnly = true;
             LicenseUserTextBox.Text = user.License;
             expirationPicker.Value = user.LicenseExpiration;
             LicensePointsUserTextBox.Text = user.LicensePoints.ToString();
+            AdminCheckbox.Checked = user.isAdmin;
         }
 
 
@@ -43,6 +43,7 @@ namespace DeltaClient
                 updatingUser.LicensePoints = Convert.ToInt16(LicensePointsUserTextBox.Text);
                 updatingUser.License = LicenseUserTextBox.Text;
                 updatingUser.LicenseExpiration = expirationPicker.Value;
+                updatingUser.isAdmin = AdminCheckbox.Checked;
                 if (PasswordUserTextBox.Text == ConfirmPasswordTextBox.Text)
                     updatingUser.PasswordHash = EasyEncryption.MD5.ComputeMD5Hash(PasswordUserTextBox.Text);
                 else
@@ -52,7 +53,26 @@ namespace DeltaClient
             
         }
 
+        private void cancelEditing (object sender, EventArgs e)
+        {
+            UserListForm listFormChild = new UserListForm(this.Email, this.PassHash);
+            listFormChild.MdiParent = this.ParentForm;
+            listFormChild.FormBorderStyle = FormBorderStyle.None;
+            listFormChild.Dock = DockStyle.Fill;
+            listFormChild.Show();
+        }
+
         private void UserDataForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }

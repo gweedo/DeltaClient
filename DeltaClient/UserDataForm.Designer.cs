@@ -42,14 +42,16 @@
             this.PasswordUserLabel = new System.Windows.Forms.Label();
             this.LicenseUserLabel = new System.Windows.Forms.Label();
             this.NameUserLabel = new System.Windows.Forms.Label();
-            this.UserLabel = new System.Windows.Forms.Label();
             this.expirationPicker = new System.Windows.Forms.DateTimePicker();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.AdminCheckbox = new System.Windows.Forms.CheckBox();
+            this.AdminLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SaveUserButton
             // 
             this.SaveUserButton.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.SaveUserButton.Location = new System.Drawing.Point(702, 498);
+            this.SaveUserButton.Location = new System.Drawing.Point(694, 391);
             this.SaveUserButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SaveUserButton.Name = "SaveUserButton";
             this.SaveUserButton.Size = new System.Drawing.Size(96, 46);
@@ -60,7 +62,7 @@
             // LicenseUserTextBox
             // 
             this.LicenseUserTextBox.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.LicenseUserTextBox.Location = new System.Drawing.Point(96, 290);
+            this.LicenseUserTextBox.Location = new System.Drawing.Point(12, 191);
             this.LicenseUserTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LicenseUserTextBox.Name = "LicenseUserTextBox";
             this.LicenseUserTextBox.Size = new System.Drawing.Size(262, 39);
@@ -69,7 +71,7 @@
             // ConfirmPasswordTextBox
             // 
             this.ConfirmPasswordTextBox.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.ConfirmPasswordTextBox.Location = new System.Drawing.Point(479, 422);
+            this.ConfirmPasswordTextBox.Location = new System.Drawing.Point(395, 323);
             this.ConfirmPasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
             this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(318, 39);
@@ -78,7 +80,7 @@
             // LicensePointsUserTextBox
             // 
             this.LicensePointsUserTextBox.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.LicensePointsUserTextBox.Location = new System.Drawing.Point(479, 290);
+            this.LicensePointsUserTextBox.Location = new System.Drawing.Point(395, 191);
             this.LicensePointsUserTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LicensePointsUserTextBox.Name = "LicensePointsUserTextBox";
             this.LicensePointsUserTextBox.Size = new System.Drawing.Size(140, 39);
@@ -86,8 +88,9 @@
             // 
             // EmailUserTextBox
             // 
+            this.EmailUserTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.EmailUserTextBox.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.EmailUserTextBox.Location = new System.Drawing.Point(479, 154);
+            this.EmailUserTextBox.Location = new System.Drawing.Point(395, 55);
             this.EmailUserTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EmailUserTextBox.Name = "EmailUserTextBox";
             this.EmailUserTextBox.Size = new System.Drawing.Size(318, 39);
@@ -96,7 +99,7 @@
             // PasswordUserTextBox
             // 
             this.PasswordUserTextBox.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.PasswordUserTextBox.Location = new System.Drawing.Point(96, 422);
+            this.PasswordUserTextBox.Location = new System.Drawing.Point(12, 323);
             this.PasswordUserTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PasswordUserTextBox.Name = "PasswordUserTextBox";
             this.PasswordUserTextBox.Size = new System.Drawing.Size(262, 39);
@@ -105,7 +108,7 @@
             // NameUsertextBox
             // 
             this.NameUsertextBox.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.NameUsertextBox.Location = new System.Drawing.Point(96, 154);
+            this.NameUsertextBox.Location = new System.Drawing.Point(12, 55);
             this.NameUsertextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NameUsertextBox.Name = "NameUsertextBox";
             this.NameUsertextBox.Size = new System.Drawing.Size(262, 37);
@@ -115,7 +118,7 @@
             // 
             this.ConfirmPasswordLabel.AutoSize = true;
             this.ConfirmPasswordLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.ConfirmPasswordLabel.Location = new System.Drawing.Point(472, 379);
+            this.ConfirmPasswordLabel.Location = new System.Drawing.Point(388, 280);
             this.ConfirmPasswordLabel.Name = "ConfirmPasswordLabel";
             this.ConfirmPasswordLabel.Size = new System.Drawing.Size(250, 38);
             this.ConfirmPasswordLabel.TabIndex = 28;
@@ -125,7 +128,7 @@
             // 
             this.LicenseExpirationUserLabel.AutoSize = true;
             this.LicenseExpirationUserLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.LicenseExpirationUserLabel.Location = new System.Drawing.Point(641, 246);
+            this.LicenseExpirationUserLabel.Location = new System.Drawing.Point(557, 147);
             this.LicenseExpirationUserLabel.Name = "LicenseExpirationUserLabel";
             this.LicenseExpirationUserLabel.Size = new System.Drawing.Size(129, 38);
             this.LicenseExpirationUserLabel.TabIndex = 27;
@@ -135,7 +138,7 @@
             // 
             this.EmailUserLabel.AutoSize = true;
             this.EmailUserLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.EmailUserLabel.Location = new System.Drawing.Point(472, 110);
+            this.EmailUserLabel.Location = new System.Drawing.Point(388, 11);
             this.EmailUserLabel.Name = "EmailUserLabel";
             this.EmailUserLabel.Size = new System.Drawing.Size(80, 38);
             this.EmailUserLabel.TabIndex = 26;
@@ -145,7 +148,7 @@
             // 
             this.LicensePointsUserLabel.AutoSize = true;
             this.LicensePointsUserLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.LicensePointsUserLabel.Location = new System.Drawing.Point(476, 246);
+            this.LicensePointsUserLabel.Location = new System.Drawing.Point(392, 147);
             this.LicensePointsUserLabel.Name = "LicensePointsUserLabel";
             this.LicensePointsUserLabel.Size = new System.Drawing.Size(76, 38);
             this.LicensePointsUserLabel.TabIndex = 25;
@@ -155,7 +158,7 @@
             // 
             this.PasswordUserLabel.AutoSize = true;
             this.PasswordUserLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.PasswordUserLabel.Location = new System.Drawing.Point(89, 379);
+            this.PasswordUserLabel.Location = new System.Drawing.Point(5, 280);
             this.PasswordUserLabel.Name = "PasswordUserLabel";
             this.PasswordUserLabel.Size = new System.Drawing.Size(126, 38);
             this.PasswordUserLabel.TabIndex = 24;
@@ -165,7 +168,7 @@
             // 
             this.LicenseUserLabel.AutoSize = true;
             this.LicenseUserLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.LicenseUserLabel.Location = new System.Drawing.Point(89, 246);
+            this.LicenseUserLabel.Location = new System.Drawing.Point(5, 147);
             this.LicenseUserLabel.Name = "LicenseUserLabel";
             this.LicenseUserLabel.Size = new System.Drawing.Size(104, 38);
             this.LicenseUserLabel.TabIndex = 23;
@@ -175,34 +178,59 @@
             // 
             this.NameUserLabel.AutoSize = true;
             this.NameUserLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.NameUserLabel.Location = new System.Drawing.Point(89, 112);
+            this.NameUserLabel.Location = new System.Drawing.Point(5, 13);
             this.NameUserLabel.Name = "NameUserLabel";
             this.NameUserLabel.Size = new System.Drawing.Size(90, 38);
             this.NameUserLabel.TabIndex = 22;
             this.NameUserLabel.Text = "Nome";
             // 
-            // UserLabel
-            // 
-            this.UserLabel.AutoSize = true;
-            this.UserLabel.Font = new System.Drawing.Font("Segoe UI Light", 18F);
-            this.UserLabel.Location = new System.Drawing.Point(393, 20);
-            this.UserLabel.Name = "UserLabel";
-            this.UserLabel.Size = new System.Drawing.Size(103, 48);
-            this.UserLabel.TabIndex = 21;
-            this.UserLabel.Text = "label1";
-            // 
             // expirationPicker
             // 
-            this.expirationPicker.Location = new System.Drawing.Point(639, 303);
+            this.expirationPicker.Location = new System.Drawing.Point(555, 204);
             this.expirationPicker.Name = "expirationPicker";
             this.expirationPicker.Size = new System.Drawing.Size(235, 26);
             this.expirationPicker.TabIndex = 37;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.cancelButton.Location = new System.Drawing.Point(569, 391);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(111, 46);
+            this.cancelButton.TabIndex = 38;
+            this.cancelButton.Text = "Annulla";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // AdminCheckbox
+            // 
+            this.AdminCheckbox.AutoSize = true;
+            this.AdminCheckbox.Location = new System.Drawing.Point(747, 67);
+            this.AdminCheckbox.Name = "AdminCheckbox";
+            this.AdminCheckbox.Size = new System.Drawing.Size(22, 21);
+            this.AdminCheckbox.TabIndex = 39;
+            this.AdminCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // AdminLabel
+            // 
+            this.AdminLabel.AutoSize = true;
+            this.AdminLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.AdminLabel.Location = new System.Drawing.Point(710, 13);
+            this.AdminLabel.Name = "AdminLabel";
+            this.AdminLabel.Size = new System.Drawing.Size(95, 38);
+            this.AdminLabel.TabIndex = 40;
+            this.AdminLabel.Text = "Admin";
+            this.AdminLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // UserDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AdminLabel);
+            this.Controls.Add(this.AdminCheckbox);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.expirationPicker);
             this.Controls.Add(this.SaveUserButton);
             this.Controls.Add(this.LicenseUserTextBox);
@@ -218,7 +246,6 @@
             this.Controls.Add(this.PasswordUserLabel);
             this.Controls.Add(this.LicenseUserLabel);
             this.Controls.Add(this.NameUserLabel);
-            this.Controls.Add(this.UserLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserDataForm";
             this.Text = "UserDataForm";
@@ -244,7 +271,9 @@
         private System.Windows.Forms.Label PasswordUserLabel;
         private System.Windows.Forms.Label LicenseUserLabel;
         private System.Windows.Forms.Label NameUserLabel;
-        private System.Windows.Forms.Label UserLabel;
         private System.Windows.Forms.DateTimePicker expirationPicker;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.CheckBox AdminCheckbox;
+        private System.Windows.Forms.Label AdminLabel;
     }
 }

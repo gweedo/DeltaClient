@@ -487,6 +487,13 @@ namespace DeltaClient.Booking {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCar", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForCarResponse")]
         System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsForCarAsync(DeltaClient.Booking.Car car, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUser", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUserResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Booking.ManagerFault), Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUserManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Booking.Booking[] GetBookingsForUser(string UserEmail, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUser", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUserResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsForUserAsync(string UserEmail, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -554,6 +561,14 @@ namespace DeltaClient.Booking {
         
         public System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsForCarAsync(DeltaClient.Booking.Car car, string Email, string MD5PassHash) {
             return base.Channel.GetBookingsForCarAsync(car, Email, MD5PassHash);
+        }
+        
+        public DeltaClient.Booking.Booking[] GetBookingsForUser(string UserEmail, string Email, string MD5PassHash) {
+            return base.Channel.GetBookingsForUser(UserEmail, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsForUserAsync(string UserEmail, string Email, string MD5PassHash) {
+            return base.Channel.GetBookingsForUserAsync(UserEmail, Email, MD5PassHash);
         }
     }
 }
