@@ -28,6 +28,42 @@
         <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="DeleteService">
+      <soap:operation soapAction="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceByID">
+      <soap:operation soapAction="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateService">
+      <soap:operation soapAction="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ServiceManager">
     <wsdl:port name="BasicHttpBinding_IServiceManager" binding="tns:BasicHttpBinding_IServiceManager">

@@ -88,6 +88,7 @@
             this.manutenzioniToolStripMenuItem.Name = "manutenzioniToolStripMenuItem";
             this.manutenzioniToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.manutenzioniToolStripMenuItem.Text = "Vai a manutenzioni";
+            this.manutenzioniToolStripMenuItem.Click += new System.EventHandler(this.CheckServices);
             // 
             // reportToolStripMenuItem
             // 

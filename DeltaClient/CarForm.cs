@@ -81,7 +81,17 @@ namespace DeltaClient
 
         private void CheckServices(object sender, EventArgs e)
         {
+            if (carListView.SelectedItems.Count == 1)
+            {
+                var selectedCar = this.carManager.GetCarByPlate(carListView.SelectedItems[0].Text, this.Email, this.PassHash);
 
+                ServicesListForm ServicesListChild = new ServicesListForm(this.Email, this.PassHash, selectedCar.PlateNumber);
+                ServicesListChild.MdiParent = this.ParentForm;
+                ServicesListChild.FormBorderStyle = FormBorderStyle.None;
+                ServicesListChild.Dock = DockStyle.Fill;
+                ServicesListChild.Show();
+
+            }
         }
 
         private void CheckReports(object sender, EventArgs e)

@@ -130,6 +130,18 @@
     <Compile Include="ReportUserForm.Designer.cs">
       <DependentUpon>ReportUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceEdit.Designer.cs">
+      <DependentUpon>ServiceEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServicesListForm.Designer.cs">
+      <DependentUpon>ServicesListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimpleUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +189,12 @@
     </Compile>
     <EmbeddedResource Include="ReportUserForm.resx">
       <DependentUpon>ReportUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceEdit.resx">
+      <DependentUpon>ServiceEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicesListForm.resx">
+      <DependentUpon>ServicesListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleUserForm.resx">
       <DependentUpon>SimpleUserForm.cs</DependentUpon>

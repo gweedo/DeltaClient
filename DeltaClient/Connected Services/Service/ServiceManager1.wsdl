@@ -27,6 +27,33 @@
   <wsdl:message name="IServiceManager_GetCarServicesForCar_ManagerFaultFault_FaultMessage">
     <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q2:ManagerFault" />
   </wsdl:message>
+  <wsdl:message name="IServiceManager_DeleteService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteService" />
+  </wsdl:message>
+  <wsdl:message name="IServiceManager_DeleteService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceManager_DeleteService_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q3:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IServiceManager_GetServiceByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceByID" />
+  </wsdl:message>
+  <wsdl:message name="IServiceManager_GetServiceByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceManager_GetServiceByID_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q4:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IServiceManager_UpdateService_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateService" />
+  </wsdl:message>
+  <wsdl:message name="IServiceManager_UpdateService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceManager_UpdateService_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q5:ManagerFault" />
+  </wsdl:message>
   <wsdl:portType name="IServiceManager">
     <wsdl:operation name="addCarService">
       <wsdl:input wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/addCarService" message="tns:IServiceManager_addCarService_InputMessage" />
@@ -37,6 +64,21 @@
       <wsdl:input wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCar" message="tns:IServiceManager_GetCarServicesForCar_InputMessage" />
       <wsdl:output wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCarResponse" message="tns:IServiceManager_GetCarServicesForCar_OutputMessage" />
       <wsdl:fault wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCarManagerFaultFault" name="ManagerFaultFault" message="tns:IServiceManager_GetCarServicesForCar_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteService">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteService" message="tns:IServiceManager_DeleteService_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteServiceResponse" message="tns:IServiceManager_DeleteService_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteServiceManagerFaultFault" name="ManagerFaultFault" message="tns:IServiceManager_DeleteService_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceByID">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByID" message="tns:IServiceManager_GetServiceByID_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByIDResponse" message="tns:IServiceManager_GetServiceByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByIDManagerFaultFault" name="ManagerFaultFault" message="tns:IServiceManager_GetServiceByID_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateService">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateService" message="tns:IServiceManager_UpdateService_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateServiceResponse" message="tns:IServiceManager_UpdateService_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateServiceManagerFaultFault" name="ManagerFaultFault" message="tns:IServiceManager_UpdateService_ManagerFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

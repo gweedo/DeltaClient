@@ -282,18 +282,39 @@ namespace DeltaClient.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/addCarService", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/addCarServiceResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Service.ManagerFault), Action="Delta.DeltaManager.ServiceNS/IServiceManager/addCarServiceManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
-        bool addCarService(int Kilometers, DeltaClient.Service.Car ServicedCar, int TotalSpent, string Email, string MD5PassHash);
+        bool addCarService(int Kilometers, DeltaClient.Service.Car ServicedCar, float TotalSpent, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/addCarService", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/addCarServiceResponse")]
-        System.Threading.Tasks.Task<bool> addCarServiceAsync(int Kilometers, DeltaClient.Service.Car ServicedCar, int TotalSpent, string Email, string MD5PassHash);
+        System.Threading.Tasks.Task<bool> addCarServiceAsync(int Kilometers, DeltaClient.Service.Car ServicedCar, float TotalSpent, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCar", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCarResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Service.ManagerFault), Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCarManagerFaultFaul" +
             "t", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
-        DeltaClient.Service.Service[] GetCarServicesForCar(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash);
+        DeltaClient.Service.Service[] GetCarServicesForCar(string Plate, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCar", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/GetCarServicesForCarResponse")]
-        System.Threading.Tasks.Task<DeltaClient.Service.Service[]> GetCarServicesForCarAsync(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash);
+        System.Threading.Tasks.Task<DeltaClient.Service.Service[]> GetCarServicesForCarAsync(string Plate, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteService", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteServiceResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Service.ManagerFault), Action="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteServiceManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        bool DeleteService(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteService", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/DeleteServiceResponse")]
+        System.Threading.Tasks.Task<bool> DeleteServiceAsync(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByID", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByIDResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Service.ManagerFault), Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByIDManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Service.Service GetServiceByID(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByID", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/GetServiceByIDResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Service.Service> GetServiceByIDAsync(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateService", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateServiceResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Service.ManagerFault), Action="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateServiceManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        bool UpdateService(DeltaClient.Service.Service service, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateService", ReplyAction="Delta.DeltaManager.ServiceNS/IServiceManager/UpdateServiceResponse")]
+        System.Threading.Tasks.Task<bool> UpdateServiceAsync(DeltaClient.Service.Service service, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -323,20 +344,44 @@ namespace DeltaClient.Service {
                 base(binding, remoteAddress) {
         }
         
-        public bool addCarService(int Kilometers, DeltaClient.Service.Car ServicedCar, int TotalSpent, string Email, string MD5PassHash) {
+        public bool addCarService(int Kilometers, DeltaClient.Service.Car ServicedCar, float TotalSpent, string Email, string MD5PassHash) {
             return base.Channel.addCarService(Kilometers, ServicedCar, TotalSpent, Email, MD5PassHash);
         }
         
-        public System.Threading.Tasks.Task<bool> addCarServiceAsync(int Kilometers, DeltaClient.Service.Car ServicedCar, int TotalSpent, string Email, string MD5PassHash) {
+        public System.Threading.Tasks.Task<bool> addCarServiceAsync(int Kilometers, DeltaClient.Service.Car ServicedCar, float TotalSpent, string Email, string MD5PassHash) {
             return base.Channel.addCarServiceAsync(Kilometers, ServicedCar, TotalSpent, Email, MD5PassHash);
         }
         
-        public DeltaClient.Service.Service[] GetCarServicesForCar(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash) {
-            return base.Channel.GetCarServicesForCar(ServicedCar, Email, MD5PassHash);
+        public DeltaClient.Service.Service[] GetCarServicesForCar(string Plate, string Email, string MD5PassHash) {
+            return base.Channel.GetCarServicesForCar(Plate, Email, MD5PassHash);
         }
         
-        public System.Threading.Tasks.Task<DeltaClient.Service.Service[]> GetCarServicesForCarAsync(DeltaClient.Service.Car ServicedCar, string Email, string MD5PassHash) {
-            return base.Channel.GetCarServicesForCarAsync(ServicedCar, Email, MD5PassHash);
+        public System.Threading.Tasks.Task<DeltaClient.Service.Service[]> GetCarServicesForCarAsync(string Plate, string Email, string MD5PassHash) {
+            return base.Channel.GetCarServicesForCarAsync(Plate, Email, MD5PassHash);
+        }
+        
+        public bool DeleteService(int ID, string Email, string MD5PassHash) {
+            return base.Channel.DeleteService(ID, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteServiceAsync(int ID, string Email, string MD5PassHash) {
+            return base.Channel.DeleteServiceAsync(ID, Email, MD5PassHash);
+        }
+        
+        public DeltaClient.Service.Service GetServiceByID(int ID, string Email, string MD5PassHash) {
+            return base.Channel.GetServiceByID(ID, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.Service.Service> GetServiceByIDAsync(int ID, string Email, string MD5PassHash) {
+            return base.Channel.GetServiceByIDAsync(ID, Email, MD5PassHash);
+        }
+        
+        public bool UpdateService(DeltaClient.Service.Service service, string Email, string MD5PassHash) {
+            return base.Channel.UpdateService(service, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateServiceAsync(DeltaClient.Service.Service service, string Email, string MD5PassHash) {
+            return base.Channel.UpdateServiceAsync(service, Email, MD5PassHash);
         }
     }
 }
