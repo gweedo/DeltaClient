@@ -40,5 +40,8 @@ namespace DeltaClient
             burnedLitersCarNumbers.Value = burnedLiters;
             InitializeComponent();
         }
+
+
+
     }
 }

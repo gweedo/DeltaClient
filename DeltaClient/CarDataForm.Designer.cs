@@ -42,6 +42,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.YearCarNumbers = new System.Windows.Forms.NumericUpDown();
             this.KilometersCarNumbers = new System.Windows.Forms.NumericUpDown();
+            this.SendCarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.burnedLitersCarNumbers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearCarNumbers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KilometersCarNumbers)).BeginInit();
@@ -91,7 +92,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.label5.Location = new System.Drawing.Point(635, 97);
+            this.label5.Location = new System.Drawing.Point(624, 97);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 32);
             this.label5.TabIndex = 4;
@@ -140,7 +141,7 @@
             // 
             // burnedLitersCarNumbers
             // 
-            this.burnedLitersCarNumbers.Location = new System.Drawing.Point(641, 135);
+            this.burnedLitersCarNumbers.Location = new System.Drawing.Point(630, 135);
             this.burnedLitersCarNumbers.Name = "burnedLitersCarNumbers";
             this.burnedLitersCarNumbers.Size = new System.Drawing.Size(120, 22);
             this.burnedLitersCarNumbers.TabIndex = 14;
@@ -168,11 +169,21 @@
             this.KilometersCarNumbers.Size = new System.Drawing.Size(120, 22);
             this.KilometersCarNumbers.TabIndex = 17;
             // 
+            // SendCarButton
+            // 
+            this.SendCarButton.Location = new System.Drawing.Point(675, 311);
+            this.SendCarButton.Name = "SendCarButton";
+            this.SendCarButton.Size = new System.Drawing.Size(75, 23);
+            this.SendCarButton.TabIndex = 18;
+            this.SendCarButton.Text = "Send";
+            this.SendCarButton.UseVisualStyleBackColor = true;
+            // 
             // CarDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SendCarButton);
             this.Controls.Add(this.KilometersCarNumbers);
             this.Controls.Add(this.YearCarNumbers);
             this.Controls.Add(this.toolStrip1);
@@ -213,5 +224,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.NumericUpDown YearCarNumbers;
         private System.Windows.Forms.NumericUpDown KilometersCarNumbers;
+        private System.Windows.Forms.Button SendCarButton;
     }
 }
