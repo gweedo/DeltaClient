@@ -73,12 +73,6 @@
     <Compile Include="CarBooker.Designer.cs">
       <DependentUpon>CarBooker.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarDataForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CarDataForm.Designer.cs">
-      <DependentUpon>CarDataForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +124,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportUserForm.Designer.cs">
+      <DependentUpon>ReportUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimpleUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,9 +154,6 @@
     <EmbeddedResource Include="CarBooker.resx">
       <DependentUpon>CarBooker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CarDataForm.resx">
-      <DependentUpon>CarDataForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CarForm.resx">
       <DependentUpon>CarForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +175,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportUserForm.resx">
+      <DependentUpon>ReportUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SimpleUserForm.resx">
       <DependentUpon>SimpleUserForm.cs</DependentUpon>
     </EmbeddedResource>
