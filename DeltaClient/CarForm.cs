@@ -29,6 +29,12 @@ namespace DeltaClient
             carListView.Columns.Add("Modello", 150, HorizontalAlignment.Left);
             carListView.Columns.Add("Anno", 50, HorizontalAlignment.Left);
             carListView.Columns.Add("Kilometri", 50, HorizontalAlignment.Left);
+            this.UpdateList();
+        }
+
+        private void UpdateList()
+        {
+            carListView.Items.Clear();
             var cars = carManager.GetCars(this.Email, this.PassHash);
             foreach (var SingleCar in cars)
             {
@@ -48,6 +54,15 @@ namespace DeltaClient
 
         }
 
+        private void CreateCar (object sender, EventArgs e)
+        {
+            EditCarForm EditCarChild = new EditCarForm(this.Email, this.PassHash);
+            EditCarChild.MdiParent = this.ParentForm;
+            EditCarChild.FormBorderStyle = FormBorderStyle.None;
+            EditCarChild.Dock = DockStyle.Fill;
+            EditCarChild.Show();
+        }
+
         private void EditCar (object sender, EventArgs e)
         {
             if (carListView.SelectedItems.Count == 1)
@@ -60,6 +75,34 @@ namespace DeltaClient
                 EditCarChild.Dock = DockStyle.Fill;
                 EditCarChild.Show();
 
+            }
+        }
+
+
+        private void CheckServices(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckReports(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void DeleteCar (object sender, EventArgs e)
+        {
+            this.carManager.DeleteCar(this.carManager.GetCarByPlate(carListView.SelectedItems[0].Text, this.Email, this.PassHash), this.Email, this.PassHash);
+            this.UpdateList();
+        }
+
+        private void CarListView_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (carListView.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    carMenu.Show(Cursor.Position);
+                }
             }
         }
     }

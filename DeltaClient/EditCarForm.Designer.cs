@@ -42,6 +42,7 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.KilometersUpDown = new System.Windows.Forms.NumericUpDown();
             this.LitersUpDown = new System.Windows.Forms.NumericUpDown();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.KilometersUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LitersUpDown)).BeginInit();
             this.SuspendLayout();
@@ -200,11 +201,24 @@
             this.LitersUpDown.Size = new System.Drawing.Size(155, 39);
             this.LitersUpDown.TabIndex = 51;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.deleteButton.Location = new System.Drawing.Point(440, 391);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(111, 46);
+            this.deleteButton.TabIndex = 52;
+            this.deleteButton.Text = "Elimina";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteCar);
+            // 
             // EditCarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.LitersUpDown);
             this.Controls.Add(this.KilometersUpDown);
             this.Controls.Add(this.cancelButton);
@@ -244,5 +258,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.NumericUpDown KilometersUpDown;
         private System.Windows.Forms.NumericUpDown LitersUpDown;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

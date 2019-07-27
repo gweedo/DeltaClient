@@ -49,13 +49,14 @@ namespace DeltaClient
         }
 
 
-        private void UpdateUser()
+        private void UpdateUser(object sender, EventArgs e)
         {
             if (editingUser.isAdmin != AdminCheckbox.Checked || editingUser.Name != NameUsertextBox.Text || editingUser.LicensePoints != PointsUpDown.Value || editingUser.LicenseExpiration != expirationPicker.Value || PasswordUserTextBox.Text != "" || editingUser.License != LicenseUserTextBox.Text)
             {
                 UserManagerClient userManager = new UserManagerClient();
                 User.User updatingUser = new User.User();
                 updatingUser.Email = EmailUserTextBox.Text;
+                EmailUserTextBox.ForeColor = Color.White;
                 updatingUser.Name = NameUsertextBox.Text;
                 updatingUser.LicensePoints = Convert.ToInt16(PointsUpDown.Value);
                 updatingUser.License = LicenseUserTextBox.Text;
@@ -71,17 +72,16 @@ namespace DeltaClient
                 else
                     updatingUser.PasswordHash = this.editingUser.PasswordHash;
                 userManager.UpdateUser(updatingUser, this.Email, this.PassHash);
+                this.cancelEditing(sender, e);
             }
         }
 
         private void SendSaveButton(object sender, EventArgs e) 
         {
             if (this.newUser)
-                this.CreateUser();
+                this.CreateUser(sender, e);
             else
-                this.UpdateUser();
-            this.cancelEditing(sender, e);
-            
+                this.UpdateUser(sender, e);            
         }
 
         private void cancelEditing (object sender, EventArgs e)
@@ -92,9 +92,9 @@ namespace DeltaClient
             listFormChild.Dock = DockStyle.Fill;
             listFormChild.Show();
         }
-        private void CreateUser()
+        private void CreateUser(object sender, EventArgs e)
         {
-            if ("" != NameUsertextBox.Text || 0 != PointsUpDown.Value || DateTime.Now.Date > expirationPicker.Value || PasswordUserTextBox.Text != "" || "" != LicenseUserTextBox.Text)
+            if ("" != EmailUserTextBox.Text && "" != NameUsertextBox.Text && 0 != PointsUpDown.Value && DateTime.Now.Date < expirationPicker.Value && PasswordUserTextBox.Text != "" && "" != LicenseUserTextBox.Text)
             {
                 UserManagerClient userManager = new UserManagerClient();
                 User.User updatingUser = new User.User();
@@ -110,6 +110,7 @@ namespace DeltaClient
                     else
                         MessageBox.Show("Le due password non corrispondono", "Controlla bene.", MessageBoxButtons.OK);
                 userManager.AddUser(updatingUser, this.Email, this.PassHash);
+                this.cancelEditing(sender, e);
             }
             else
                 MessageBox.Show("Controlla bene i campi.", "Non posso salvare così.", MessageBoxButtons.OK);
