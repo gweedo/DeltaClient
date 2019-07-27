@@ -71,6 +71,15 @@
   <wsdl:message name="IUserManager_GetUserByEmail_ManagerFaultFault_FaultMessage">
     <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q7:ManagerFault" />
   </wsdl:message>
+  <wsdl:message name="IUserManager_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserManager_AddUser_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q8:ManagerFault" />
+  </wsdl:message>
   <wsdl:portType name="IUserManager">
     <wsdl:operation name="CreateUser">
       <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/CreateUser" message="tns:IUserManager_CreateUser_InputMessage" />
@@ -106,6 +115,11 @@
       <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmail" message="tns:IUserManager_GetUserByEmail_InputMessage" />
       <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmailResponse" message="tns:IUserManager_GetUserByEmail_OutputMessage" />
       <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmailManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_GetUserByEmail_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/AddUser" message="tns:IUserManager_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/AddUserResponse" message="tns:IUserManager_AddUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.UserNS/IUserManager/AddUserManagerFaultFault" name="ManagerFaultFault" message="tns:IUserManager_AddUser_ManagerFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

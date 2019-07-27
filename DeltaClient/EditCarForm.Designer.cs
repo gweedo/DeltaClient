@@ -155,6 +155,7 @@
             this.cancelButton.TabIndex = 49;
             this.cancelButton.Text = "Annulla";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.stopEditing);
             // 
             // SaveButton
             // 
@@ -166,6 +167,7 @@
             this.SaveButton.TabIndex = 48;
             this.SaveButton.Text = "Salva";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SendSaveButton);
             // 
             // KilometersUpDown
             // 

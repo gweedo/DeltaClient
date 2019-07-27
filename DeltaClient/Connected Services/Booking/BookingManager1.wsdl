@@ -64,6 +64,15 @@
   <wsdl:message name="IBookingManager_GetBookingsForUser_ManagerFaultFault_FaultMessage">
     <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q6:ManagerFault" />
   </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookingByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingByID" />
+  </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookingByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingManager_GetBookingByID_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q7:ManagerFault" />
+  </wsdl:message>
   <wsdl:portType name="IBookingManager">
     <wsdl:operation name="BookCar">
       <wsdl:input wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/BookCar" message="tns:IBookingManager_BookCar_InputMessage" />
@@ -94,6 +103,11 @@
       <wsdl:input wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUser" message="tns:IBookingManager_GetBookingsForUser_InputMessage" />
       <wsdl:output wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUserResponse" message="tns:IBookingManager_GetBookingsForUser_OutputMessage" />
       <wsdl:fault wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUserManagerFaultFault" name="ManagerFaultFault" message="tns:IBookingManager_GetBookingsForUser_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingByID">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingByID" message="tns:IBookingManager_GetBookingByID_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingByIDResponse" message="tns:IBookingManager_GetBookingByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingByIDManagerFaultFault" name="ManagerFaultFault" message="tns:IBookingManager_GetBookingByID_ManagerFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

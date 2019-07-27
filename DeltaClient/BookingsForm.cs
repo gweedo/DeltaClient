@@ -1,4 +1,6 @@
 ﻿using DeltaClient.Booking;
+using DeltaClient.Car;
+using DeltaClient.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,7 @@ namespace DeltaClient
     {
         private string Email;
         private string PassHash;
+        private string UserEmail;
         private BookingManagerClient bookingManager;
         public BookingsForm(string Email, string PassHash, string UserEmail = "")
         {
@@ -23,28 +26,39 @@ namespace DeltaClient
             InitializeComponent();
             bookingsListView.Clear();
             this.bookingManager = new BookingManagerClient();
+            this.UserEmail = UserEmail;
             bookingsListView.View = View.Details;
             bookingsListView.Columns.Add("ID", 230, HorizontalAlignment.Left);
             bookingsListView.Columns.Add("Targa", 230, HorizontalAlignment.Left);
             bookingsListView.Columns.Add("Utente", 200, HorizontalAlignment.Left);
             bookingsListView.Columns.Add("Inizio", 150, HorizontalAlignment.Left);
             bookingsListView.Columns.Add("Fine", 50, HorizontalAlignment.Left);
+            this.UpdateBookings();
+        }
+
+        private void DeleteBooking (object sender, EventArgs e)
+        {
+            this.bookingManager.DeleteBooking(this.bookingManager.GetBookingByID(Convert.ToInt32(bookingsListView.SelectedItems[0].Text), this.Email, this.PassHash), this.Email, this.PassHash);
+            this.UpdateBookings();
+        }
+
+        private void UpdateBookings()
+        {
             var bookings = bookingManager.GetBookings(this.Email, this.PassHash);
-            if (UserEmail != "")
+            if (this.UserEmail != "")
             {
-                bookings = bookingManager.GetBookingsForUser(UserEmail, this.Email, this.PassHash);
-                labelUser.Text = "di " + UserEmail;
+                bookings = bookingManager.GetBookingsForUser(this.UserEmail, this.Email, this.PassHash);
+                labelUser.Text = "di " + this.UserEmail;
                 labelUser.Left = (this.ClientSize.Width - labelUser.Width) / 2;
 
             }
             foreach (var SingleBooking in bookings)
             {
-                bookingsListView.Items.Add(new ListViewItem(new string[] {SingleBooking.ID.ToString(), SingleBooking.BookedCar.PlateNumber, SingleBooking.Booker.Email, SingleBooking.Start.ToString(), SingleBooking.End.ToString() }));
+                bookingsListView.Items.Add(new ListViewItem(new string[] { SingleBooking.ID.ToString(), SingleBooking.BookedCar.PlateNumber, SingleBooking.Booker.Email, SingleBooking.Start.ToString(), SingleBooking.End.ToString() }));
             }
             bookingsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             bookingsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
-
         private void BookingsLabel_Click(object sender, EventArgs e)
         {
 
@@ -58,6 +72,38 @@ namespace DeltaClient
         private void BookingsForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditUser (object sender, EventArgs e)
+        {
+            UserManagerClient userManager = new UserManagerClient();
+            var selectedUser = bookingManager.GetBookingByID(Convert.ToInt32(bookingsListView.SelectedItems[0].Text), this.Email, this.PassHash).Booker;
+            UserDataForm bookingFormChild = new UserDataForm(userManager.GetUserByEmail(selectedUser.Email, this.Email, this.PassHash), this.Email, this.PassHash);
+            bookingFormChild.MdiParent = this.ParentForm;
+            bookingFormChild.FormBorderStyle = FormBorderStyle.None;
+            bookingFormChild.Dock = DockStyle.Fill;
+            bookingFormChild.Show();
+        }
+
+        private void EditCar (object sender, EventArgs e)
+        {
+            CarManagerClient carManager = new CarManagerClient();
+            var selectedCar = bookingManager.GetBookingByID(Convert.ToInt32(bookingsListView.SelectedItems[0].Text), this.Email, this.PassHash).BookedCar;
+            EditCarForm bookingFormChild = new EditCarForm(carManager.GetCarByPlate(selectedCar.PlateNumber, this.Email, this.PassHash), this.Email, this.PassHash);
+            bookingFormChild.MdiParent = this.ParentForm;
+            bookingFormChild.FormBorderStyle = FormBorderStyle.None;
+            bookingFormChild.Dock = DockStyle.Fill;
+            bookingFormChild.Show();
+        }
+        private void BookingsListView_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (bookingsListView.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    bookingMenu.Show(Cursor.Position);
+                }
+            }
         }
     }
 }

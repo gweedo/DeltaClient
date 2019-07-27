@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingsForm));
             this.bookingsLabel = new System.Windows.Forms.Label();
             this.addBooking = new System.Windows.Forms.Button();
             this.bookingsListView = new System.Windows.Forms.ListView();
             this.labelUser = new System.Windows.Forms.Label();
+            this.bookingMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modificaUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificaAutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookingMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // bookingsLabel
@@ -65,6 +71,7 @@
             this.bookingsListView.TabIndex = 3;
             this.bookingsListView.UseCompatibleStateImageBehavior = false;
             this.bookingsListView.SelectedIndexChanged += new System.EventHandler(this.BookingsListView_SelectedIndexChanged);
+            this.bookingsListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BookingsListView_MouseClick);
             // 
             // labelUser
             // 
@@ -74,6 +81,37 @@
             this.labelUser.Size = new System.Drawing.Size(0, 20);
             this.labelUser.TabIndex = 6;
             this.labelUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // bookingMenu
+            // 
+            this.bookingMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.bookingMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificaUtenteToolStripMenuItem,
+            this.modificaAutoToolStripMenuItem,
+            this.eliminaToolStripMenuItem});
+            this.bookingMenu.Name = "bookingMenu";
+            this.bookingMenu.Size = new System.Drawing.Size(241, 133);
+            // 
+            // modificaUtenteToolStripMenuItem
+            // 
+            this.modificaUtenteToolStripMenuItem.Name = "modificaUtenteToolStripMenuItem";
+            this.modificaUtenteToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.modificaUtenteToolStripMenuItem.Text = "Modifica utente";
+            this.modificaUtenteToolStripMenuItem.Click += new System.EventHandler(this.EditUser);
+            // 
+            // modificaAutoToolStripMenuItem
+            // 
+            this.modificaAutoToolStripMenuItem.Name = "modificaAutoToolStripMenuItem";
+            this.modificaAutoToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.modificaAutoToolStripMenuItem.Text = "Modifica auto";
+            this.modificaAutoToolStripMenuItem.Click += new System.EventHandler(this.EditCar);
+            // 
+            // eliminaToolStripMenuItem
+            // 
+            this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.eliminaToolStripMenuItem.Text = "Elimina";
+            this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.DeleteBooking);
             // 
             // BookingsForm
             // 
@@ -87,6 +125,7 @@
             this.Name = "BookingsForm";
             this.Text = "BookingsForm";
             this.Load += new System.EventHandler(this.BookingsForm_Load);
+            this.bookingMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +137,9 @@
         private System.Windows.Forms.Button addBooking;
         private System.Windows.Forms.ListView bookingsListView;
         private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.ContextMenuStrip bookingMenu;
+        private System.Windows.Forms.ToolStripMenuItem modificaUtenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificaAutoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
     }
 }
