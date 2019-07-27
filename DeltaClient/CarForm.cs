@@ -15,13 +15,14 @@ namespace DeltaClient
     {
         private string Email;
         private string PassHash;
+        private CarManagerClient carManager;
         public CarForm(string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
             InitializeComponent();
             carListView.Clear();
-            CarManagerClient carManager = new CarManagerClient();
+            carManager = new CarManagerClient();
             carListView.View = View.Details;
             carListView.Columns.Add("Targa", 230, HorizontalAlignment.Left);
             carListView.Columns.Add("Marca", 200, HorizontalAlignment.Left);
@@ -40,6 +41,26 @@ namespace DeltaClient
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CarForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditCar (object sender, EventArgs e)
+        {
+            if (carListView.SelectedItems.Count == 1)
+            {
+                var selectedCar = this.carManager.GetCarByPlate(carListView.SelectedItems[0].Text, this.Email, this.PassHash);
+
+                EditCarForm EditCarChild = new EditCarForm(selectedCar, this.Email, this.PassHash);
+                EditCarChild.MdiParent = this.ParentForm;
+                EditCarChild.FormBorderStyle = FormBorderStyle.None;
+                EditCarChild.Dock = DockStyle.Fill;
+                EditCarChild.Show();
+
+            }
         }
     }
 }

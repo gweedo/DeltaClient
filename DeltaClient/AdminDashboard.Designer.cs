@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class Form2
+    partial class AdminDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -98,14 +98,14 @@
             this.toolStripLabel3.Text = "Esci";
             this.toolStripLabel3.Click += new System.EventHandler(this.ExitOnClickLabel);
             // 
-            // Form2
+            // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 458);
+            this.ClientSize = new System.Drawing.Size(955, 458);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form2";
+            this.Name = "AdminDashboard";
             this.Text = "DeltaAdmin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
             this.Load += new System.EventHandler(this.Form2_Load);

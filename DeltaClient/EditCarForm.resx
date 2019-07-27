@@ -117,16 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="addUser.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACRSURBVFhHxZUxCsMwFMV8/8ulN2rSTBrUgAv6FWh5hmiKvX7gdfn+4nGZY2GaY1GaY1GaY1Ga
-        Y1GaY1GaY1GaY1GaY1GaY1GaY1G6zdPdXnu/HXYwqY6T6jipjpPqOKmOk/71N/y0t7EP0RyL0hyL0hyL
-        0hyL0hyL0hyL0hyL0hyL0hyL0hyL0pynt2Pzbl/rBDoQvNbLfZjCAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

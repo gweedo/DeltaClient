@@ -32,13 +32,14 @@
             this.bookingsLabel = new System.Windows.Forms.Label();
             this.addBooking = new System.Windows.Forms.Button();
             this.bookingsListView = new System.Windows.Forms.ListView();
+            this.labelUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bookingsLabel
             // 
             this.bookingsLabel.AutoSize = true;
             this.bookingsLabel.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookingsLabel.Location = new System.Drawing.Point(285, 9);
+            this.bookingsLabel.Location = new System.Drawing.Point(297, -2);
             this.bookingsLabel.Name = "bookingsLabel";
             this.bookingsLabel.Size = new System.Drawing.Size(207, 48);
             this.bookingsLabel.TabIndex = 5;
@@ -65,16 +66,27 @@
             this.bookingsListView.UseCompatibleStateImageBehavior = false;
             this.bookingsListView.SelectedIndexChanged += new System.EventHandler(this.BookingsListView_SelectedIndexChanged);
             // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(375, 45);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(0, 20);
+            this.labelUser.TabIndex = 6;
+            this.labelUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // BookingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelUser);
             this.Controls.Add(this.bookingsLabel);
             this.Controls.Add(this.addBooking);
             this.Controls.Add(this.bookingsListView);
             this.Name = "BookingsForm";
             this.Text = "BookingsForm";
+            this.Load += new System.EventHandler(this.BookingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,5 +97,6 @@
         private System.Windows.Forms.Label bookingsLabel;
         private System.Windows.Forms.Button addBooking;
         private System.Windows.Forms.ListView bookingsListView;
+        private System.Windows.Forms.Label labelUser;
     }
 }

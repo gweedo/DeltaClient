@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class UserForm
+    partial class UserListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserListForm));
             this.usersListView = new System.Windows.Forms.ListView();
             this.addUser = new System.Windows.Forms.Button();
             this.userLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.userMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // usersListView
@@ -45,6 +49,7 @@
             this.usersListView.UseCompatibleStateImageBehavior = false;
             this.usersListView.SelectedIndexChanged += new System.EventHandler(this.usersListView_SelectedIndexChanged);
             this.usersListView.DoubleClick += new System.EventHandler(this.UsersListView_DoubleClick);
+            this.usersListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UsersListView_MouseClick);
             // 
             // addUser
             // 
@@ -76,7 +81,22 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
             // 
-            // UserForm
+            // userMenuStrip
+            // 
+            this.userMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.userMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bookingToolStripMenuItem});
+            this.userMenuStrip.Name = "userMenuStrip";
+            this.userMenuStrip.Size = new System.Drawing.Size(243, 36);
+            // 
+            // bookingToolStripMenuItem
+            // 
+            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(242, 32);
+            this.bookingToolStripMenuItem.Text = "Vai alle prenotazioni";
+            this.bookingToolStripMenuItem.Click += new System.EventHandler(this.showBookingsForUser);
+            // 
+            // UserListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,9 +106,10 @@
             this.Controls.Add(this.usersListView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "UserForm";
+            this.Name = "UserListForm";
             this.Text = "UserForm";
             this.Load += new System.EventHandler(this.UserForm_Load);
+            this.userMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,5 +121,7 @@
         private System.Windows.Forms.Button addUser;
         private System.Windows.Forms.Label userLabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ContextMenuStrip userMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
     }
 }

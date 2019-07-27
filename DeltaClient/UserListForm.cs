@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class UserForm : Form
+    public partial class UserListForm : Form
     {
         private string Email;
         private string PassHash;
         private UserManagerClient userManager;
-        public UserForm(string Email, string PassHash)
+        public UserListForm(string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
@@ -58,12 +58,37 @@ namespace DeltaClient
 
         }
 
+        private void UsersListView_MouseClick (object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (usersListView.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    userMenuStrip.Show(Cursor.Position);
+                }
+            }
+        }
+        private void showBookingsForUser (object sender, EventArgs e)
+        {
+            BookingsForm bookingFormChild = new BookingsForm(this.Email, this.PassHash, usersListView.SelectedItems[0].Text);
+            bookingFormChild.MdiParent = this.ParentForm;
+            bookingFormChild.FormBorderStyle = FormBorderStyle.None;
+            bookingFormChild.Dock = DockStyle.Fill;
+            bookingFormChild.Show();
+        }
+
         private void UsersListView_DoubleClick(object sender, EventArgs e)
         {
             if (usersListView.SelectedItems.Count == 1)
             {
                 var selectedUser = this.userManager.GetUserByEmail(usersListView.SelectedItems[0].Text, this.Email, this.PassHash);
-                MessageBox.Show("User", selectedUser.Email, MessageBoxButtons.OK);
+
+                UserDataForm bookingFormChild = new UserDataForm(selectedUser, this.Email, this.PassHash);
+                bookingFormChild.MdiParent = this.ParentForm;
+                bookingFormChild.FormBorderStyle = FormBorderStyle.None;
+                bookingFormChild.Dock = DockStyle.Fill;
+                bookingFormChild.Show();
+
             }
         }
     }

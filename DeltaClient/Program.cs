@@ -16,7 +16,7 @@ namespace DeltaClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 login = new Form1();
+            LoginForm login = new LoginForm();
             login.Show();
             Application.Run();
         }

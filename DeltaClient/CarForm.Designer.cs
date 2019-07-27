@@ -43,6 +43,7 @@
             this.carListView.TabIndex = 0;
             this.carListView.UseCompatibleStateImageBehavior = false;
             this.carListView.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
+            this.carListView.DoubleClick += new System.EventHandler(this.EditCar);
             // 
             // carLabel
             // 
@@ -74,6 +75,7 @@
             this.Controls.Add(this.carListView);
             this.Name = "CarForm";
             this.Text = "CarForm";
+            this.Load += new System.EventHandler(this.CarForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.EmailBoxLogin = new System.Windows.Forms.TextBox();
             this.PasswordBoxLogin = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
@@ -150,7 +150,7 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Registrazione";
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,8 +168,8 @@
             this.Controls.Add(this.EmailBoxLogin);
             this.Font = new System.Drawing.Font("Segoe UI Light", 8F);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "LoginForm";
+            this.Text = "Delta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
