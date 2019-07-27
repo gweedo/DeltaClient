@@ -31,7 +31,6 @@
             this.SaveUserButton = new System.Windows.Forms.Button();
             this.LicenseUserTextBox = new System.Windows.Forms.TextBox();
             this.ConfirmPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.LicenseExpirationUserTextBox = new System.Windows.Forms.TextBox();
             this.LicensePointsUserTextBox = new System.Windows.Forms.TextBox();
             this.EmailUserTextBox = new System.Windows.Forms.TextBox();
             this.PasswordUserTextBox = new System.Windows.Forms.TextBox();
@@ -45,6 +44,7 @@
             this.NameUserLabel = new System.Windows.Forms.Label();
             this.UserLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.LicenseExpirationUserDateTime = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // SaveUserButton
@@ -56,6 +56,7 @@
             this.SaveUserButton.TabIndex = 36;
             this.SaveUserButton.Text = "Salva";
             this.SaveUserButton.UseVisualStyleBackColor = true;
+            this.SaveUserButton.Click += new System.EventHandler(this.SendSaveButton);
             // 
             // LicenseUserTextBox
             // 
@@ -72,14 +73,6 @@
             this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
             this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(283, 34);
             this.ConfirmPasswordTextBox.TabIndex = 34;
-            // 
-            // LicenseExpirationUserTextBox
-            // 
-            this.LicenseExpirationUserTextBox.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.LicenseExpirationUserTextBox.Location = new System.Drawing.Point(597, 232);
-            this.LicenseExpirationUserTextBox.Name = "LicenseExpirationUserTextBox";
-            this.LicenseExpirationUserTextBox.Size = new System.Drawing.Size(125, 34);
-            this.LicenseExpirationUserTextBox.TabIndex = 33;
             // 
             // LicensePointsUserTextBox
             // 
@@ -203,16 +196,26 @@
             this.label1.TabIndex = 37;
             this.label1.Text = "label1";
             // 
+            // LicenseExpirationUserDateTime
+            // 
+            this.LicenseExpirationUserDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.LicenseExpirationUserDateTime.Location = new System.Drawing.Point(592, 240);
+            this.LicenseExpirationUserDateTime.MaxDate = new System.DateTime(2019, 7, 27, 0, 0, 0, 0);
+            this.LicenseExpirationUserDateTime.Name = "LicenseExpirationUserDateTime";
+            this.LicenseExpirationUserDateTime.Size = new System.Drawing.Size(117, 22);
+            this.LicenseExpirationUserDateTime.TabIndex = 38;
+            this.LicenseExpirationUserDateTime.Value = new System.DateTime(2019, 7, 27, 0, 0, 0, 0);
+            // 
             // UserDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LicenseExpirationUserDateTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SaveUserButton);
             this.Controls.Add(this.LicenseUserTextBox);
             this.Controls.Add(this.ConfirmPasswordTextBox);
-            this.Controls.Add(this.LicenseExpirationUserTextBox);
             this.Controls.Add(this.LicensePointsUserTextBox);
             this.Controls.Add(this.EmailUserTextBox);
             this.Controls.Add(this.PasswordUserTextBox);
@@ -237,7 +240,6 @@
         private System.Windows.Forms.Button SaveUserButton;
         private System.Windows.Forms.TextBox LicenseUserTextBox;
         private System.Windows.Forms.TextBox ConfirmPasswordTextBox;
-        private System.Windows.Forms.TextBox LicenseExpirationUserTextBox;
         private System.Windows.Forms.TextBox LicensePointsUserTextBox;
         private System.Windows.Forms.TextBox EmailUserTextBox;
         private System.Windows.Forms.TextBox PasswordUserTextBox;
@@ -251,5 +253,6 @@
         private System.Windows.Forms.Label NameUserLabel;
         private System.Windows.Forms.Label UserLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker LicenseExpirationUserDateTime;
     }
 }

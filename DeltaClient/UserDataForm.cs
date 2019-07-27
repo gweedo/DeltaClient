@@ -17,10 +17,11 @@ namespace DeltaClient
         protected string Email = null;
         protected string License = null;
         protected short LicensePoints = 0;
-        protected DateTime LicenseExpiration = new DateTime(0,0,0);
+        protected DateTime LicenseExpiration = new DateTime(0, 0, 0);
+        protected string Password;
 
         protected string Temp;
-        public UserDataForm(string name, string email, string license, short licensePoints, DateTime licenseExpiration)
+        public UserDataForm(string name, string email, string license, short licensePoints, DateTime licenseExpiration, string password)
         {
             Name = name;
             UserLabel.Text = Name;
@@ -28,6 +29,7 @@ namespace DeltaClient
             License = license;
             LicensePoints = licensePoints;
             LicenseExpiration = licenseExpiration;
+            Password = password;
 
             PasswordUserLabel.Visible = false;
             PasswordUserTextBox.Visible = false;
@@ -38,17 +40,22 @@ namespace DeltaClient
             InitializeComponent();
         }
 
-
-        private void SendSaveButton() 
+        private void SendSaveButton(object sender, EventArgs e)
         {
-            if(Name != NameUsertextBox.Text || Email != EmailUserTextBox.Text || LicensePoints.ToString() != LicensePointsUserTextBox.Text || LicenseExpiration.ToString() != LicenseExpirationUserTextBox.Text)
+            if (Name != NameUsertextBox.Text || Email != EmailUserTextBox.Text || License != LicenseUserTextBox.Text || LicensePoints.ToString() != LicensePointsUserTextBox.Text || LicenseExpiration != LicenseExpirationUserDateTime.Value)
             {
-                UserManagerClient userManager = new UserManagerClient();
-                User.User Update = userManager.
-                    if (userManager.UpdateUser())
-            }
-            
-        }
+                User.User UpdatableUser = new User.User();
+                UpdatableUser.Name = NameUsertextBox.Text;
+                UpdatableUser.Email = EmailUserTextBox.Text;
+                UpdatableUser.License = LicenseUserTextBox.Text;
+                UpdatableUser.LicensePoints = short.Parse(LicensePointsUserTextBox.Text);
+                UpdatableUser.LicenseExpiration = LicenseExpirationUserDateTime.Value;
 
+                UserManagerClient UserManager = new UserManagerClient();
+                if (UserManager.UpdateUser(UpdatableUser, Email, Password)) MessageBox.Show("Modifica effettuata");
+                else MessageBox.Show("aiai casini");
+
+            }
+        }
     }
 }
