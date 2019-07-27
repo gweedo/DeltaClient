@@ -70,7 +70,8 @@ namespace DeltaClient
 
 
                 ReportManagerClient reportManager = new ReportManagerClient();
-                reportManager.AddReport(SubjectTextBox.Text, MessageTextBox.Text, selectedBooking , Email, PasswordHash);
+                if (reportManager.AddReport(SubjectTextBox.Text, MessageTextBox.Text, selectedBooking, Email, PasswordHash)) MessageBox.Show("Grazie per la sua disponibilita");
+                else MessageBox.Show("oh-ho c'è stato un problema non previsto. La preghiamo di riprovare più tardi");
             }
         }
 
