@@ -73,6 +73,12 @@
     <Compile Include="CarBooker.Designer.cs">
       <DependentUpon>CarBooker.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarDataForm.Designer.cs">
+      <DependentUpon>CarDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarBooker.resx">
       <DependentUpon>CarBooker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarDataForm.resx">
+      <DependentUpon>CarDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CarForm.resx">
       <DependentUpon>CarForm.cs</DependentUpon>
