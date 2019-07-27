@@ -553,13 +553,40 @@ namespace DeltaClient.Report {
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/AddReport", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/AddReportResponse")]
         System.Threading.Tasks.Task<bool> AddReportAsync(string Message, string Subject, DeltaClient.Report.Booking ReportedBooking, string Email, string MD5PassHash);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCar", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCarResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Report.ManagerFault), Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCarManagerFaultFault" +
-            "", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
-        DeltaClient.Report.Report[] retrieveReportsForCar(DeltaClient.Report.Car car, string Email, string MD5PassHash);
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCar", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCarResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Report.ManagerFault), Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCarManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Report.Report[] getReportsForCar(string CarPlate, string Email, string MD5PassHash);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCar", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCarResponse")]
-        System.Threading.Tasks.Task<DeltaClient.Report.Report[]> retrieveReportsForCarAsync(DeltaClient.Report.Car car, string Email, string MD5PassHash);
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCar", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCarResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Report.Report[]> getReportsForCarAsync(string CarPlate, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/getReportByID", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/getReportByIDResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Report.ManagerFault), Action="Delta.DeltaManager.ReportNS/IReportManager/getReportByIDManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Report.Report getReportByID(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/getReportByID", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/getReportByIDResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Report.Report> getReportByIDAsync(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/DeleteReport", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/DeleteReportResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Report.ManagerFault), Action="Delta.DeltaManager.ReportNS/IReportManager/DeleteReportManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        bool DeleteReport(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/DeleteReport", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/DeleteReportResponse")]
+        System.Threading.Tasks.Task<bool> DeleteReportAsync(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBooking", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBookingResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Report.ManagerFault), Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBookingManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Report.Report[] getReportsForBooking(int BookingID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBooking", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBookingResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Report.Report[]> getReportsForBookingAsync(int BookingID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/UpdateReport", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/UpdateReportResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Report.ManagerFault), Action="Delta.DeltaManager.ReportNS/IReportManager/UpdateReportManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        bool UpdateReport(DeltaClient.Report.Report report, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.ReportNS/IReportManager/UpdateReport", ReplyAction="Delta.DeltaManager.ReportNS/IReportManager/UpdateReportResponse")]
+        System.Threading.Tasks.Task<bool> UpdateReportAsync(DeltaClient.Report.Report report, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -597,12 +624,44 @@ namespace DeltaClient.Report {
             return base.Channel.AddReportAsync(Message, Subject, ReportedBooking, Email, MD5PassHash);
         }
         
-        public DeltaClient.Report.Report[] retrieveReportsForCar(DeltaClient.Report.Car car, string Email, string MD5PassHash) {
-            return base.Channel.retrieveReportsForCar(car, Email, MD5PassHash);
+        public DeltaClient.Report.Report[] getReportsForCar(string CarPlate, string Email, string MD5PassHash) {
+            return base.Channel.getReportsForCar(CarPlate, Email, MD5PassHash);
         }
         
-        public System.Threading.Tasks.Task<DeltaClient.Report.Report[]> retrieveReportsForCarAsync(DeltaClient.Report.Car car, string Email, string MD5PassHash) {
-            return base.Channel.retrieveReportsForCarAsync(car, Email, MD5PassHash);
+        public System.Threading.Tasks.Task<DeltaClient.Report.Report[]> getReportsForCarAsync(string CarPlate, string Email, string MD5PassHash) {
+            return base.Channel.getReportsForCarAsync(CarPlate, Email, MD5PassHash);
+        }
+        
+        public DeltaClient.Report.Report getReportByID(int ID, string Email, string MD5PassHash) {
+            return base.Channel.getReportByID(ID, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.Report.Report> getReportByIDAsync(int ID, string Email, string MD5PassHash) {
+            return base.Channel.getReportByIDAsync(ID, Email, MD5PassHash);
+        }
+        
+        public bool DeleteReport(int ID, string Email, string MD5PassHash) {
+            return base.Channel.DeleteReport(ID, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteReportAsync(int ID, string Email, string MD5PassHash) {
+            return base.Channel.DeleteReportAsync(ID, Email, MD5PassHash);
+        }
+        
+        public DeltaClient.Report.Report[] getReportsForBooking(int BookingID, string Email, string MD5PassHash) {
+            return base.Channel.getReportsForBooking(BookingID, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.Report.Report[]> getReportsForBookingAsync(int BookingID, string Email, string MD5PassHash) {
+            return base.Channel.getReportsForBookingAsync(BookingID, Email, MD5PassHash);
+        }
+        
+        public bool UpdateReport(DeltaClient.Report.Report report, string Email, string MD5PassHash) {
+            return base.Channel.UpdateReport(report, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateReportAsync(DeltaClient.Report.Report report, string Email, string MD5PassHash) {
+            return base.Channel.UpdateReportAsync(report, Email, MD5PassHash);
         }
     }
 }

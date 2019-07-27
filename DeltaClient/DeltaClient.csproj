@@ -124,6 +124,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportEdit.Designer.cs">
+      <DependentUpon>ReportEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportListForm.Designer.cs">
+      <DependentUpon>ReportListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +199,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportEdit.resx">
+      <DependentUpon>ReportEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportListForm.resx">
+      <DependentUpon>ReportListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportUserForm.resx">
       <DependentUpon>ReportUserForm.cs</DependentUpon>
     </EmbeddedResource>

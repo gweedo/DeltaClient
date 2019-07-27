@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServicesListForm));
             this.addCar = new System.Windows.Forms.Button();
             this.servicesLabel = new System.Windows.Forms.Label();
             this.servicesListView = new System.Windows.Forms.ListView();
             this.PlateNumberLabel = new System.Windows.Forms.Label();
+            this.serviceMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serviceMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // addCar
@@ -65,6 +69,7 @@
             this.servicesListView.TabIndex = 5;
             this.servicesListView.UseCompatibleStateImageBehavior = false;
             this.servicesListView.DoubleClick += new System.EventHandler(this.EditService);
+            this.servicesListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ServicesListView_MouseClick);
             // 
             // PlateNumberLabel
             // 
@@ -75,6 +80,21 @@
             this.PlateNumberLabel.TabIndex = 8;
             this.PlateNumberLabel.Text = "di XX999XX";
             this.PlateNumberLabel.Click += new System.EventHandler(this.Label1_Click);
+            // 
+            // serviceMenu
+            // 
+            this.serviceMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.serviceMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminaToolStripMenuItem});
+            this.serviceMenu.Name = "serviceMenu";
+            this.serviceMenu.Size = new System.Drawing.Size(241, 69);
+            // 
+            // eliminaToolStripMenuItem
+            // 
+            this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.eliminaToolStripMenuItem.Text = "Elimina";
+            this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.DeleteService);
             // 
             // ServicesListForm
             // 
@@ -88,6 +108,7 @@
             this.Name = "ServicesListForm";
             this.Text = "ServicesListForm";
             this.Load += new System.EventHandler(this.ServicesListForm_Load);
+            this.serviceMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +120,7 @@
         private System.Windows.Forms.Label servicesLabel;
         private System.Windows.Forms.ListView servicesListView;
         private System.Windows.Forms.Label PlateNumberLabel;
+        private System.Windows.Forms.ContextMenuStrip serviceMenu;
+        private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
     }
 }

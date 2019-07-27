@@ -105,5 +105,14 @@ namespace DeltaClient
                 }
             }
         }
+
+        private void VaiAReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportListForm reportFormChild = new ReportListForm(this.Email, this.PassHash, Convert.ToInt32(this.bookingsListView.SelectedItems[0].Text));
+            reportFormChild.MdiParent = this.ParentForm;
+            reportFormChild.FormBorderStyle = FormBorderStyle.None;
+            reportFormChild.Dock = DockStyle.Fill;
+            reportFormChild.Show();
+        }
     }
 }

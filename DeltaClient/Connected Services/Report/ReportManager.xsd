@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="Delta.DeltaManager.ReportNS" elementFormDefault="qualified" targetNamespace="Delta.DeltaManager.ReportNS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.BookingNS" />
-  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" />
   <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Delta.DeltaManager.ReportNS/ReportManager?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS" />
   <xs:element name="AddReport">
     <xs:complexType>
@@ -21,19 +20,83 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="retrieveReportsForCar">
+  <xs:element name="getReportsForCar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.CarNS" minOccurs="0" name="car" nillable="true" type="q2:Car" />
+        <xs:element minOccurs="0" name="CarPlate" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="retrieveReportsForCarResponse">
+  <xs:element name="getReportsForCarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS" minOccurs="0" name="retrieveReportsForCarResult" nillable="true" type="q3:ArrayOfReport" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS" minOccurs="0" name="getReportsForCarResult" nillable="true" type="q2:ArrayOfReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReportByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReportByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS" minOccurs="0" name="getReportByIDResult" nillable="true" type="q3:Report" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReportsForBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BookingID" type="xs:int" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReportsForBookingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS" minOccurs="0" name="getReportsForBookingResult" nillable="true" type="q4:ArrayOfReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.ReportNS" minOccurs="0" name="report" nillable="true" type="q5:Report" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateReportResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

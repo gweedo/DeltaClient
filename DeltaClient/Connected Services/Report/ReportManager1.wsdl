@@ -16,8 +16,56 @@
         <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="retrieveReportsForCar">
-      <soap:operation soapAction="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCar" style="document" />
+    <wsdl:operation name="getReportsForCar">
+      <soap:operation soapAction="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReportByID">
+      <soap:operation soapAction="Delta.DeltaManager.ReportNS/IReportManager/getReportByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReport">
+      <soap:operation soapAction="Delta.DeltaManager.ReportNS/IReportManager/DeleteReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReportsForBooking">
+      <soap:operation soapAction="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManagerFaultFault">
+        <soap:fault use="literal" name="ManagerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReport">
+      <soap:operation soapAction="Delta.DeltaManager.ReportNS/IReportManager/UpdateReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

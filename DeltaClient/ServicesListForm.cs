@@ -28,9 +28,9 @@ namespace DeltaClient
             InitializeComponent();
             this.CarPlate = CarPlate;
             servicesListView.View = View.Details;
-            servicesListView.Columns.Add("ID", 230, HorizontalAlignment.Left);
-            servicesListView.Columns.Add("Kilometri", 200, HorizontalAlignment.Left);
-            servicesListView.Columns.Add("Spesa totale", 150, HorizontalAlignment.Left);
+            servicesListView.Columns.Add("ID", -2, HorizontalAlignment.Left);
+            servicesListView.Columns.Add("Kilometri", -2, HorizontalAlignment.Left);
+            servicesListView.Columns.Add("Spesa totale", -2, HorizontalAlignment.Left);
             this.UpdateServices();
         }
 
@@ -56,7 +56,7 @@ namespace DeltaClient
             ServicesListChild.Show();
         }
 
-        private void DeleteService()
+        private void DeleteService(object sender, EventArgs e)
         {
             this.serviceManager.DeleteService(Convert.ToInt32(servicesListView.SelectedItems[0].Text), this.Email, this.PassHash);
             this.UpdateServices();
@@ -84,6 +84,17 @@ namespace DeltaClient
         private void ServicesListForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ServicesListView_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (servicesListView.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    serviceMenu.Show(Cursor.Position);
+                }
+            }
         }
     }
 }

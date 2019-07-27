@@ -38,6 +38,7 @@
             this.modificaUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaAutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vaiAReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,11 +87,12 @@
             // 
             this.bookingMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.bookingMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vaiAReportToolStripMenuItem,
             this.modificaUtenteToolStripMenuItem,
             this.modificaAutoToolStripMenuItem,
             this.eliminaToolStripMenuItem});
             this.bookingMenu.Name = "bookingMenu";
-            this.bookingMenu.Size = new System.Drawing.Size(241, 133);
+            this.bookingMenu.Size = new System.Drawing.Size(241, 165);
             // 
             // modificaUtenteToolStripMenuItem
             // 
@@ -112,6 +114,13 @@
             this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.DeleteBooking);
+            // 
+            // vaiAReportToolStripMenuItem
+            // 
+            this.vaiAReportToolStripMenuItem.Name = "vaiAReportToolStripMenuItem";
+            this.vaiAReportToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.vaiAReportToolStripMenuItem.Text = "Vai a report";
+            this.vaiAReportToolStripMenuItem.Click += new System.EventHandler(this.VaiAReportToolStripMenuItem_Click);
             // 
             // BookingsForm
             // 
@@ -141,5 +150,6 @@
         private System.Windows.Forms.ToolStripMenuItem modificaUtenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificaAutoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vaiAReportToolStripMenuItem;
     }
 }

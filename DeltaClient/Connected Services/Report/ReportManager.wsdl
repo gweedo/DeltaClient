@@ -20,14 +20,50 @@
   <wsdl:message name="IReportManager_AddReport_ManagerFaultFault_FaultMessage">
     <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q1:ManagerFault" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_retrieveReportsForCar_InputMessage">
-    <wsdl:part name="parameters" element="tns:retrieveReportsForCar" />
+  <wsdl:message name="IReportManager_getReportsForCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReportsForCar" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_retrieveReportsForCar_OutputMessage">
-    <wsdl:part name="parameters" element="tns:retrieveReportsForCarResponse" />
+  <wsdl:message name="IReportManager_getReportsForCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReportsForCarResponse" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_retrieveReportsForCar_ManagerFaultFault_FaultMessage">
+  <wsdl:message name="IReportManager_getReportsForCar_ManagerFaultFault_FaultMessage">
     <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q2:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_getReportByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReportByID" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_getReportByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReportByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_getReportByID_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q3:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_DeleteReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReport" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_DeleteReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_DeleteReport_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q4:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_getReportsForBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReportsForBooking" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_getReportsForBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReportsForBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_getReportsForBooking_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q5:ManagerFault" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_UpdateReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReport" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_UpdateReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_UpdateReport_ManagerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils" name="detail" element="q6:ManagerFault" />
   </wsdl:message>
   <wsdl:portType name="IReportManager">
     <wsdl:operation name="AddReport">
@@ -35,10 +71,30 @@
       <wsdl:output wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/AddReportResponse" message="tns:IReportManager_AddReport_OutputMessage" />
       <wsdl:fault wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/AddReportManagerFaultFault" name="ManagerFaultFault" message="tns:IReportManager_AddReport_ManagerFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="retrieveReportsForCar">
-      <wsdl:input wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCar" message="tns:IReportManager_retrieveReportsForCar_InputMessage" />
-      <wsdl:output wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCarResponse" message="tns:IReportManager_retrieveReportsForCar_OutputMessage" />
-      <wsdl:fault wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/retrieveReportsForCarManagerFaultFault" name="ManagerFaultFault" message="tns:IReportManager_retrieveReportsForCar_ManagerFaultFault_FaultMessage" />
+    <wsdl:operation name="getReportsForCar">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCar" message="tns:IReportManager_getReportsForCar_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCarResponse" message="tns:IReportManager_getReportsForCar_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForCarManagerFaultFault" name="ManagerFaultFault" message="tns:IReportManager_getReportsForCar_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportByID">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportByID" message="tns:IReportManager_getReportByID_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportByIDResponse" message="tns:IReportManager_getReportByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportByIDManagerFaultFault" name="ManagerFaultFault" message="tns:IReportManager_getReportByID_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReport">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/DeleteReport" message="tns:IReportManager_DeleteReport_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/DeleteReportResponse" message="tns:IReportManager_DeleteReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/DeleteReportManagerFaultFault" name="ManagerFaultFault" message="tns:IReportManager_DeleteReport_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportsForBooking">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBooking" message="tns:IReportManager_getReportsForBooking_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBookingResponse" message="tns:IReportManager_getReportsForBooking_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/getReportsForBookingManagerFaultFault" name="ManagerFaultFault" message="tns:IReportManager_getReportsForBooking_ManagerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReport">
+      <wsdl:input wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/UpdateReport" message="tns:IReportManager_UpdateReport_InputMessage" />
+      <wsdl:output wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/UpdateReportResponse" message="tns:IReportManager_UpdateReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="Delta.DeltaManager.ReportNS/IReportManager/UpdateReportManagerFaultFault" name="ManagerFaultFault" message="tns:IReportManager_UpdateReport_ManagerFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
