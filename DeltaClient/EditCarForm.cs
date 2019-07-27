@@ -31,7 +31,7 @@ namespace DeltaClient
                 YearComboBox.Items.Add(i);
             }
             if (EditingCar.Year != 0)
-                YearComboBox.SelectedValue = EditingCar.Year;
+                YearComboBox.SelectedIndex = EditingCar.Year-1980;
             LitersUpDown.Value = EditingCar.BurnedLiters;
             KilometersUpDown.Value=EditingCar.Kilometers;
         }
@@ -40,20 +40,32 @@ namespace DeltaClient
         {
 
         }
-        private void SendSaveButton()
+        private void SendSaveButton(object sender, EventArgs e)
         {
-            if (EditingCar.Make!= MakerTextBox.Text || EditingCar.Model != ModelTextBox.Text || EditingCar.Year != Convert.ToInt32(YearComboBox.SelectedValue) || EditingCar.Kilometers != KilometersUpDown.Value || EditingCar.BurnedLiters != LitersUpDown.Value)
+            if (EditingCar.Make!= MakerTextBox.Text || EditingCar.Model != ModelTextBox.Text || EditingCar.Year != Convert.ToInt32(YearComboBox.SelectedIndex+1980) || EditingCar.Kilometers != KilometersUpDown.Value || EditingCar.BurnedLiters != LitersUpDown.Value)
             {
                 CarManagerClient carManager = new CarManagerClient();
                 Car.Car UpdatingCar = new Car.Car();
+                UpdatingCar.PlateNumber = PlateNumberTextBox.Text;
                 UpdatingCar.Model= ModelTextBox.Text;
                 UpdatingCar.Make = MakerTextBox.Text;
                 UpdatingCar.Kilometers = Convert.ToInt32(KilometersUpDown.Value);
                 UpdatingCar.BurnedLiters= Convert.ToInt32(LitersUpDown.Value);
-                UpdatingCar.Year= Convert.ToInt32(YearComboBox.SelectedValue);
+                UpdatingCar.Year= Convert.ToInt32(YearComboBox.SelectedIndex+1980);
                 carManager.UpdateCar(UpdatingCar, this.Email, this.PassHash);
             }
+            this.stopEditing(sender, e);
 
+
+        }
+
+        private void stopEditing(object sender, EventArgs e)
+        {
+            CarForm listFormChild = new CarForm(this.Email, this.PassHash);
+            listFormChild.MdiParent = this.ParentForm;
+            listFormChild.FormBorderStyle = FormBorderStyle.None;
+            listFormChild.Dock = DockStyle.Fill;
+            listFormChild.Show();
         }
         private void Label1_Click(object sender, EventArgs e)
         {

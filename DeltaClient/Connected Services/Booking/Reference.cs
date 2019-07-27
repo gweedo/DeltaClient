@@ -494,6 +494,13 @@ namespace DeltaClient.Booking {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUser", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsForUserResponse")]
         System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsForUserAsync(string UserEmail, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingByID", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingByIDResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Booking.ManagerFault), Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingByIDManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        DeltaClient.Booking.Booking GetBookingByID(int ID, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingByID", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingByIDResponse")]
+        System.Threading.Tasks.Task<DeltaClient.Booking.Booking> GetBookingByIDAsync(int ID, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -569,6 +576,14 @@ namespace DeltaClient.Booking {
         
         public System.Threading.Tasks.Task<DeltaClient.Booking.Booking[]> GetBookingsForUserAsync(string UserEmail, string Email, string MD5PassHash) {
             return base.Channel.GetBookingsForUserAsync(UserEmail, Email, MD5PassHash);
+        }
+        
+        public DeltaClient.Booking.Booking GetBookingByID(int ID, string Email, string MD5PassHash) {
+            return base.Channel.GetBookingByID(ID, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<DeltaClient.Booking.Booking> GetBookingByIDAsync(int ID, string Email, string MD5PassHash) {
+            return base.Channel.GetBookingByIDAsync(ID, Email, MD5PassHash);
         }
     }
 }

@@ -36,6 +36,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.userMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.addUser.Size = new System.Drawing.Size(50, 50);
             this.addUser.TabIndex = 1;
             this.addUser.UseVisualStyleBackColor = true;
+            this.addUser.Click += new System.EventHandler(this.AddUser);
             // 
             // userLabel
             // 
@@ -85,9 +87,10 @@
             // 
             this.userMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.userMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bookingToolStripMenuItem});
+            this.bookingToolStripMenuItem,
+            this.eliminaToolStripMenuItem});
             this.userMenuStrip.Name = "userMenuStrip";
-            this.userMenuStrip.Size = new System.Drawing.Size(243, 36);
+            this.userMenuStrip.Size = new System.Drawing.Size(243, 101);
             // 
             // bookingToolStripMenuItem
             // 
@@ -95,6 +98,13 @@
             this.bookingToolStripMenuItem.Size = new System.Drawing.Size(242, 32);
             this.bookingToolStripMenuItem.Text = "Vai alle prenotazioni";
             this.bookingToolStripMenuItem.Click += new System.EventHandler(this.showBookingsForUser);
+            // 
+            // eliminaToolStripMenuItem
+            // 
+            this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(242, 32);
+            this.eliminaToolStripMenuItem.Text = "Elimina";
+            this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.DeleteUser);
             // 
             // UserListForm
             // 
@@ -123,5 +133,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ContextMenuStrip userMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
     }
 }

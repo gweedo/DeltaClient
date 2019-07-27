@@ -31,7 +31,6 @@
             this.SaveUserButton = new System.Windows.Forms.Button();
             this.LicenseUserTextBox = new System.Windows.Forms.TextBox();
             this.ConfirmPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.LicensePointsUserTextBox = new System.Windows.Forms.TextBox();
             this.EmailUserTextBox = new System.Windows.Forms.TextBox();
             this.PasswordUserTextBox = new System.Windows.Forms.TextBox();
             this.NameUsertextBox = new System.Windows.Forms.TextBox();
@@ -46,6 +45,9 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.AdminCheckbox = new System.Windows.Forms.CheckBox();
             this.AdminLabel = new System.Windows.Forms.Label();
+            this.PointsUpDown = new System.Windows.Forms.NumericUpDown();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.PointsUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveUserButton
@@ -58,6 +60,7 @@
             this.SaveUserButton.TabIndex = 36;
             this.SaveUserButton.Text = "Salva";
             this.SaveUserButton.UseVisualStyleBackColor = true;
+            this.SaveUserButton.Click += new System.EventHandler(this.SendSaveButton);
             // 
             // LicenseUserTextBox
             // 
@@ -76,15 +79,6 @@
             this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
             this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(318, 39);
             this.ConfirmPasswordTextBox.TabIndex = 34;
-            // 
-            // LicensePointsUserTextBox
-            // 
-            this.LicensePointsUserTextBox.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.LicensePointsUserTextBox.Location = new System.Drawing.Point(395, 191);
-            this.LicensePointsUserTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LicensePointsUserTextBox.Name = "LicensePointsUserTextBox";
-            this.LicensePointsUserTextBox.Size = new System.Drawing.Size(140, 39);
-            this.LicensePointsUserTextBox.TabIndex = 32;
             // 
             // EmailUserTextBox
             // 
@@ -201,7 +195,7 @@
             this.cancelButton.TabIndex = 38;
             this.cancelButton.Text = "Annulla";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.Button1_Click);
+            this.cancelButton.Click += new System.EventHandler(this.cancelEditing);
             // 
             // AdminCheckbox
             // 
@@ -223,11 +217,38 @@
             this.AdminLabel.Text = "Admin";
             this.AdminLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
+            // PointsUpDown
+            // 
+            this.PointsUpDown.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PointsUpDown.Location = new System.Drawing.Point(395, 192);
+            this.PointsUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.PointsUpDown.Name = "PointsUpDown";
+            this.PointsUpDown.Size = new System.Drawing.Size(120, 39);
+            this.PointsUpDown.TabIndex = 41;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.DeleteButton.Location = new System.Drawing.Point(440, 391);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(111, 46);
+            this.DeleteButton.TabIndex = 42;
+            this.DeleteButton.Text = "Elimina";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteUser);
+            // 
             // UserDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.PointsUpDown);
             this.Controls.Add(this.AdminLabel);
             this.Controls.Add(this.AdminCheckbox);
             this.Controls.Add(this.cancelButton);
@@ -235,7 +256,6 @@
             this.Controls.Add(this.SaveUserButton);
             this.Controls.Add(this.LicenseUserTextBox);
             this.Controls.Add(this.ConfirmPasswordTextBox);
-            this.Controls.Add(this.LicensePointsUserTextBox);
             this.Controls.Add(this.EmailUserTextBox);
             this.Controls.Add(this.PasswordUserTextBox);
             this.Controls.Add(this.NameUsertextBox);
@@ -250,6 +270,7 @@
             this.Name = "UserDataForm";
             this.Text = "UserDataForm";
             this.Load += new System.EventHandler(this.UserDataForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PointsUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +281,6 @@
         private System.Windows.Forms.Button SaveUserButton;
         private System.Windows.Forms.TextBox LicenseUserTextBox;
         private System.Windows.Forms.TextBox ConfirmPasswordTextBox;
-        private System.Windows.Forms.TextBox LicensePointsUserTextBox;
         private System.Windows.Forms.TextBox EmailUserTextBox;
         private System.Windows.Forms.TextBox PasswordUserTextBox;
         private System.Windows.Forms.TextBox NameUsertextBox;
@@ -275,5 +295,7 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.CheckBox AdminCheckbox;
         private System.Windows.Forms.Label AdminLabel;
+        private System.Windows.Forms.NumericUpDown PointsUpDown;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }

@@ -251,6 +251,13 @@ namespace DeltaClient.User {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmail", ReplyAction="Delta.DeltaManager.UserNS/IUserManager/GetUserByEmailResponse")]
         System.Threading.Tasks.Task<DeltaClient.User.User> GetUserByEmailAsync(string SearchedEmail, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.UserNS/IUserManager/AddUser", ReplyAction="Delta.DeltaManager.UserNS/IUserManager/AddUserResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.User.ManagerFault), Action="Delta.DeltaManager.UserNS/IUserManager/AddUserManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
+        bool AddUser(DeltaClient.User.User user, string Email, string MD5PassHash);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.UserNS/IUserManager/AddUser", ReplyAction="Delta.DeltaManager.UserNS/IUserManager/AddUserResponse")]
+        System.Threading.Tasks.Task<bool> AddUserAsync(DeltaClient.User.User user, string Email, string MD5PassHash);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -334,6 +341,14 @@ namespace DeltaClient.User {
         
         public System.Threading.Tasks.Task<DeltaClient.User.User> GetUserByEmailAsync(string SearchedEmail, string Email, string MD5PassHash) {
             return base.Channel.GetUserByEmailAsync(SearchedEmail, Email, MD5PassHash);
+        }
+        
+        public bool AddUser(DeltaClient.User.User user, string Email, string MD5PassHash) {
+            return base.Channel.AddUser(user, Email, MD5PassHash);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddUserAsync(DeltaClient.User.User user, string Email, string MD5PassHash) {
+            return base.Channel.AddUserAsync(user, Email, MD5PassHash);
         }
     }
 }

@@ -29,8 +29,14 @@ namespace DeltaClient
             usersListView.Columns.Add("Scadenza", 150, HorizontalAlignment.Left);
             usersListView.Columns.Add("Punti", 50, HorizontalAlignment.Left);
             usersListView.Columns.Add("Admin", 50, HorizontalAlignment.Left);
+            this.UpdateUsers();
+        }
+
+        private void UpdateUsers()
+        {
             var users = this.userManager.GetUsers(this.Email, this.PassHash);
             var AdminString = "";
+            usersListView.Items.Clear();
             foreach (var SingleUser in users)
             {
                 if (SingleUser.isAdmin == true)
@@ -46,6 +52,12 @@ namespace DeltaClient
         private void UserForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void DeleteUser (object sender, EventArgs e)
+        {
+            this.userManager.DeleteUser(this.userManager.GetUserByEmail(usersListView.SelectedItems[0].Text, this.Email, this.PassHash), this.Email, this.PassHash);
+            this.UpdateUsers();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,6 +83,15 @@ namespace DeltaClient
         private void showBookingsForUser (object sender, EventArgs e)
         {
             BookingsForm bookingFormChild = new BookingsForm(this.Email, this.PassHash, usersListView.SelectedItems[0].Text);
+            bookingFormChild.MdiParent = this.ParentForm;
+            bookingFormChild.FormBorderStyle = FormBorderStyle.None;
+            bookingFormChild.Dock = DockStyle.Fill;
+            bookingFormChild.Show();
+        }
+
+        private void AddUser (object sender, EventArgs e)
+        {
+            UserDataForm bookingFormChild = new UserDataForm(this.Email, this.PassHash);
             bookingFormChild.MdiParent = this.ParentForm;
             bookingFormChild.FormBorderStyle = FormBorderStyle.None;
             bookingFormChild.Dock = DockStyle.Fill;
