@@ -54,7 +54,7 @@ namespace DeltaClient
             }
             foreach (var SingleBooking in bookings)
             {
-                bookingsListView.Items.Add(new ListViewItem(new string[] { SingleBooking.ID.ToString(), SingleBooking.BookedCar.PlateNumber, SingleBooking.Booker.Email, SingleBooking.Start.ToString(), SingleBooking.End.ToString() }));
+                bookingsListView.Items.Add(new ListViewItem(new string[] { SingleBooking.ID.ToString(), SingleBooking.BookedCar.PlateNumber, SingleBooking.Booker.Email, SingleBooking.Start.ToShortDateString(), SingleBooking.End.ToShortDateString() }));
             }
             bookingsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             bookingsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);

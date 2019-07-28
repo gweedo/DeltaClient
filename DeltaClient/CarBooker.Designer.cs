@@ -32,26 +32,28 @@ namespace DeltaClient
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.bookCarTab = new System.Windows.Forms.TabPage();
-            this.returnCarTab = new System.Windows.Forms.TabPage();
-            this.startPicker = new System.Windows.Forms.DateTimePicker();
-            this.bookCarLabel = new System.Windows.Forms.Label();
-            this.Fine = new System.Windows.Forms.Label();
-            this.Inizio = new System.Windows.Forms.Label();
-            this.endPicker = new System.Windows.Forms.DateTimePicker();
-            this.carBox = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.carLabel = new System.Windows.Forms.Label();
+            this.carBox = new System.Windows.Forms.ComboBox();
+            this.endPicker = new System.Windows.Forms.DateTimePicker();
+            this.Inizio = new System.Windows.Forms.Label();
+            this.Fine = new System.Windows.Forms.Label();
+            this.bookCarLabel = new System.Windows.Forms.Label();
+            this.startPicker = new System.Windows.Forms.DateTimePicker();
+            this.returnCarTab = new System.Windows.Forms.TabPage();
+            this.kilometersUpDown = new System.Windows.Forms.NumericUpDown();
+            this.litersUpDown = new System.Windows.Forms.NumericUpDown();
+            this.returnButton = new System.Windows.Forms.Button();
+            this.kmLabel = new System.Windows.Forms.Label();
+            this.litersLabel = new System.Windows.Forms.Label();
             this.bookingLabel = new System.Windows.Forms.Label();
             this.bookingBox = new System.Windows.Forms.ComboBox();
             this.returnLabel = new System.Windows.Forms.Label();
-            this.kmTextBox = new System.Windows.Forms.TextBox();
-            this.litersTextBox = new System.Windows.Forms.TextBox();
-            this.litersLabel = new System.Windows.Forms.Label();
-            this.kmLabel = new System.Windows.Forms.Label();
-            this.returnButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.bookCarTab.SuspendLayout();
             this.returnCarTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kilometersUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.litersUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,31 +85,61 @@ namespace DeltaClient
             this.bookCarTab.Text = "Prenota";
             this.bookCarTab.Click += new System.EventHandler(this.BookCarTab_Click);
             // 
-            // returnCarTab
+            // button1
             // 
-            this.returnCarTab.BackColor = System.Drawing.SystemColors.Control;
-            this.returnCarTab.Controls.Add(this.returnButton);
-            this.returnCarTab.Controls.Add(this.kmLabel);
-            this.returnCarTab.Controls.Add(this.litersLabel);
-            this.returnCarTab.Controls.Add(this.litersTextBox);
-            this.returnCarTab.Controls.Add(this.kmTextBox);
-            this.returnCarTab.Controls.Add(this.bookingLabel);
-            this.returnCarTab.Controls.Add(this.bookingBox);
-            this.returnCarTab.Controls.Add(this.returnLabel);
-            this.returnCarTab.Location = new System.Drawing.Point(4, 29);
-            this.returnCarTab.Name = "returnCarTab";
-            this.returnCarTab.Padding = new System.Windows.Forms.Padding(3);
-            this.returnCarTab.Size = new System.Drawing.Size(790, 417);
-            this.returnCarTab.TabIndex = 1;
-            this.returnCarTab.Text = "Restituisci";
+            this.button1.Location = new System.Drawing.Point(338, 346);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 37);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Prenota";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.confirmBooking);
             // 
-            // startPicker
+            // carLabel
             // 
-            this.startPicker.Location = new System.Drawing.Point(48, 94);
-            this.startPicker.Name = "startPicker";
-            this.startPicker.Size = new System.Drawing.Size(236, 26);
-            this.startPicker.TabIndex = 1;
-            this.startPicker.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            this.carLabel.AutoSize = true;
+            this.carLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carLabel.Location = new System.Drawing.Point(242, 186);
+            this.carLabel.Name = "carLabel";
+            this.carLabel.Size = new System.Drawing.Size(74, 38);
+            this.carLabel.TabIndex = 11;
+            this.carLabel.Text = "Auto";
+            // 
+            // carBox
+            // 
+            this.carBox.FormattingEnabled = true;
+            this.carBox.Location = new System.Drawing.Point(240, 227);
+            this.carBox.Name = "carBox";
+            this.carBox.Size = new System.Drawing.Size(310, 28);
+            this.carBox.TabIndex = 10;
+            // 
+            // endPicker
+            // 
+            this.endPicker.Location = new System.Drawing.Point(489, 94);
+            this.endPicker.Name = "endPicker";
+            this.endPicker.Size = new System.Drawing.Size(236, 26);
+            this.endPicker.TabIndex = 9;
+            this.endPicker.ValueChanged += new System.EventHandler(this.UpdateAvailableCars);
+            // 
+            // Inizio
+            // 
+            this.Inizio.AutoSize = true;
+            this.Inizio.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inizio.Location = new System.Drawing.Point(41, 53);
+            this.Inizio.Name = "Inizio";
+            this.Inizio.Size = new System.Drawing.Size(79, 38);
+            this.Inizio.TabIndex = 8;
+            this.Inizio.Text = "Inizio";
+            // 
+            // Fine
+            // 
+            this.Fine.AutoSize = true;
+            this.Fine.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fine.Location = new System.Drawing.Point(482, 53);
+            this.Fine.Name = "Fine";
+            this.Fine.Size = new System.Drawing.Size(65, 38);
+            this.Fine.TabIndex = 7;
+            this.Fine.Text = "Fine";
             // 
             // bookCarLabel
             // 
@@ -120,56 +152,100 @@ namespace DeltaClient
             this.bookCarLabel.Text = "Prenota auto";
             this.bookCarLabel.Click += new System.EventHandler(this.BookingsLabel_Click);
             // 
-            // Fine
+            // startPicker
             // 
-            this.Fine.AutoSize = true;
-            this.Fine.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fine.Location = new System.Drawing.Point(482, 53);
-            this.Fine.Name = "Fine";
-            this.Fine.Size = new System.Drawing.Size(65, 38);
-            this.Fine.TabIndex = 7;
-            this.Fine.Text = "Fine";
+            this.startPicker.Location = new System.Drawing.Point(48, 94);
+            this.startPicker.Name = "startPicker";
+            this.startPicker.Size = new System.Drawing.Size(236, 26);
+            this.startPicker.TabIndex = 1;
+            this.startPicker.ValueChanged += new System.EventHandler(this.UpdateAvailableCars);
             // 
-            // Inizio
+            // returnCarTab
             // 
-            this.Inizio.AutoSize = true;
-            this.Inizio.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inizio.Location = new System.Drawing.Point(41, 53);
-            this.Inizio.Name = "Inizio";
-            this.Inizio.Size = new System.Drawing.Size(79, 38);
-            this.Inizio.TabIndex = 8;
-            this.Inizio.Text = "Inizio";
+            this.returnCarTab.BackColor = System.Drawing.SystemColors.Control;
+            this.returnCarTab.Controls.Add(this.kilometersUpDown);
+            this.returnCarTab.Controls.Add(this.litersUpDown);
+            this.returnCarTab.Controls.Add(this.returnButton);
+            this.returnCarTab.Controls.Add(this.kmLabel);
+            this.returnCarTab.Controls.Add(this.litersLabel);
+            this.returnCarTab.Controls.Add(this.bookingLabel);
+            this.returnCarTab.Controls.Add(this.bookingBox);
+            this.returnCarTab.Controls.Add(this.returnLabel);
+            this.returnCarTab.Location = new System.Drawing.Point(4, 29);
+            this.returnCarTab.Name = "returnCarTab";
+            this.returnCarTab.Padding = new System.Windows.Forms.Padding(3);
+            this.returnCarTab.Size = new System.Drawing.Size(790, 417);
+            this.returnCarTab.TabIndex = 1;
+            this.returnCarTab.Text = "Restituisci";
+            this.returnCarTab.Click += new System.EventHandler(this.ReturnCarTab_Click);
+            this.returnCarTab.Enter += new System.EventHandler(this.UpdateBookings);
             // 
-            // endPicker
+            // kilometersUpDown
             // 
-            this.endPicker.Location = new System.Drawing.Point(489, 94);
-            this.endPicker.Name = "endPicker";
-            this.endPicker.Size = new System.Drawing.Size(236, 26);
-            this.endPicker.TabIndex = 9;
+            this.kilometersUpDown.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kilometersUpDown.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.kilometersUpDown.Location = new System.Drawing.Point(412, 227);
+            this.kilometersUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.kilometersUpDown.Name = "kilometersUpDown";
+            this.kilometersUpDown.Size = new System.Drawing.Size(120, 39);
+            this.kilometersUpDown.TabIndex = 22;
             // 
-            // carBox
+            // litersUpDown
             // 
-            this.carBox.FormattingEnabled = true;
-            this.carBox.Location = new System.Drawing.Point(263, 227);
-            this.carBox.Name = "carBox";
-            this.carBox.Size = new System.Drawing.Size(251, 28);
-            this.carBox.TabIndex = 10;
+            this.litersUpDown.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.litersUpDown.Location = new System.Drawing.Point(265, 227);
+            this.litersUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.litersUpDown.Name = "litersUpDown";
+            this.litersUpDown.Size = new System.Drawing.Size(120, 39);
+            this.litersUpDown.TabIndex = 21;
             // 
-            // carLabel
+            // returnButton
             // 
-            this.carLabel.AutoSize = true;
-            this.carLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carLabel.Location = new System.Drawing.Point(256, 186);
-            this.carLabel.Name = "carLabel";
-            this.carLabel.Size = new System.Drawing.Size(74, 38);
-            this.carLabel.TabIndex = 11;
-            this.carLabel.Text = "Auto";
+            this.returnButton.Location = new System.Drawing.Point(322, 346);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(122, 37);
+            this.returnButton.TabIndex = 20;
+            this.returnButton.Text = "Restituisci";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnBooking);
+            // 
+            // kmLabel
+            // 
+            this.kmLabel.AutoSize = true;
+            this.kmLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kmLabel.Location = new System.Drawing.Point(405, 185);
+            this.kmLabel.Name = "kmLabel";
+            this.kmLabel.Size = new System.Drawing.Size(55, 38);
+            this.kmLabel.TabIndex = 19;
+            this.kmLabel.Text = "Km";
+            // 
+            // litersLabel
+            // 
+            this.litersLabel.AutoSize = true;
+            this.litersLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.litersLabel.Location = new System.Drawing.Point(258, 185);
+            this.litersLabel.Name = "litersLabel";
+            this.litersLabel.Size = new System.Drawing.Size(59, 38);
+            this.litersLabel.TabIndex = 18;
+            this.litersLabel.Text = "Litri";
             // 
             // bookingLabel
             // 
             this.bookingLabel.AutoSize = true;
             this.bookingLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookingLabel.Location = new System.Drawing.Point(274, 85);
+            this.bookingLabel.Location = new System.Drawing.Point(315, 85);
             this.bookingLabel.Name = "bookingLabel";
             this.bookingLabel.Size = new System.Drawing.Size(171, 38);
             this.bookingLabel.TabIndex = 14;
@@ -179,74 +255,21 @@ namespace DeltaClient
             // bookingBox
             // 
             this.bookingBox.FormattingEnabled = true;
-            this.bookingBox.Location = new System.Drawing.Point(281, 126);
+            this.bookingBox.Location = new System.Drawing.Point(226, 126);
             this.bookingBox.Name = "bookingBox";
-            this.bookingBox.Size = new System.Drawing.Size(251, 28);
+            this.bookingBox.Size = new System.Drawing.Size(339, 28);
             this.bookingBox.TabIndex = 13;
-            this.bookingBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
             // returnLabel
             // 
             this.returnLabel.AutoSize = true;
             this.returnLabel.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnLabel.Location = new System.Drawing.Point(290, 3);
+            this.returnLabel.Location = new System.Drawing.Point(274, 3);
             this.returnLabel.Name = "returnLabel";
             this.returnLabel.Size = new System.Drawing.Size(242, 48);
             this.returnLabel.TabIndex = 12;
             this.returnLabel.Text = "Restituisci auto";
             this.returnLabel.Click += new System.EventHandler(this.Label2_Click);
-            // 
-            // kmTextBox
-            // 
-            this.kmTextBox.Location = new System.Drawing.Point(428, 226);
-            this.kmTextBox.Name = "kmTextBox";
-            this.kmTextBox.Size = new System.Drawing.Size(104, 26);
-            this.kmTextBox.TabIndex = 16;
-            // 
-            // litersTextBox
-            // 
-            this.litersTextBox.Location = new System.Drawing.Point(281, 226);
-            this.litersTextBox.Name = "litersTextBox";
-            this.litersTextBox.Size = new System.Drawing.Size(104, 26);
-            this.litersTextBox.TabIndex = 17;
-            // 
-            // litersLabel
-            // 
-            this.litersLabel.AutoSize = true;
-            this.litersLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.litersLabel.Location = new System.Drawing.Point(274, 185);
-            this.litersLabel.Name = "litersLabel";
-            this.litersLabel.Size = new System.Drawing.Size(59, 38);
-            this.litersLabel.TabIndex = 18;
-            this.litersLabel.Text = "Litri";
-            // 
-            // kmLabel
-            // 
-            this.kmLabel.AutoSize = true;
-            this.kmLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kmLabel.Location = new System.Drawing.Point(421, 185);
-            this.kmLabel.Name = "kmLabel";
-            this.kmLabel.Size = new System.Drawing.Size(55, 38);
-            this.kmLabel.TabIndex = 19;
-            this.kmLabel.Text = "Km";
-            // 
-            // returnButton
-            // 
-            this.returnButton.Location = new System.Drawing.Point(338, 346);
-            this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(122, 37);
-            this.returnButton.TabIndex = 20;
-            this.returnButton.Text = "Restituisci";
-            this.returnButton.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(338, 346);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 37);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Restituisci";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // CarBooker
             // 
@@ -256,11 +279,14 @@ namespace DeltaClient
             this.Controls.Add(this.tabControl1);
             this.Name = "CarBooker";
             this.Text = "CarBooker";
+            this.Load += new System.EventHandler(this.CarBooker_Load);
             this.tabControl1.ResumeLayout(false);
             this.bookCarTab.ResumeLayout(false);
             this.bookCarTab.PerformLayout();
             this.returnCarTab.ResumeLayout(false);
             this.returnCarTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kilometersUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.litersUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,8 +319,8 @@ namespace DeltaClient
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Label kmLabel;
         private System.Windows.Forms.Label litersLabel;
-        private System.Windows.Forms.TextBox litersTextBox;
-        private System.Windows.Forms.TextBox kmTextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown kilometersUpDown;
+        private System.Windows.Forms.NumericUpDown litersUpDown;
     }
 }

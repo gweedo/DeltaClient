@@ -38,7 +38,8 @@ namespace DeltaClient
         {
             reportListView.Items.Clear();
             var reports = reportManager.getReportsForBooking(this.BookingID, this.Email, this.PassHash);
-            PlateNumberLabel.Text = "su " + this.BookingID;
+            PlateNumberLabel.Text = "su prenotazione " + this.BookingID;
+            PlateNumberLabel.Left = (this.ClientSize.Width - PlateNumberLabel.Width) / 2;
             foreach (var SingleReport in reports)
             {
                 reportListView.Items.Add(new ListViewItem(new string[] { SingleReport.ID.ToString(), SingleReport.Subject, SingleReport.Message }));

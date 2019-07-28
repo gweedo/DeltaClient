@@ -136,12 +136,6 @@
     <Compile Include="ReportListForm.Designer.cs">
       <DependentUpon>ReportListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportUserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportUserForm.Designer.cs">
-      <DependentUpon>ReportUserForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ServiceEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +153,12 @@
     </Compile>
     <Compile Include="SimpleUserForm.Designer.cs">
       <DependentUpon>SimpleUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAddReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAddReport.Designer.cs">
+      <DependentUpon>UserAddReport.cs</DependentUpon>
     </Compile>
     <Compile Include="UserDataForm.cs">
       <SubType>Form</SubType>
@@ -205,9 +205,6 @@
     <EmbeddedResource Include="ReportListForm.resx">
       <DependentUpon>ReportListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportUserForm.resx">
-      <DependentUpon>ReportUserForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ServiceEdit.resx">
       <DependentUpon>ServiceEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleUserForm.resx">
       <DependentUpon>SimpleUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAddReport.resx">
+      <DependentUpon>UserAddReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserDataForm.resx">
       <DependentUpon>UserDataForm.cs</DependentUpon>

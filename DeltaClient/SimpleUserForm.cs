@@ -33,11 +33,30 @@ namespace DeltaClient
             carBookerChild.Show();
         }
 
+        private void ShowReportForm (object sender, EventArgs e)
+        {
+            UserAddReport reportFormChild = new UserAddReport(this.Email, this.PassHash);
+            reportFormChild.MdiParent = this;
+            reportFormChild.FormBorderStyle = FormBorderStyle.None;
+            reportFormChild.Dock = DockStyle.Fill;
+            reportFormChild.Show();
+        }
         private void SimpleUserForm_Load(object sender, EventArgs e)
         {
 
         }
-
+        private void killDelta(object sender, FormClosedEventArgs e)
+        {
+            if (this.loggedOut != true)
+                Application.Exit();
+        }
+        private void ExitOnClickLabel(object sender, EventArgs e)
+        {
+            loggedOut = true;
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
+        }
         private void ToolStripLabel1_Click(object sender, EventArgs e)
         {
 

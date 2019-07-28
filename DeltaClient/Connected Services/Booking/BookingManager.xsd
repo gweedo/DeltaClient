@@ -42,6 +42,8 @@
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Delta.DeltaDBManager.BookingNS" minOccurs="0" name="EndedBooking" nillable="true" type="q3:Booking" />
         <xs:element minOccurs="0" name="NewKilometers" type="xs:int" />
         <xs:element minOccurs="0" name="Liters" type="xs:int" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MD5PassHash" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

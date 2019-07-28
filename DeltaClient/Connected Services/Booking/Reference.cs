@@ -469,10 +469,10 @@ namespace DeltaClient.Booking {
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/EndBooking", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/EndBookingResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Booking.ManagerFault), Action="Delta.DeltaManager.BookingNS/IBookingManager/EndBookingManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
-        bool EndBooking(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters);
+        bool EndBooking(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/EndBooking", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/EndBookingResponse")]
-        System.Threading.Tasks.Task<bool> EndBookingAsync(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters);
+        System.Threading.Tasks.Task<bool> EndBookingAsync(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters, string Email, string MD5PassHash);
         
         [System.ServiceModel.OperationContractAttribute(Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookings", ReplyAction="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(DeltaClient.Booking.ManagerFault), Action="Delta.DeltaManager.BookingNS/IBookingManager/GetBookingsManagerFaultFault", Name="ManagerFault", Namespace="http://schemas.datacontract.org/2004/07/Delta.DeltaManager.Utils")]
@@ -546,12 +546,12 @@ namespace DeltaClient.Booking {
             return base.Channel.DeleteBookingAsync(DeletableBooking, Email, MD5PassHash);
         }
         
-        public bool EndBooking(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters) {
-            return base.Channel.EndBooking(EndedBooking, NewKilometers, Liters);
+        public bool EndBooking(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters, string Email, string MD5PassHash) {
+            return base.Channel.EndBooking(EndedBooking, NewKilometers, Liters, Email, MD5PassHash);
         }
         
-        public System.Threading.Tasks.Task<bool> EndBookingAsync(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters) {
-            return base.Channel.EndBookingAsync(EndedBooking, NewKilometers, Liters);
+        public System.Threading.Tasks.Task<bool> EndBookingAsync(DeltaClient.Booking.Booking EndedBooking, int NewKilometers, int Liters, string Email, string MD5PassHash) {
+            return base.Channel.EndBookingAsync(EndedBooking, NewKilometers, Liters, Email, MD5PassHash);
         }
         
         public DeltaClient.Booking.Booking[] GetBookings(string Email, string MD5PassHash) {

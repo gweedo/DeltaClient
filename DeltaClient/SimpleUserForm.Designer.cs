@@ -49,7 +49,7 @@
             this.logoutLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(140, 450);
+            this.toolStrip1.Size = new System.Drawing.Size(140, 458);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -75,6 +75,7 @@
             this.reportLabel.Name = "reportLabel";
             this.reportLabel.Size = new System.Drawing.Size(135, 48);
             this.reportLabel.Text = "Segnala";
+            this.reportLabel.Click += new System.EventHandler(this.ShowReportForm);
             // 
             // toolStripSeparator1
             // 
@@ -87,15 +88,17 @@
             this.logoutLabel.Name = "logoutLabel";
             this.logoutLabel.Size = new System.Drawing.Size(135, 48);
             this.logoutLabel.Text = "Esci";
+            this.logoutLabel.Click += new System.EventHandler(this.ExitOnClickLabel);
             // 
             // SimpleUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(955, 458);
             this.Controls.Add(this.toolStrip1);
             this.Name = "SimpleUserForm";
             this.Text = "DeltaClient";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
             this.Load += new System.EventHandler(this.SimpleUserForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
