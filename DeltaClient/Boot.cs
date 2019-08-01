@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    static class Program
+    static class Boot
     {
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
@@ -16,7 +16,7 @@ namespace DeltaClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginForm login = new LoginForm();
+            Login login = new Login();
             login.Show();
             Application.Run();
         }

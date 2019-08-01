@@ -2,7 +2,7 @@
 
 namespace DeltaClient
 {
-    partial class CarBooker
+    partial class UserCarBooker
     {
         /// <summary>
         /// Required designer variable.

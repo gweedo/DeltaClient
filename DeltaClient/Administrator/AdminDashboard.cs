@@ -29,7 +29,7 @@ namespace DeltaClient
 
         private void ShowUsers(object sender, EventArgs e)
         {
-            UserListForm userFormChild = new UserListForm(this.Email, this.PassHash);
+            AdminUserList userFormChild = new AdminUserList(this.Email, this.PassHash);
             userFormChild.MdiParent = this;
             userFormChild.FormBorderStyle = FormBorderStyle.None;
             userFormChild.Dock = DockStyle.Fill;
@@ -38,7 +38,7 @@ namespace DeltaClient
         }
         private void ShowCars(object sender, EventArgs e)
         {
-            CarForm carFormChild = new CarForm(this.Email, this.PassHash);
+            AdminCarList carFormChild = new AdminCarList(this.Email, this.PassHash);
             carFormChild.MdiParent = this;
             carFormChild.FormBorderStyle = FormBorderStyle.None;
             carFormChild.Dock = DockStyle.Fill;
@@ -46,7 +46,7 @@ namespace DeltaClient
         }
         private void ShowBookings (object sender, EventArgs e)
         {
-            BookingsForm bookingFormChild = new BookingsForm(this.Email, this.PassHash);
+            AdminBookingList bookingFormChild = new AdminBookingList(this.Email, this.PassHash);
             bookingFormChild.MdiParent = this;
             bookingFormChild.FormBorderStyle = FormBorderStyle.None;
             bookingFormChild.Dock = DockStyle.Fill;
@@ -56,7 +56,7 @@ namespace DeltaClient
         private void ExitOnClickLabel(object sender, EventArgs e)
         {
             loggedOut = true;
-            LoginForm login = new LoginForm();
+            Login login = new Login();
             login.Show();
             this.Close();
         }

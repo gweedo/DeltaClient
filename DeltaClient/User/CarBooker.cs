@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class CarBooker : Form
+    public partial class UserCarBooker : Form
     {
         private string Email;
         private string PassHash;
         private List<Car.Car> AvailableCars;
         private BookingManagerClient bookingManager;
         private CarManagerClient carManager;
-        public CarBooker(string Email, string PassHash)
+        public UserCarBooker(string Email, string PassHash)
         {
             InitializeComponent();
             this.bookingManager = new BookingManagerClient();
@@ -91,7 +91,7 @@ namespace DeltaClient
 
         private void StopEditing()
         {
-            CarBooker childBooker = new CarBooker(this.Email, this.PassHash);
+            UserCarBooker childBooker = new UserCarBooker(this.Email, this.PassHash);
             childBooker.MdiParent = ParentForm;
             childBooker.FormBorderStyle = FormBorderStyle.None;
             childBooker.Dock = DockStyle.Fill;

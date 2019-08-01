@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class UserListForm : Form
+    public partial class AdminUserList : Form
     {
         private string Email;
         private string PassHash;
         private UserManagerClient userManager;
-        public UserListForm(string Email, string PassHash)
+        public AdminUserList(string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
@@ -82,7 +82,7 @@ namespace DeltaClient
         }
         private void showBookingsForUser (object sender, EventArgs e)
         {
-            BookingsForm bookingFormChild = new BookingsForm(this.Email, this.PassHash, usersListView.SelectedItems[0].Text);
+            AdminBookingList bookingFormChild = new AdminBookingList(this.Email, this.PassHash, usersListView.SelectedItems[0].Text);
             bookingFormChild.MdiParent = this.ParentForm;
             bookingFormChild.FormBorderStyle = FormBorderStyle.None;
             bookingFormChild.Dock = DockStyle.Fill;
@@ -91,7 +91,7 @@ namespace DeltaClient
 
         private void AddUser (object sender, EventArgs e)
         {
-            UserDataForm bookingFormChild = new UserDataForm(this.Email, this.PassHash);
+            AdminUserEdit bookingFormChild = new AdminUserEdit(this.Email, this.PassHash);
             bookingFormChild.MdiParent = this.ParentForm;
             bookingFormChild.FormBorderStyle = FormBorderStyle.None;
             bookingFormChild.Dock = DockStyle.Fill;
@@ -104,7 +104,7 @@ namespace DeltaClient
             {
                 var selectedUser = this.userManager.GetUserByEmail(usersListView.SelectedItems[0].Text, this.Email, this.PassHash);
 
-                UserDataForm bookingFormChild = new UserDataForm(selectedUser, this.Email, this.PassHash);
+                AdminUserEdit bookingFormChild = new AdminUserEdit(selectedUser, this.Email, this.PassHash);
                 bookingFormChild.MdiParent = this.ParentForm;
                 bookingFormChild.FormBorderStyle = FormBorderStyle.None;
                 bookingFormChild.Dock = DockStyle.Fill;

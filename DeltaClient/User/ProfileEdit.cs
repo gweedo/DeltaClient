@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class ProfileEdit : Form
+    public partial class UserProfileEdit : Form
     {
         private User.User editingUser;
         private UserManagerClient userManager;
-        public ProfileEdit(string Email, string PassHash)
+        public UserProfileEdit(string Email, string PassHash)
         {
             this.userManager = new UserManagerClient();
             this.editingUser = userManager.GetUserByEmail(Email, Email, PassHash);

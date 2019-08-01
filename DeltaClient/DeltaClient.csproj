@@ -61,23 +61,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookingsForm.cs">
+    <Compile Include="Administrator\Booking\List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookingsForm.Designer.cs">
-      <DependentUpon>BookingsForm.cs</DependentUpon>
+    <Compile Include="Administrator\Booking\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarBooker.cs">
+    <Compile Include="User\CarBooker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarBooker.Designer.cs">
+    <Compile Include="User\CarBooker.Designer.cs">
       <DependentUpon>CarBooker.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarForm.cs">
+    <Compile Include="Administrator\Car\List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarForm.Designer.cs">
-      <DependentUpon>CarForm.cs</DependentUpon>
+    <Compile Include="Administrator\Car\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\Booking\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -104,99 +104,99 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="EditCarForm.cs">
+    <Compile Include="Administrator\Car\Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditCarForm.Designer.cs">
-      <DependentUpon>EditCarForm.cs</DependentUpon>
+    <Compile Include="Administrator\Car\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminDashboard.cs">
+    <Compile Include="Administrator\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminDashboard.Designer.cs">
+    <Compile Include="Administrator\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfileEdit.cs">
+    <Compile Include="User\ProfileEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfileEdit.Designer.cs">
+    <Compile Include="User\ProfileEdit.Designer.cs">
       <DependentUpon>ProfileEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Boot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportEdit.cs">
+    <Compile Include="Administrator\Report\Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportEdit.Designer.cs">
-      <DependentUpon>ReportEdit.cs</DependentUpon>
+    <Compile Include="Administrator\Report\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportListForm.cs">
+    <Compile Include="Administrator\Report\List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportListForm.Designer.cs">
-      <DependentUpon>ReportListForm.cs</DependentUpon>
+    <Compile Include="Administrator\Report\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServiceEdit.cs">
+    <Compile Include="Administrator\Service\Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServiceEdit.Designer.cs">
-      <DependentUpon>ServiceEdit.cs</DependentUpon>
+    <Compile Include="Administrator\Service\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServicesListForm.cs">
+    <Compile Include="Administrator\Service\List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServicesListForm.Designer.cs">
-      <DependentUpon>ServicesListForm.cs</DependentUpon>
+    <Compile Include="Administrator\Service\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="SimpleUserForm.cs">
+    <Compile Include="User\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SimpleUserForm.Designer.cs">
-      <DependentUpon>SimpleUserForm.cs</DependentUpon>
+    <Compile Include="User\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserAddReport.cs">
+    <Compile Include="User\AddReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserAddReport.Designer.cs">
-      <DependentUpon>UserAddReport.cs</DependentUpon>
+    <Compile Include="User\AddReport.Designer.cs">
+      <DependentUpon>AddReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserDataForm.cs">
+    <Compile Include="Administrator\User\Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserDataForm.Designer.cs">
-      <DependentUpon>UserDataForm.cs</DependentUpon>
+    <Compile Include="Administrator\User\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserListForm.cs">
+    <Compile Include="Administrator\User\List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserListForm.Designer.cs">
-      <DependentUpon>UserListForm.cs</DependentUpon>
+    <Compile Include="Administrator\User\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookingsForm.resx">
-      <DependentUpon>BookingsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\Booking\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CarBooker.resx">
+    <EmbeddedResource Include="User\CarBooker.resx">
       <DependentUpon>CarBooker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CarForm.resx">
-      <DependentUpon>CarForm.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\Car\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCarForm.resx">
-      <DependentUpon>EditCarForm.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\Car\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminDashboard.resx">
+    <EmbeddedResource Include="Administrator\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfileEdit.resx">
+    <EmbeddedResource Include="User\ProfileEdit.resx">
       <DependentUpon>ProfileEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -208,29 +208,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportEdit.resx">
-      <DependentUpon>ReportEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\Report\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportListForm.resx">
-      <DependentUpon>ReportListForm.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\Report\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServiceEdit.resx">
-      <DependentUpon>ServiceEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\Service\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServicesListForm.resx">
-      <DependentUpon>ServicesListForm.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\Service\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimpleUserForm.resx">
-      <DependentUpon>SimpleUserForm.cs</DependentUpon>
+    <EmbeddedResource Include="User\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserAddReport.resx">
-      <DependentUpon>UserAddReport.cs</DependentUpon>
+    <EmbeddedResource Include="User\AddReport.resx">
+      <DependentUpon>AddReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserDataForm.resx">
-      <DependentUpon>UserDataForm.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\User\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserListForm.resx">
-      <DependentUpon>UserListForm.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator\User\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\Booking\BookingManager.wsdl" />
     <None Include="Connected Services\Booking\BookingManager.xsd">
@@ -434,5 +434,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

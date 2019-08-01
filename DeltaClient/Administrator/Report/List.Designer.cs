@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class ReportListForm
+    partial class AdminReportList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminReportList));
             this.PlateNumberLabel = new System.Windows.Forms.Label();
             this.addReport = new System.Windows.Forms.Button();
             this.reportLabel = new System.Windows.Forms.Label();

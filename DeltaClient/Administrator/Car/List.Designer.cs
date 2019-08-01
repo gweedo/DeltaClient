@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class CarForm
+    partial class AdminCarList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCarList));
             this.carListView = new System.Windows.Forms.ListView();
             this.carLabel = new System.Windows.Forms.Label();
             this.addCar = new System.Windows.Forms.Button();

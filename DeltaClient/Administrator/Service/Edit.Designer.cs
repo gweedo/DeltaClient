@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class ServiceEdit
+    partial class AdminServiceEdit
     {
         /// <summary>
         /// Required designer variable.

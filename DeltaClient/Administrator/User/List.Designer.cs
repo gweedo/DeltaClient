@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class UserListForm
+    partial class AdminUserList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUserList));
             this.usersListView = new System.Windows.Forms.ListView();
             this.addUser = new System.Windows.Forms.Button();
             this.userLabel = new System.Windows.Forms.Label();

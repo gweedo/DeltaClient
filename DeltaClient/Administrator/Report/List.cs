@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class ReportListForm : Form
+    public partial class AdminReportList : Form
     {
         private string Email;
         private string PassHash;
         private int BookingID;
         private ReportManagerClient reportManager;
         private CarManagerClient carManager;
-        public ReportListForm(string Email, string PassHash, int BookingID)
+        public AdminReportList(string Email, string PassHash, int BookingID)
         {
             this.Email = Email;
             this.PassHash = PassHash;
@@ -50,7 +50,7 @@ namespace DeltaClient
 
         private void AddReport(object sender, EventArgs e)
         {
-            ReportEdit ReportListChild = new ReportEdit(this.Email, this.PassHash, this.BookingID);
+            AdminReportEdit ReportListChild = new AdminReportEdit(this.Email, this.PassHash, this.BookingID);
             ReportListChild.MdiParent = this.ParentForm;
             ReportListChild.FormBorderStyle = FormBorderStyle.None;
             ReportListChild.Dock = DockStyle.Fill;
@@ -68,7 +68,7 @@ namespace DeltaClient
             if (reportListView.SelectedItems.Count == 1)
             {
                 var selectedReport = this.reportManager.getReportByID(Convert.ToInt32(this.reportListView.SelectedItems[0].Text), this.Email, this.PassHash);
-                ReportEdit ReportListChild = new ReportEdit(this.Email, this.PassHash, selectedReport);
+                AdminReportEdit ReportListChild = new AdminReportEdit(this.Email, this.PassHash, selectedReport);
                 ReportListChild.MdiParent = this.ParentForm;
                 ReportListChild.FormBorderStyle = FormBorderStyle.None;
                 ReportListChild.Dock = DockStyle.Fill;

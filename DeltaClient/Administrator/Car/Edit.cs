@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class EditCarForm : Form
+    public partial class AdminCarEdit : Form
     {
         private Car.Car EditingCar;
         private string Email;
@@ -19,7 +19,7 @@ namespace DeltaClient
         private bool newCar;
         private CarManagerClient carManager;
 
-        public EditCarForm(Car.Car EditingCar, string Email, string PassHash)
+        public AdminCarEdit(Car.Car EditingCar, string Email, string PassHash)
         {
             InitializeComponent();
             this.EditingCar = EditingCar;
@@ -41,7 +41,7 @@ namespace DeltaClient
             KilometersUpDown.Value=EditingCar.Kilometers;
         }
 
-        public EditCarForm (string Email, string PassHash)
+        public AdminCarEdit (string Email, string PassHash)
         {
             InitializeComponent();
             this.Email = Email;
@@ -118,7 +118,7 @@ namespace DeltaClient
 
         private void stopEditing(object sender, EventArgs e)
         {
-            CarForm listFormChild = new CarForm(this.Email, this.PassHash);
+            AdminCarList listFormChild = new AdminCarList(this.Email, this.PassHash);
             listFormChild.MdiParent = this.ParentForm;
             listFormChild.FormBorderStyle = FormBorderStyle.None;
             listFormChild.Dock = DockStyle.Fill;

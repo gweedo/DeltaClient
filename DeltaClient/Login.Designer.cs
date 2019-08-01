@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class LoginForm
+    partial class Login
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.EmailBoxLogin = new System.Windows.Forms.TextBox();
             this.PasswordBoxLogin = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();

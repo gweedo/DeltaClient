@@ -13,11 +13,11 @@ using System.Collections;
 
 namespace DeltaClient
 {
-    public partial class LoginForm : Form
+    public partial class Login : Form
     {
         private string tempHint;
         private bool loggingIn;
-        public LoginForm()
+        public Login()
         {
             InitializeComponent();
             this.loggingIn = false;
@@ -82,7 +82,7 @@ namespace DeltaClient
                     }
                     else
                     {
-                        SimpleUserForm main = new SimpleUserForm(UserMail, PassHash);
+                        UserDashboard main = new UserDashboard(UserMail, PassHash);
                         main.Show();
                     }
                     this.Close();

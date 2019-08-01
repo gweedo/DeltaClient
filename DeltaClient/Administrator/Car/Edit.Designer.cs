@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class EditCarForm
+    partial class AdminCarEdit
     {
         /// <summary>
         /// Required designer variable.

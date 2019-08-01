@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class ReportEdit
+    partial class AdminReportEdit
     {
         /// <summary>
         /// Required designer variable.

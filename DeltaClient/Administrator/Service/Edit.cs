@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class ServiceEdit : Form
+    public partial class AdminServiceEdit : Form
     {
         private string Email;
         private string PassHash;
@@ -20,7 +20,7 @@ namespace DeltaClient
         private ServiceManagerClient serviceManager;
         private Service.Service service;
         private bool newService;
-        public ServiceEdit(string Email, string PassHash, Service.Service service)
+        public AdminServiceEdit(string Email, string PassHash, Service.Service service)
         {
             InitializeComponent();
             this.Email = Email;
@@ -34,7 +34,7 @@ namespace DeltaClient
 
         }
 
-        public ServiceEdit (string Email, string PassHash, string CarPlate)
+        public AdminServiceEdit (string Email, string PassHash, string CarPlate)
         {
             InitializeComponent();
             this.Email = Email;
@@ -81,7 +81,7 @@ namespace DeltaClient
         }
         private void StopEditing(object sender, EventArgs e)
         {
-            ServicesListForm ServicesListChild = new ServicesListForm(this.Email, this.PassHash, this.ServicedCar.PlateNumber);
+            AdminServiceList ServicesListChild = new AdminServiceList(this.Email, this.PassHash, this.ServicedCar.PlateNumber);
             ServicesListChild.MdiParent = this.ParentForm;
             ServicesListChild.FormBorderStyle = FormBorderStyle.None;
             ServicesListChild.Dock = DockStyle.Fill;

@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class BookingsForm : Form
+    public partial class AdminBookingList : Form
     {
         private string Email;
         private string PassHash;
         private string UserEmail;
         private BookingManagerClient bookingManager;
-        public BookingsForm(string Email, string PassHash, string UserEmail = "")
+        public AdminBookingList(string Email, string PassHash, string UserEmail = "")
         {
             this.Email = Email;
             this.PassHash = PassHash;
@@ -78,7 +78,7 @@ namespace DeltaClient
         {
             UserManagerClient userManager = new UserManagerClient();
             var selectedUser = bookingManager.GetBookingByID(Convert.ToInt32(bookingsListView.SelectedItems[0].Text), this.Email, this.PassHash).Booker;
-            UserDataForm bookingFormChild = new UserDataForm(userManager.GetUserByEmail(selectedUser.Email, this.Email, this.PassHash), this.Email, this.PassHash);
+            AdminUserEdit bookingFormChild = new AdminUserEdit(userManager.GetUserByEmail(selectedUser.Email, this.Email, this.PassHash), this.Email, this.PassHash);
             bookingFormChild.MdiParent = this.ParentForm;
             bookingFormChild.FormBorderStyle = FormBorderStyle.None;
             bookingFormChild.Dock = DockStyle.Fill;
@@ -89,7 +89,7 @@ namespace DeltaClient
         {
             CarManagerClient carManager = new CarManagerClient();
             var selectedCar = bookingManager.GetBookingByID(Convert.ToInt32(bookingsListView.SelectedItems[0].Text), this.Email, this.PassHash).BookedCar;
-            EditCarForm bookingFormChild = new EditCarForm(carManager.GetCarByPlate(selectedCar.PlateNumber, this.Email, this.PassHash), this.Email, this.PassHash);
+            AdminCarEdit bookingFormChild = new AdminCarEdit(carManager.GetCarByPlate(selectedCar.PlateNumber, this.Email, this.PassHash), this.Email, this.PassHash);
             bookingFormChild.MdiParent = this.ParentForm;
             bookingFormChild.FormBorderStyle = FormBorderStyle.None;
             bookingFormChild.Dock = DockStyle.Fill;
@@ -108,7 +108,7 @@ namespace DeltaClient
 
         private void VaiAReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportListForm reportFormChild = new ReportListForm(this.Email, this.PassHash, Convert.ToInt32(this.bookingsListView.SelectedItems[0].Text));
+            AdminReportList reportFormChild = new AdminReportList(this.Email, this.PassHash, Convert.ToInt32(this.bookingsListView.SelectedItems[0].Text));
             reportFormChild.MdiParent = this.ParentForm;
             reportFormChild.FormBorderStyle = FormBorderStyle.None;
             reportFormChild.Dock = DockStyle.Fill;

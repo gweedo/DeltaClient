@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class ServicesListForm : Form
+    public partial class AdminServiceList : Form
     {
         private string Email;
         private string PassHash;
         private string CarPlate;
         private ServiceManagerClient serviceManager;
         private CarManagerClient carManager;
-        public ServicesListForm(string Email, string PassHash, string CarPlate)
+        public AdminServiceList(string Email, string PassHash, string CarPlate)
         {
             this.Email = Email;
             this.PassHash = PassHash;
@@ -49,7 +49,7 @@ namespace DeltaClient
 
         private void AddService(object sender, EventArgs e)
         {
-            ServiceEdit ServicesListChild = new ServiceEdit(this.Email, this.PassHash, CarPlate);
+            AdminServiceEdit ServicesListChild = new AdminServiceEdit(this.Email, this.PassHash, CarPlate);
             ServicesListChild.MdiParent = this.ParentForm;
             ServicesListChild.FormBorderStyle = FormBorderStyle.None;
             ServicesListChild.Dock = DockStyle.Fill;
@@ -67,7 +67,7 @@ namespace DeltaClient
             if (servicesListView.SelectedItems.Count == 1)
             {
                 var selectedService = this.serviceManager.GetServiceByID(Convert.ToInt32(this.servicesListView.SelectedItems[0].Text), this.Email, this.PassHash);
-                ServiceEdit ServicesListChild = new ServiceEdit(this.Email, this.PassHash, selectedService);
+                AdminServiceEdit ServicesListChild = new AdminServiceEdit(this.Email, this.PassHash, selectedService);
                 ServicesListChild.MdiParent = this.ParentForm;
                 ServicesListChild.FormBorderStyle = FormBorderStyle.None;
                 ServicesListChild.Dock = DockStyle.Fill;

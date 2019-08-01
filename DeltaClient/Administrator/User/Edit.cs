@@ -11,14 +11,14 @@ using DeltaClient.User;
 
 namespace DeltaClient
 {
-    public partial class UserDataForm : Form
+    public partial class AdminUserEdit : Form
     {
         private User.User editingUser;
         private UserManagerClient userManager;
         private string Email;
         private string PassHash;
         private bool newUser;
-        public UserDataForm(User.User user, string Email, string PassHash)
+        public AdminUserEdit(User.User user, string Email, string PassHash)
         {
             InitializeComponent();
             this.newUser = false;
@@ -35,7 +35,7 @@ namespace DeltaClient
             AdminCheckbox.Checked = user.isAdmin;
         }
 
-        public UserDataForm (string Email, string PassHash)
+        public AdminUserEdit (string Email, string PassHash)
         {
             InitializeComponent();
             this.newUser = true;
@@ -87,7 +87,7 @@ namespace DeltaClient
 
         private void cancelEditing (object sender, EventArgs e)
         {
-            UserListForm listFormChild = new UserListForm(this.Email, this.PassHash);
+            AdminUserList listFormChild = new AdminUserList(this.Email, this.PassHash);
             listFormChild.MdiParent = this.ParentForm;
             listFormChild.FormBorderStyle = FormBorderStyle.None;
             listFormChild.Dock = DockStyle.Fill;

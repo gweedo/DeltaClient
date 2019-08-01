@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class CarForm : Form
+    public partial class AdminCarList : Form
     {
         private string Email;
         private string PassHash;
         private CarManagerClient carManager;
-        public CarForm(string Email, string PassHash)
+        public AdminCarList(string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
@@ -56,7 +56,7 @@ namespace DeltaClient
 
         private void CreateCar (object sender, EventArgs e)
         {
-            EditCarForm EditCarChild = new EditCarForm(this.Email, this.PassHash);
+            AdminCarEdit EditCarChild = new AdminCarEdit(this.Email, this.PassHash);
             EditCarChild.MdiParent = this.ParentForm;
             EditCarChild.FormBorderStyle = FormBorderStyle.None;
             EditCarChild.Dock = DockStyle.Fill;
@@ -69,7 +69,7 @@ namespace DeltaClient
             {
                 var selectedCar = this.carManager.GetCarByPlate(carListView.SelectedItems[0].Text, this.Email, this.PassHash);
 
-                EditCarForm EditCarChild = new EditCarForm(selectedCar, this.Email, this.PassHash);
+                AdminCarEdit EditCarChild = new AdminCarEdit(selectedCar, this.Email, this.PassHash);
                 EditCarChild.MdiParent = this.ParentForm;
                 EditCarChild.FormBorderStyle = FormBorderStyle.None;
                 EditCarChild.Dock = DockStyle.Fill;
@@ -85,7 +85,7 @@ namespace DeltaClient
             {
                 var selectedCar = this.carManager.GetCarByPlate(carListView.SelectedItems[0].Text, this.Email, this.PassHash);
 
-                ServicesListForm ServicesListChild = new ServicesListForm(this.Email, this.PassHash, selectedCar.PlateNumber);
+                AdminServiceList ServicesListChild = new AdminServiceList(this.Email, this.PassHash, selectedCar.PlateNumber);
                 ServicesListChild.MdiParent = this.ParentForm;
                 ServicesListChild.FormBorderStyle = FormBorderStyle.None;
                 ServicesListChild.Dock = DockStyle.Fill;

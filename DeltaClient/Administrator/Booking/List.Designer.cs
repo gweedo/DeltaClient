@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class BookingsForm
+    partial class AdminBookingList
     {
         /// <summary>
         /// Required designer variable.

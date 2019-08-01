@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class SimpleUserForm : Form
+    public partial class UserDashboard : Form
     {
         private string Email;
         private string PassHash;
         private bool loggedOut;
-        public SimpleUserForm(string Email, string PassHash)
+        public UserDashboard(string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
@@ -26,7 +26,7 @@ namespace DeltaClient
 
         private void ShowBookingForm (object sender, EventArgs e)
         {
-            CarBooker carBookerChild= new CarBooker(this.Email, this.PassHash);
+            UserCarBooker carBookerChild= new UserCarBooker(this.Email, this.PassHash);
             carBookerChild.MdiParent = this;
             carBookerChild.FormBorderStyle = FormBorderStyle.None;
             carBookerChild.Dock = DockStyle.Fill;
@@ -43,7 +43,7 @@ namespace DeltaClient
         }
         private void ShowProfileForm (object sender, EventArgs e)
         {
-            ProfileEdit userFormChild = new ProfileEdit(this.Email, this.PassHash);
+            UserProfileEdit userFormChild = new UserProfileEdit(this.Email, this.PassHash);
             userFormChild.MdiParent = this;
             userFormChild.FormBorderStyle = FormBorderStyle.None;
             userFormChild.Dock = DockStyle.Fill;
@@ -61,7 +61,7 @@ namespace DeltaClient
         private void ExitOnClickLabel(object sender, EventArgs e)
         {
             loggedOut = true;
-            LoginForm login = new LoginForm();
+            Login login = new Login();
             login.Show();
             this.Close();
         }
