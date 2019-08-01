@@ -59,6 +59,20 @@ namespace DeltaClient
             bookingsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             bookingsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
+        private void BookingsLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BookingsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BookingsForm_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void EditUser (object sender, EventArgs e)
         {
