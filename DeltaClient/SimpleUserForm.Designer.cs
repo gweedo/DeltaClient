@@ -59,7 +59,7 @@
             this.profileLabel.Name = "profileLabel";
             this.profileLabel.Size = new System.Drawing.Size(135, 48);
             this.profileLabel.Text = "Profilo";
-            this.profileLabel.Click += new System.EventHandler(this.ToolStripLabel1_Click);
+            this.profileLabel.Click += new System.EventHandler(this.ShowProfileForm);
             // 
             // bookLabel
             // 

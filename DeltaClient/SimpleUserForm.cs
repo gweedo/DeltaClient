@@ -41,6 +41,14 @@ namespace DeltaClient
             reportFormChild.Dock = DockStyle.Fill;
             reportFormChild.Show();
         }
+        private void ShowProfileForm (object sender, EventArgs e)
+        {
+            ProfileEdit userFormChild = new ProfileEdit(this.Email, this.PassHash);
+            userFormChild.MdiParent = this;
+            userFormChild.FormBorderStyle = FormBorderStyle.None;
+            userFormChild.Dock = DockStyle.Fill;
+            userFormChild.Show();
+        }
         private void SimpleUserForm_Load(object sender, EventArgs e)
         {
 
@@ -56,10 +64,6 @@ namespace DeltaClient
             LoginForm login = new LoginForm();
             login.Show();
             this.Close();
-        }
-        private void ToolStripLabel1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

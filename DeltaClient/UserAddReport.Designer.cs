@@ -49,6 +49,7 @@
             this.cancelButton.TabIndex = 49;
             this.cancelButton.Text = "Annulla";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelReport);
             // 
             // SendButton
             // 
@@ -60,12 +61,13 @@
             this.SendButton.TabIndex = 48;
             this.SendButton.Text = "Invia";
             this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.Click += new System.EventHandler(this.InviaButton_Click);
             // 
             // MessageTextBox
             // 
             this.MessageTextBox.Location = new System.Drawing.Point(414, 174);
             this.MessageTextBox.Name = "MessageTextBox";
-            this.MessageTextBox.Size = new System.Drawing.Size(296, 186);
+            this.MessageTextBox.Size = new System.Drawing.Size(315, 186);
             this.MessageTextBox.TabIndex = 47;
             this.MessageTextBox.Text = "";
             // 
@@ -83,7 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.label3.Location = new System.Drawing.Point(99, 141);
+            this.label3.Location = new System.Drawing.Point(53, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 30);
             this.label3.TabIndex = 45;
@@ -111,9 +113,9 @@
             // 
             // SubjectTextBox
             // 
-            this.SubjectTextBox.Location = new System.Drawing.Point(104, 174);
+            this.SubjectTextBox.Location = new System.Drawing.Point(58, 174);
             this.SubjectTextBox.Name = "SubjectTextBox";
-            this.SubjectTextBox.Size = new System.Drawing.Size(209, 26);
+            this.SubjectTextBox.Size = new System.Drawing.Size(255, 26);
             this.SubjectTextBox.TabIndex = 42;
             // 
             // BookingListComboBox

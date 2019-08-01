@@ -14,6 +14,7 @@ namespace DeltaClient
     public partial class UserDataForm : Form
     {
         private User.User editingUser;
+        private UserManagerClient userManager;
         private string Email;
         private string PassHash;
         private bool newUser;
@@ -24,6 +25,7 @@ namespace DeltaClient
             this.editingUser = user;
             this.Email = Email;
             this.PassHash = PassHash;
+            this.userManager = new UserManagerClient();
             NameUsertextBox.Text = user.Name;
             EmailUserTextBox.Text = user.Email;
             EmailUserTextBox.ReadOnly = true;
@@ -53,7 +55,6 @@ namespace DeltaClient
         {
             if (editingUser.isAdmin != AdminCheckbox.Checked || editingUser.Name != NameUsertextBox.Text || editingUser.LicensePoints != PointsUpDown.Value || editingUser.LicenseExpiration != expirationPicker.Value || PasswordUserTextBox.Text != "" || editingUser.License != LicenseUserTextBox.Text)
             {
-                UserManagerClient userManager = new UserManagerClient();
                 User.User updatingUser = new User.User();
                 updatingUser.Email = EmailUserTextBox.Text;
                 EmailUserTextBox.ForeColor = Color.White;
@@ -71,7 +72,7 @@ namespace DeltaClient
                 }
                 else
                     updatingUser.PasswordHash = this.editingUser.PasswordHash;
-                userManager.UpdateUser(updatingUser, this.Email, this.PassHash);
+                this.userManager.UpdateUser(updatingUser, this.Email, this.PassHash);
                 this.cancelEditing(sender, e);
             }
         }
@@ -96,7 +97,6 @@ namespace DeltaClient
         {
             if ("" != EmailUserTextBox.Text && "" != NameUsertextBox.Text && 0 != PointsUpDown.Value && DateTime.Now.Date < expirationPicker.Value && PasswordUserTextBox.Text != "" && "" != LicenseUserTextBox.Text)
             {
-                UserManagerClient userManager = new UserManagerClient();
                 User.User updatingUser = new User.User();
                 updatingUser.Email = EmailUserTextBox.Text;
                 updatingUser.Name = NameUsertextBox.Text;
@@ -109,7 +109,7 @@ namespace DeltaClient
                         updatingUser.PasswordHash = EasyEncryption.MD5.ComputeMD5Hash(PasswordUserTextBox.Text);
                     else
                         MessageBox.Show("Le due password non corrispondono", "Controlla bene.", MessageBoxButtons.OK);
-                userManager.AddUser(updatingUser, this.Email, this.PassHash);
+                this.userManager.AddUser(updatingUser, this.Email, this.PassHash);
                 this.cancelEditing(sender, e);
             }
             else
