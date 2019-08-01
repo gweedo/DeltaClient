@@ -20,6 +20,7 @@ namespace DeltaClient
         private ReportManagerClient reportManager;
         private Report.Report report;
         private bool newReport;
+
         public ReportEdit(string Email, string PassHash, Report.Report report)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace DeltaClient
             subjectTextbox.Text = report.Subject;
             messageTextBox.Text = report.Message;
         }
+
         public ReportEdit (string Email, string PassHash, int BookingID) { 
         InitializeComponent();
             this.Email = Email;
@@ -64,11 +66,13 @@ namespace DeltaClient
             this.reportManager.DeleteReport(this.report.ID, this.Email, this.PassHash);
             this.StopEditing(sender, e);
         }
+
         private void CreateReport(object sender, EventArgs e)
         {
             this.reportManager.AddReport(messageTextBox.Text, subjectTextbox.Text, this.ReportedBooking, this.Email, this.PassHash);
             this.StopEditing(sender, e);
         }
+
         private void UpdateReport(object sender, EventArgs e)
         {
             this.report.Subject = subjectTextbox.Text;
@@ -76,8 +80,10 @@ namespace DeltaClient
             this.reportManager.UpdateReport(this.report, this.Email, this.PassHash);
             this.StopEditing(sender, e);
         }
+
+
         private void StopEditing(object sender, EventArgs e)
-        {
+        {  
             ReportListForm ServicesListChild = new ReportListForm(this.Email, this.PassHash, this.ReportedBooking.ID);
             ServicesListChild.MdiParent = this.ParentForm;
             ServicesListChild.FormBorderStyle = FormBorderStyle.None;
