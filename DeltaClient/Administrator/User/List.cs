@@ -49,25 +49,10 @@ namespace DeltaClient
             usersListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        private void UserForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void DeleteUser (object sender, EventArgs e)
         {
             this.userManager.DeleteUser(this.userManager.GetUserByEmail(usersListView.SelectedItems[0].Text, this.Email, this.PassHash), this.Email, this.PassHash);
             this.UpdateUsers();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usersListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void UsersListView_MouseClick (object sender, MouseEventArgs e)

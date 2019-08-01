@@ -108,7 +108,6 @@
             this.Name = "AdminDashboard";
             this.Text = "DeltaAdmin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

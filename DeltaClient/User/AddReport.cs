@@ -89,18 +89,5 @@ namespace DeltaClient
             listFormChild.Show();
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void SendButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserAddReport_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

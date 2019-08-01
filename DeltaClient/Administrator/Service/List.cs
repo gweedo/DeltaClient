@@ -76,15 +76,6 @@ namespace DeltaClient
             }
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ServicesListForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void ServicesListView_MouseClick(object sender, MouseEventArgs e)
         {

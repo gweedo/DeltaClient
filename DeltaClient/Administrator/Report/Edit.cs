@@ -84,9 +84,6 @@ namespace DeltaClient
             ServicesListChild.Dock = DockStyle.Fill;
             ServicesListChild.Show();
         }
-        private void ReportEdit_Load(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

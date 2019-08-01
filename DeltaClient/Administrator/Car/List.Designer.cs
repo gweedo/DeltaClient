@@ -47,7 +47,6 @@
             this.carListView.Size = new System.Drawing.Size(800, 379);
             this.carListView.TabIndex = 0;
             this.carListView.UseCompatibleStateImageBehavior = false;
-            this.carListView.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
             this.carListView.DoubleClick += new System.EventHandler(this.EditCar);
             this.carListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CarListView_MouseClick);
             // 
@@ -104,7 +103,6 @@
             this.Controls.Add(this.carListView);
             this.Name = "CarForm";
             this.Text = "CarForm";
-            this.Load += new System.EventHandler(this.CarForm_Load);
             this.carMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

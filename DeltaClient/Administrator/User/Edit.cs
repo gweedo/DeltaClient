@@ -121,14 +121,5 @@ namespace DeltaClient
             userManager.DeleteUser(this.editingUser, this.Email, this.PassHash);
             this.cancelEditing(sender, e);
         }
-        private void UserDataForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

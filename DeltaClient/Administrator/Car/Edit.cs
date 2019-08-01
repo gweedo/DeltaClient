@@ -61,10 +61,6 @@ namespace DeltaClient
             KilometersUpDown.Value = 0;
         }
 
-        private void NameUserLabel_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void DeleteCar(object sender, EventArgs e)
         {
@@ -124,14 +120,6 @@ namespace DeltaClient
             listFormChild.Dock = DockStyle.Fill;
             listFormChild.Show();
         }
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditCarForm_Load(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

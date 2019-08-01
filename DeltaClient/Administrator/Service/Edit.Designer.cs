@@ -153,7 +153,6 @@
             this.Controls.Add(this.serviceLabel);
             this.Name = "ServiceEdit";
             this.Text = "ServiceEdit";
-            this.Load += new System.EventHandler(this.ServiceEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TotalUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KilometersUpDown)).EndInit();
             this.ResumeLayout(false);

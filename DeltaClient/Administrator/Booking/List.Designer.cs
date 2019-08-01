@@ -49,7 +49,6 @@
             this.bookingsLabel.Size = new System.Drawing.Size(207, 48);
             this.bookingsLabel.TabIndex = 5;
             this.bookingsLabel.Text = "Prenotazioni";
-            this.bookingsLabel.Click += new System.EventHandler(this.BookingsLabel_Click);
             // 
             // bookingsListView
             // 
@@ -59,7 +58,6 @@
             this.bookingsListView.Size = new System.Drawing.Size(800, 379);
             this.bookingsListView.TabIndex = 3;
             this.bookingsListView.UseCompatibleStateImageBehavior = false;
-            this.bookingsListView.SelectedIndexChanged += new System.EventHandler(this.BookingsListView_SelectedIndexChanged);
             this.bookingsListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BookingsListView_MouseClick);
             // 
             // labelUser
@@ -120,7 +118,6 @@
             this.Controls.Add(this.bookingsListView);
             this.Name = "BookingsForm";
             this.Text = "BookingsForm";
-            this.Load += new System.EventHandler(this.BookingsForm_Load);
             this.bookingMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

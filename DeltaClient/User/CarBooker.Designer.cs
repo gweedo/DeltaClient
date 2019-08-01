@@ -83,7 +83,6 @@ namespace DeltaClient
             this.bookCarTab.Size = new System.Drawing.Size(790, 417);
             this.bookCarTab.TabIndex = 0;
             this.bookCarTab.Text = "Prenota";
-            this.bookCarTab.Click += new System.EventHandler(this.BookCarTab_Click);
             // 
             // button1
             // 
@@ -150,7 +149,6 @@ namespace DeltaClient
             this.bookCarLabel.Size = new System.Drawing.Size(215, 48);
             this.bookCarLabel.TabIndex = 6;
             this.bookCarLabel.Text = "Prenota auto";
-            this.bookCarLabel.Click += new System.EventHandler(this.BookingsLabel_Click);
             // 
             // startPicker
             // 
@@ -177,7 +175,6 @@ namespace DeltaClient
             this.returnCarTab.Size = new System.Drawing.Size(790, 417);
             this.returnCarTab.TabIndex = 1;
             this.returnCarTab.Text = "Restituisci";
-            this.returnCarTab.Click += new System.EventHandler(this.ReturnCarTab_Click);
             this.returnCarTab.Enter += new System.EventHandler(this.UpdateBookings);
             // 
             // kilometersUpDown
@@ -250,7 +247,6 @@ namespace DeltaClient
             this.bookingLabel.Size = new System.Drawing.Size(171, 38);
             this.bookingLabel.TabIndex = 14;
             this.bookingLabel.Text = "Prenotazione";
-            this.bookingLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // bookingBox
             // 
@@ -279,7 +275,6 @@ namespace DeltaClient
             this.Controls.Add(this.tabControl1);
             this.Name = "CarBooker";
             this.Text = "CarBooker";
-            this.Load += new System.EventHandler(this.CarBooker_Load);
             this.tabControl1.ResumeLayout(false);
             this.bookCarTab.ResumeLayout(false);
             this.bookCarTab.PerformLayout();

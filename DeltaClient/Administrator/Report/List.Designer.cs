@@ -106,7 +106,6 @@
             this.Controls.Add(this.reportListView);
             this.Name = "ReportListForm";
             this.Text = "ReportListForm";
-            this.Load += new System.EventHandler(this.ReportListForm_Load);
             this.reportMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
