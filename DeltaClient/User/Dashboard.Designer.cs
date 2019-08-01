@@ -115,7 +115,6 @@
             this.Name = "UserDashboard";
             this.Text = "DeltaClient";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
-            this.Load += new System.EventHandler(this.SimpleUserForm_Load);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);

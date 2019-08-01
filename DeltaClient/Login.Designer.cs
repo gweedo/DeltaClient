@@ -50,7 +50,6 @@
             this.EmailBoxLogin.Size = new System.Drawing.Size(262, 39);
             this.EmailBoxLogin.TabIndex = 0;
             this.EmailBoxLogin.Text = "Email";
-            this.EmailBoxLogin.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             this.EmailBoxLogin.Enter += new System.EventHandler(this.deactivateHint);
             this.EmailBoxLogin.Leave += new System.EventHandler(this.activateHint);
             // 
@@ -171,7 +170,6 @@
             this.Name = "Login";
             this.Text = "Delta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
