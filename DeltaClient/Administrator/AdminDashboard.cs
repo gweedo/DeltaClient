@@ -23,8 +23,10 @@ namespace DeltaClient
             this.PassHash = PassHash;
             this.loggedOut = false;
             IsMdiContainer = true;
-
             InitializeComponent();
+            homeButton.AutoSize = false;
+            toolStrip.ImageScalingSize = new Size(80, 80);
+            toolStrip.AutoSize = false;
         }
 
         private void ShowUsers(object sender, EventArgs e)
@@ -52,7 +54,13 @@ namespace DeltaClient
             bookingFormChild.Dock = DockStyle.Fill;
             bookingFormChild.Show();
         }
-
+        private void killChildren (object sender, EventArgs e) // This may sound a bit wrong
+        {
+            foreach (var child in this.MdiChildren)
+            {
+                child.Close();
+            }
+        }
         private void ExitOnClickLabel(object sender, EventArgs e)
         {
             loggedOut = true;

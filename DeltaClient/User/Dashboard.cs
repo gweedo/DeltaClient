@@ -22,6 +22,9 @@ namespace DeltaClient
             this.loggedOut = false;
             IsMdiContainer = true;
             InitializeComponent();
+            homeButton.AutoSize = false;
+            toolStrip.ImageScalingSize = new Size(80, 80);
+            toolStrip.AutoSize = false;
         }
 
         private void ShowBookingForm (object sender, EventArgs e)

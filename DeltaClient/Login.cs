@@ -34,14 +34,6 @@ namespace DeltaClient
             PasswordBoxSignUp.ForeColor = Color.Gray;
         }
 
-        private void Login(object sender, EventArgs e)
-        {
-            string Email = EmailBoxLogin.Text;
-            string Password = EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text);
-            
-           
-
-        }
 
         private void deactivateHint (object sender, EventArgs e)
         {
@@ -64,7 +56,7 @@ namespace DeltaClient
             }
         }
 
-        private void login (object sender, EventArgs e)
+        private void loginNow (object sender, EventArgs e)
         {
             UserManagerClient userManager = new UserManagerClient();
             try

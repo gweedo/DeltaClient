@@ -28,30 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.profileLabel = new System.Windows.Forms.ToolStripLabel();
             this.bookLabel = new System.Windows.Forms.ToolStripLabel();
             this.reportLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.logoutLabel = new System.Windows.Forms.ToolStripLabel();
-            this.toolStrip1.SuspendLayout();
+            this.homeButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // toolStrip
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeButton,
             this.profileLabel,
             this.bookLabel,
             this.reportLabel,
             this.toolStripSeparator1,
             this.logoutLabel});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(140, 458);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(140, 458);
+            this.toolStrip.TabIndex = 4;
+            this.toolStrip.Text = "toolStrip1";
             // 
             // profileLabel
             // 
@@ -90,18 +94,30 @@
             this.logoutLabel.Text = "Esci";
             this.logoutLabel.Click += new System.EventHandler(this.ExitOnClickLabel);
             // 
-            // SimpleUserForm
+            // homeButton
+            // 
+            this.homeButton.AutoSize = false;
+            this.homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.homeButton.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
+            this.homeButton.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(100, 100);
+            this.homeButton.Text = "Home";
+            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
+            // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 458);
-            this.Controls.Add(this.toolStrip1);
-            this.Name = "SimpleUserForm";
+            this.Controls.Add(this.toolStrip);
+            this.Name = "UserDashboard";
             this.Text = "DeltaClient";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
             this.Load += new System.EventHandler(this.SimpleUserForm_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,11 +125,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripLabel profileLabel;
         private System.Windows.Forms.ToolStripLabel bookLabel;
         private System.Windows.Forms.ToolStripLabel reportLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel logoutLabel;
+        private System.Windows.Forms.ToolStripButton homeButton;
     }
 }
