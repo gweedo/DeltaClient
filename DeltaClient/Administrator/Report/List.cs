@@ -77,16 +77,6 @@ namespace DeltaClient
         }
         
 
-        private void ReportListForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void ReportListView_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)

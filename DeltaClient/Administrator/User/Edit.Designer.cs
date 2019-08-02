@@ -217,7 +217,6 @@
             this.AdminLabel.Size = new System.Drawing.Size(95, 38);
             this.AdminLabel.TabIndex = 40;
             this.AdminLabel.Text = "Admin";
-            this.AdminLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // PointsUpDown
             // 
@@ -271,7 +270,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserDataForm";
             this.Text = "UserDataForm";
-            this.Load += new System.EventHandler(this.UserDataForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PointsUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

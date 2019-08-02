@@ -97,31 +97,6 @@ namespace DeltaClient
             childBooker.Dock = DockStyle.Fill;
             childBooker.Show();
         }
-        private void BookCarTab_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void BookingsLabel_Click (object sender, EventArgs e)
-        {
-
-        }
-        private void Label1_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void CarBooker_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ReturnCarTab_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
-    public partial class AdminReportEdit : Form
+    public partial class ReportEdit : Form
     {
         private string Email;
         private string PassHash;
@@ -20,7 +20,7 @@ namespace DeltaClient
         private ReportManagerClient reportManager;
         private Report.Report report;
         private bool newReport;
-        public AdminReportEdit(string Email, string PassHash, Report.Report report)
+        public ReportEdit(string Email, string PassHash, Report.Report report)
         {
             InitializeComponent();
             this.Email = Email;
@@ -32,7 +32,7 @@ namespace DeltaClient
             subjectTextbox.Text = report.Subject;
             messageTextBox.Text = report.Message;
         }
-        public AdminReportEdit (string Email, string PassHash, int BookingID) { 
+        public ReportEdit (string Email, string PassHash, int BookingID) { 
         InitializeComponent();
             this.Email = Email;
             this.PassHash = PassHash;
@@ -78,15 +78,12 @@ namespace DeltaClient
         }
         private void StopEditing(object sender, EventArgs e)
         {
-            AdminReportList ServicesListChild = new AdminReportList(this.Email, this.PassHash, this.ReportedBooking.ID);
+            ReportListForm ServicesListChild = new ReportListForm(this.Email, this.PassHash, this.ReportedBooking.ID);
             ServicesListChild.MdiParent = this.ParentForm;
             ServicesListChild.FormBorderStyle = FormBorderStyle.None;
             ServicesListChild.Dock = DockStyle.Fill;
             ServicesListChild.Show();
         }
-        private void ReportEdit_Load(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

@@ -124,7 +124,6 @@
             this.MakerLabel.Size = new System.Drawing.Size(88, 38);
             this.MakerLabel.TabIndex = 36;
             this.MakerLabel.Text = "Marca";
-            this.MakerLabel.Click += new System.EventHandler(this.NameUserLabel_Click);
             // 
             // YearComboBox
             // 
@@ -144,7 +143,6 @@
             this.YearLabel.Size = new System.Drawing.Size(81, 38);
             this.YearLabel.TabIndex = 47;
             this.YearLabel.Text = "Anno";
-            this.YearLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // cancelButton
             // 
@@ -235,7 +233,6 @@
             this.Controls.Add(this.MakerLabel);
             this.Name = "EditCarForm";
             this.Text = "EditCarForm";
-            this.Load += new System.EventHandler(this.EditCarForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.KilometersUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LitersUpDown)).EndInit();
             this.ResumeLayout(false);

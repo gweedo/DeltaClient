@@ -218,7 +218,6 @@
             this.Controls.Add(this.NameUserLabel);
             this.Name = "ProfileEdit";
             this.Text = "ProfileEdit";
-            this.Load += new System.EventHandler(this.ProfileEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PointsUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

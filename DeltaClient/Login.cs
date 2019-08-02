@@ -13,6 +13,10 @@ using System.Collections;
 
 namespace DeltaClient
 {
+
+    /// <summary>
+    /// That form give the access to all the functionality, if the user haven't got the access referencies he can create them in this form.
+    /// </summary>
     public partial class Login : Form
     {
         private string tempHint;
@@ -34,18 +38,19 @@ namespace DeltaClient
             PasswordBoxSignUp.ForeColor = Color.Gray;
         }
 
-
+        //design function. change the color font in all the textbox when the user is writing down 
         private void deactivateHint (object sender, EventArgs e)
         {
             TextBox box = sender as TextBox;
             this.tempHint = box.Text;
             box.Text = "";
             box.ForeColor = Color.Black;
-            if (box.Name=="PasswordBoxLogin" || box.Name == "PasswordBoxSignUp"){
+            if (box.Name=="PasswordBoxLogin" || box.Name == "PasswordBoxSignUp"){ //this control change the font of the field of the password 
                 box.PasswordChar = '*';
             }
         }
 
+        //design function. after a textbox deselection, if the fiel is empty, reset the grapich design.
         private void activateHint (object sender, EventArgs e)
         {
             TextBox box = sender as TextBox;
@@ -56,50 +61,61 @@ namespace DeltaClient
             }
         }
 
+        // on click function. Check if the access refericies are good and then give the access at the program. Otherwise show an error message
         private void loginNow (object sender, EventArgs e)
         {
-            UserManagerClient userManager = new UserManagerClient();
+            UserManagerClient userManager = new UserManagerClient(); //initialize 
             try
-            {
+            {   //take the data of the textBox
                 string UserMail = EmailBoxLogin.Text;
-                string PassHash= EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text);
+                string PassHash= EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text);//encode the password 
+
+                //apply the funcition control on the referencies
                 if (userManager.LoginChecker(UserMail,PassHash))
                 {
-                    loggingIn = true;
-                    this.Hide();
+                    loggingIn = true; //set the user logged
+
+                    this.Hide();//hide the control to the user
+                    //verify if the user is an admin or not
                     if (userManager.IsAdmin(UserMail, PassHash))
                     {
-                        AdminDashboard main = new AdminDashboard(UserMail, PassHash);
-                        main.Show();
+                        AdminDashboard main = new AdminDashboard(UserMail, PassHash); //initialize a new admin form
+                        main.Show(); //send to the new form
                     }
                     else
                     {
-                        UserDashboard main = new UserDashboard(UserMail, PassHash);
+                        UserDashboard main = new UserDashboard(UserMail, PassHash); //initialize a new user form
                         main.Show();
                     }
-                    this.Close();
+                    this.Close();// End of the control Hiding
                 }
                 else
-                    MessageBox.Show("Utente/Password errati.", "Non è così che si fa.", MessageBoxButtons.OK);
+                    MessageBox.Show("Utente/Password errati.", "Non è così che si fa.", MessageBoxButtons.OK);//Error Message
+
             }catch (Exception exc)
             {
                 MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco.", MessageBoxButtons.OK);
             }
         }
 
+
+        //on Click function. allow the access at the program to the user creating new referencies 
         private void signUp (object sender, EventArgs e)
         {
             try
             {
-                UserManagerClient userManager = new UserManagerClient();
+                UserManagerClient userManager = new UserManagerClient(); //initialize
+                
+                //check if the Email is just used for another account, if the email is valid try to create and save into the databse the account  
                 if (this.CheckEmail(EmailBoxSignUp.Text))
                 {
-                    if (userManager.CreateUser(NameBoxSignUp.Text, EmailBoxSignUp.Text, EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxSignUp.Text), false, null, 20))
-                        MessageBox.Show("Utente creato.", "Loggati pure.", MessageBoxButtons.OK);
+                    //control of the good account's creation
+                    if (userManager.CreateUser(NameBoxSignUp.Text, EmailBoxSignUp.Text, EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxSignUp.Text), false, null, 20)) //account's creation
+                        MessageBox.Show("Utente creato.", "Loggati pure.", MessageBoxButtons.OK); //affermative message
                     else
-                        MessageBox.Show("Sicuro?", "Temo che ci sia qualcosa che non va.", MessageBoxButtons.OK);
+                        MessageBox.Show("Sicuro?", "Temo che ci sia qualcosa che non va.", MessageBoxButtons.OK); //negative message
                 }
-                else
+                else // if the Email isin't valid the program show an errore message
                 {
                     MessageBox.Show("Sicuro?", "Controlla l'email.", MessageBoxButtons.OK);
 
@@ -108,10 +124,10 @@ namespace DeltaClient
             catch (Exception exc)
             {
                 MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco.", MessageBoxButtons.OK);
-
-
             }
         }
+
+        //control function used in "singUp" function for the email control
         private bool CheckEmail(string Email)
         {
             try
@@ -124,21 +140,8 @@ namespace DeltaClient
                 return false;
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //on Click function. close the program   
         private void killDelta(object sender, FormClosedEventArgs e)
         {
             if (!loggingIn)

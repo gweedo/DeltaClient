@@ -142,7 +142,6 @@
             this.Controls.Add(this.BookingListComboBox);
             this.Name = "UserAddReport";
             this.Text = "UserAddReport";
-            this.Load += new System.EventHandler(this.UserAddReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

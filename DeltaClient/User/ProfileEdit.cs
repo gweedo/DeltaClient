@@ -39,11 +39,6 @@ namespace DeltaClient
             ConfirmPasswordTextBox.Text = "";
         }
 
-        private void ProfileEdit_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void UpdateUser (object sender, EventArgs e)
         {
             if (editingUser.Name != NameUsertextBox.Text || editingUser.LicensePoints != PointsUpDown.Value || editingUser.LicenseExpiration != expirationPicker.Value || PasswordUserTextBox.Text != "" || editingUser.License != LicenseUserTextBox.Text)

@@ -79,7 +79,6 @@
             this.PlateNumberLabel.Size = new System.Drawing.Size(96, 20);
             this.PlateNumberLabel.TabIndex = 8;
             this.PlateNumberLabel.Text = "di XX999XX";
-            this.PlateNumberLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // serviceMenu
             // 
@@ -107,7 +106,6 @@
             this.Controls.Add(this.servicesListView);
             this.Name = "ServicesListForm";
             this.Text = "ServicesListForm";
-            this.Load += new System.EventHandler(this.ServicesListForm_Load);
             this.serviceMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

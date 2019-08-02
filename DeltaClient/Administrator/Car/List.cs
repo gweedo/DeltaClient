@@ -44,16 +44,6 @@ namespace DeltaClient
             carListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CarForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void CreateCar (object sender, EventArgs e)
         {
             AdminCarEdit EditCarChild = new AdminCarEdit(this.Email, this.PassHash);
@@ -94,11 +84,8 @@ namespace DeltaClient
             }
         }
 
-        private void CheckReports(object sender, EventArgs e)
-        {
 
-        }
-        
+        //nessun riferimento quindi inutilizzata
         private void DeleteCar (object sender, EventArgs e)
         {
             this.carManager.DeleteCar(this.carManager.GetCarByPlate(carListView.SelectedItems[0].Text, this.Email, this.PassHash), this.Email, this.PassHash);

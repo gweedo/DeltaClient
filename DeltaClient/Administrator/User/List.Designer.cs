@@ -48,7 +48,6 @@
             this.usersListView.Size = new System.Drawing.Size(800, 379);
             this.usersListView.TabIndex = 0;
             this.usersListView.UseCompatibleStateImageBehavior = false;
-            this.usersListView.SelectedIndexChanged += new System.EventHandler(this.usersListView_SelectedIndexChanged);
             this.usersListView.DoubleClick += new System.EventHandler(this.UsersListView_DoubleClick);
             this.usersListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UsersListView_MouseClick);
             // 
@@ -118,7 +117,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "UserListForm";
             this.Text = "UserForm";
-            this.Load += new System.EventHandler(this.UserForm_Load);
             this.userMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
