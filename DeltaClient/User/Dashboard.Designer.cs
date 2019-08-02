@@ -105,6 +105,7 @@
             this.homeButton.Size = new System.Drawing.Size(100, 100);
             this.homeButton.Text = "Home";
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.homeButton.Click += new System.EventHandler(this.killChildren);
             // 
             // UserDashboard
             // 

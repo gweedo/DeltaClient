@@ -14,17 +14,21 @@ namespace DeltaClient
     public partial class UserProfileEdit : Form
     {
         private User.User editingUser;
+        private string Email;
+        private string PassHash;
         private UserManagerClient userManager;
         public UserProfileEdit(string Email, string PassHash)
         {
             this.userManager = new UserManagerClient();
-            this.editingUser = userManager.GetUserByEmail(Email, Email, PassHash);
+            this.Email = Email;
+            this.PassHash = PassHash;
             InitializeComponent();
             this.HydrateFields();
         }
 
         private void HydrateFields()
         {
+            this.editingUser = userManager.GetUserByEmail(this.Email, this.Email, this.PassHash);
             NameUsertextBox.Text = editingUser.Name;
             EmailUserTextBox.Text = editingUser.Email;
             EmailUserTextBox.ReadOnly = true;
