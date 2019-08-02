@@ -63,7 +63,13 @@ namespace DeltaClient
             userFormChild.Dock = DockStyle.Fill;
             userFormChild.Show();
         }
- 
+        private void killChildren(object sender, EventArgs e) // This may sound a bit wrong
+        {
+            foreach (var child in this.MdiChildren)
+            {
+                child.Close();
+            }
+        }
         private void killDelta(object sender, FormClosedEventArgs e)
         {
             if (this.loggedOut != true)

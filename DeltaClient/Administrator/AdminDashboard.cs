@@ -56,10 +56,7 @@ namespace DeltaClient
         }
         private void killChildren (object sender, EventArgs e) // This may sound a bit wrong
         {
-            foreach (var child in this.MdiChildren)
-            {
-                child.Close();
-            }
+
         }
         private void ExitOnClickLabel(object sender, EventArgs e)
         {
@@ -75,5 +72,14 @@ namespace DeltaClient
                 Application.Exit();
         }
 
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

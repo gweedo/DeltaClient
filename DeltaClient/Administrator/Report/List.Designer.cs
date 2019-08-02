@@ -91,11 +91,11 @@
             // eliminaToolStripMenuItem
             // 
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(140, 32);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.DeleteReport);
             // 
-            // ReportListForm
+            // AdminReportList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,8 +104,9 @@
             this.Controls.Add(this.addReport);
             this.Controls.Add(this.reportLabel);
             this.Controls.Add(this.reportListView);
-            this.Name = "ReportListForm";
+            this.Name = "AdminReportList";
             this.Text = "ReportListForm";
+            this.Load += new System.EventHandler(this.AdminReportList_Load);
             this.reportMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

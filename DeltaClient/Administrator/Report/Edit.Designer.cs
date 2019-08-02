@@ -1,6 +1,6 @@
 ﻿namespace DeltaClient
 {
-    partial class ReportEdit
+    partial class AdminReportEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -135,6 +135,7 @@
             this.Controls.Add(this.reportLabel);
             this.Name = "ReportEdit";
             this.Text = "ReportEdit";
+            this.Load += new System.EventHandler(this.ReportEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
