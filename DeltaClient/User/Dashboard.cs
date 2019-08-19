@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {/// <summary>
-/// this is the form that show after the login as norma user. it handle three child which allow the user to book a car or to add a report 
+/// this is the form that show after the login as normal user. it handle three child which allow the user to book a car or to add a report 
 /// or handle his profile
 /// </summary>
     public partial class UserDashboard : Form
@@ -37,31 +37,35 @@ namespace DeltaClient
         //on Click function. in the empty space of the page show the child form which show the possible booking fot the user
         private void ShowBookingForm (object sender, EventArgs e)
         {
-            UserCarBooker carBookerChild= new UserCarBooker(this.Email, this.PassHash); 
-            carBookerChild.MdiParent = this;
-            carBookerChild.FormBorderStyle = FormBorderStyle.None;
-            carBookerChild.Dock = DockStyle.Fill;
-            carBookerChild.Show();
+                UserCarBooker carBookerChild = new UserCarBooker(this.Email, this.PassHash);
+                carBookerChild.MdiParent = this;
+                carBookerChild.FormBorderStyle = FormBorderStyle.None;
+                carBookerChild.Dock = DockStyle.Fill;
+                carBookerChild.Show();
+            
+           
         }
 
         //on Click function. in the empty space of the page show the child form which show the reporta made by the user
         private void ShowReportForm (object sender, EventArgs e)
         {
-            UserAddReport reportFormChild = new UserAddReport(this.Email, this.PassHash);
-            reportFormChild.MdiParent = this;
-            reportFormChild.FormBorderStyle = FormBorderStyle.None;
-            reportFormChild.Dock = DockStyle.Fill;
-            reportFormChild.Show();
+                UserAddReport reportFormChild = new UserAddReport(this.Email, this.PassHash);
+                reportFormChild.MdiParent = this;
+                reportFormChild.FormBorderStyle = FormBorderStyle.None;
+                reportFormChild.Dock = DockStyle.Fill;
+                reportFormChild.Show();
+            
         }
 
         //on Click function. in the empty space of the page show the child form which show the data of the user and the chance to change it
         private void ShowProfileForm (object sender, EventArgs e)
         {
-            UserProfileEdit userFormChild = new UserProfileEdit(this.Email, this.PassHash);
-            userFormChild.MdiParent = this;
-            userFormChild.FormBorderStyle = FormBorderStyle.None;
-            userFormChild.Dock = DockStyle.Fill;
-            userFormChild.Show();
+                UserProfileEdit userFormChild = new UserProfileEdit(this.Email, this.PassHash);
+                userFormChild.MdiParent = this;
+                userFormChild.FormBorderStyle = FormBorderStyle.None;
+                userFormChild.Dock = DockStyle.Fill;
+                userFormChild.Show();
+            
         }
         private void killChildren(object sender, EventArgs e) // This may sound a bit wrong
         {
