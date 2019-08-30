@@ -64,9 +64,10 @@ namespace DeltaClient
         // on click function. Check if the access refericies are good and then give the access at the program. Otherwise show an error message
         private void loginNow (object sender, EventArgs e)
         {
-            UserManagerClient userManager = new UserManagerClient(); //initialize 
+             
             try
             {   //take the data of the textBox
+                UserManagerClient userManager = new UserManagerClient(); //initialize
                 string UserMail = EmailBoxLogin.Text;
                 string PassHash= EasyEncryption.MD5.ComputeMD5Hash(PasswordBoxLogin.Text);//encode the password 
 
