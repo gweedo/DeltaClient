@@ -12,23 +12,31 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
+    /// <summary>
+    /// This form is visibile only if the user own the admin referencies. it's allow the administrator to see and modify some details about users,
+    /// booking, servicies and cars by some other child forms
+    /// </summary>
     public partial class AdminDashboard : Form
     {
         protected string Email;
         protected string PassHash;
         private bool loggedOut;
+
+        //Constructor
         public AdminDashboard( string Email, string PassHash)
         {
             this.Email = Email;
             this.PassHash = PassHash;
             this.loggedOut = false;
             IsMdiContainer = true;
+            //initialize desing
             InitializeComponent();
             homeButton.AutoSize = false;
             toolStrip.ImageScalingSize = new Size(80, 80);
             toolStrip.AutoSize = false;
         }
 
+        //on Click function. this function initilize and show the child form for handle all users
         private void ShowUsers(object sender, EventArgs e)
         {
             AdminUserList userFormChild = new AdminUserList(this.Email, this.PassHash);
@@ -38,6 +46,8 @@ namespace DeltaClient
             userFormChild.Show();
             
         }
+
+        //on Click function. this function initilize and show the child form for handle all cars
         private void ShowCars(object sender, EventArgs e)
         {
             AdminCarList carFormChild = new AdminCarList(this.Email, this.PassHash);
@@ -46,6 +56,8 @@ namespace DeltaClient
             carFormChild.Dock = DockStyle.Fill;
             carFormChild.Show();
         }
+
+        //on Click function. this function initilize and show the child form for handle all bookings
         private void ShowBookings (object sender, EventArgs e)
         {
             AdminBookingList bookingFormChild = new AdminBookingList(this.Email, this.PassHash);
@@ -54,10 +66,8 @@ namespace DeltaClient
             bookingFormChild.Dock = DockStyle.Fill;
             bookingFormChild.Show();
         }
-        private void killChildren (object sender, EventArgs e) // This may sound a bit wrong
-        {
 
-        }
+        //on Click function. this function make the logout of the user, close this form, initialize and shoe the login form 
         private void ExitOnClickLabel(object sender, EventArgs e)
         {
             loggedOut = true;
@@ -66,20 +76,11 @@ namespace DeltaClient
             this.Close();
         }
 
+        //on Click Function. this function close the program
         private void killDelta(object sender, FormClosedEventArgs e)
         {
             if(this.loggedOut!=true)
                 Application.Exit();
-        }
-
-        private void AdminDashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

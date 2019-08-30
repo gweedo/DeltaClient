@@ -11,6 +11,10 @@ using System.Windows.Forms;
 
 namespace DeltaClient
 {
+
+    /// <summary>
+    /// this form allow the admin to change or even add platenumber, model, kilometers, year and burned liters of a car
+    /// </summary>
     public partial class AdminCarEdit : Form
     {
         private Car.Car EditingCar;
@@ -19,6 +23,7 @@ namespace DeltaClient
         private bool newCar;
         private CarManagerClient carManager;
 
+        //constructor
         public AdminCarEdit(Car.Car EditingCar, string Email, string PassHash)
         {
             InitializeComponent();
@@ -26,7 +31,6 @@ namespace DeltaClient
             this.Email = Email;
             this.PassHash = PassHash;
             this.newCar = false;
-            this.carManager = new CarManagerClient();
             MakerTextBox.Text = EditingCar.Make;
             ModelTextBox.Text = EditingCar.Model;
             PlateNumberTextBox.Text = EditingCar.PlateNumber;
@@ -39,15 +43,23 @@ namespace DeltaClient
                 YearComboBox.SelectedIndex = EditingCar.Year-1980;
             LitersUpDown.Value = EditingCar.BurnedLiters;
             KilometersUpDown.Value=EditingCar.Kilometers;
+
+            try
+            {
+                this.carManager = new CarManagerClient();
+            }catch(Exception exc)
+            {
+                MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco.", MessageBoxButtons.OK);
+            }
         }
 
+        //overloaded constructor. in this case the admin add a car
         public AdminCarEdit (string Email, string PassHash)
         {
             InitializeComponent();
             this.Email = Email;
             this.PassHash = PassHash;
             this.newCar = true;
-            this.carManager = new CarManagerClient();
             MakerTextBox.Text = "";
             ModelTextBox.Text = "";
             PlateNumberTextBox.Text = "";
@@ -59,43 +71,54 @@ namespace DeltaClient
             }
             LitersUpDown.Value = 0;
             KilometersUpDown.Value = 0;
+            try
+            {
+                this.carManager = new CarManagerClient();
+            }catch(Exception exc)
+            {
+                MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco.", MessageBoxButtons.OK);
+            }
         }
 
-
-        private void DeleteCar(object sender, EventArgs e)
-        {
-            this.carManager.DeleteCar(this.EditingCar, this.Email, this.PassHash);
-            this.stopEditing(sender, e);
-        }
-        private void UpdateCar()
+        //this function control if there are some changes and update the car
+        private void UpdateCar(object sender, EventArgs e)
         {
             if (EditingCar.Make != MakerTextBox.Text || EditingCar.Model != ModelTextBox.Text || EditingCar.Year != Convert.ToInt32(YearComboBox.SelectedIndex + 1980) || EditingCar.Kilometers != KilometersUpDown.Value || EditingCar.BurnedLiters != LitersUpDown.Value)
             {
-                CarManagerClient carManager = new CarManagerClient();
-                Car.Car UpdatingCar = new Car.Car();
-                UpdatingCar.PlateNumber = PlateNumberTextBox.Text;
-                UpdatingCar.Model = ModelTextBox.Text;
-                UpdatingCar.Make = MakerTextBox.Text;
-                UpdatingCar.Kilometers = Convert.ToInt32(KilometersUpDown.Value);
-                UpdatingCar.BurnedLiters = Convert.ToInt32(LitersUpDown.Value);
-                UpdatingCar.Year = Convert.ToInt32(YearComboBox.SelectedIndex + 1980);
-                carManager.UpdateCar(UpdatingCar, this.Email, this.PassHash);
+                
+                    Car.Car UpdatingCar = new Car.Car();
+                    UpdatingCar.PlateNumber = PlateNumberTextBox.Text;
+                    UpdatingCar.Model = ModelTextBox.Text;
+                    UpdatingCar.Make = MakerTextBox.Text;
+                    UpdatingCar.Kilometers = Convert.ToInt32(KilometersUpDown.Value);
+                    UpdatingCar.BurnedLiters = Convert.ToInt32(LitersUpDown.Value);
+                    UpdatingCar.Year = Convert.ToInt32(YearComboBox.SelectedIndex + 1980);
+               try
+                {
+                    carManager.UpdateCar(UpdatingCar, this.Email, this.PassHash);
+                    this.stopEditing(sender, e);
+                }
+                catch(Exception exc)
+                {
+                    MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco ad aggiornare la macchina.", MessageBoxButtons.OK);
+                }
             }
         }
+
+        //on CLick fucntion. control if the amind is modifing or adding a car
         private void SendSaveButton(object sender, EventArgs e)
         {
             if (this.newCar)
             {
-                this.CreateCar();
+                this.CreateCar(sender, e);
             }
-            else
-                this.UpdateCar();
-            this.stopEditing(sender, e);
-
-
+            else 
+                this.UpdateCar(sender, e);
         }
 
-        private void CreateCar()
+
+        //This function add the report
+        private void CreateCar(object sender, EventArgs e)
         {
             if ("" != MakerTextBox.Text && "" != ModelTextBox.Text && 0 != Convert.ToInt32(YearComboBox.SelectedIndex + 1980) && "" != PlateNumberTextBox.Text)
             {
@@ -106,12 +129,34 @@ namespace DeltaClient
                 UpdatingCar.Kilometers = Convert.ToInt32(KilometersUpDown.Value);
                 UpdatingCar.BurnedLiters = Convert.ToInt32(LitersUpDown.Value);
                 UpdatingCar.Year = Convert.ToInt32(YearComboBox.SelectedIndex + 1980);
-                this.carManager.AddCar(UpdatingCar, this.Email, this.PassHash);
+                try
+                {
+                    this.carManager.AddCar(UpdatingCar, this.Email, this.PassHash);
+                    this.stopEditing(sender, e);
+                }catch(Exception exc)
+                {
+                    MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco a creare la macchina.", MessageBoxButtons.OK);
+                }
             }
             else
                 MessageBox.Show("Hai inserito tutti i dati?", "Controlla, per favore.", MessageBoxButtons.OK);
         }
 
+        //on Click function. this function deleate the selected car
+        private void DeleteCar(object sender, EventArgs e)
+        {
+            try
+            {
+                this.carManager.DeleteCar(this.EditingCar, this.Email, this.PassHash);
+                this.stopEditing(sender, e);
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco ad eliminare la macchina.", MessageBoxButtons.OK);
+            }
+        }
+
+        //on Click function. This function close this form and open the carlist Form
         private void stopEditing(object sender, EventArgs e)
         {
             AdminCarList listFormChild = new AdminCarList(this.Email, this.PassHash);

@@ -89,7 +89,7 @@ namespace DeltaClient
                     }
                     catch(Exception exc)
                     {
-                        MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco a iinviare i dati al server.", MessageBoxButtons.OK);
+                        MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco a inviare i dati al server.", MessageBoxButtons.OK);
 
                     }
                 
