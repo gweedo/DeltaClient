@@ -82,5 +82,10 @@ namespace DeltaClient
             if(this.loggedOut!=true)
                 Application.Exit();
         }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

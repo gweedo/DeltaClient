@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.homeButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.bookingsLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.homeButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,18 @@
             this.toolStrip.Size = new System.Drawing.Size(140, 458);
             this.toolStrip.TabIndex = 3;
             this.toolStrip.Text = "toolStrip1";
+            // 
+            // homeButton
+            // 
+            this.homeButton.AutoSize = false;
+            this.homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.homeButton.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
+            this.homeButton.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(100, 100);
+            this.homeButton.Text = "Home";
+            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
             // toolStripLabel1
             // 
@@ -102,19 +114,6 @@
             this.toolStripLabel3.Text = "Esci";
             this.toolStripLabel3.Click += new System.EventHandler(this.ExitOnClickLabel);
             // 
-            // homeButton
-            // 
-            this.homeButton.AutoSize = false;
-            this.homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.homeButton.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
-            this.homeButton.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(100, 100);
-            this.homeButton.Text = "Home";
-            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.homeButton.Click += new System.EventHandler();
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -125,7 +124,7 @@
             this.Name = "AdminDashboard";
             this.Text = "DeltaAdmin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
-            this.Load += new System.EventHandler();
+            this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);

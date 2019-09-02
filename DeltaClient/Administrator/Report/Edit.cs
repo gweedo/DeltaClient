@@ -78,16 +78,7 @@ namespace DeltaClient
         //this update the report
         private void UpdateReport(object sender, EventArgs e)
         {
-            this.report.Subject = subjectTextbox.Text;
-            this.report.Message = messageTextBox.Text;
-            try
-            {
-                this.reportManager.UpdateReport(this.report, this.Email, this.PassHash);
-                this.StopEditing(sender, e);
-            }catch(Exception exc)
-            {
-                MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco ad aggiornare il report.", MessageBoxButtons.OK);
-            }
+
         }
 
         //on CLick fucntion. control if the amind is modifing or adding a report

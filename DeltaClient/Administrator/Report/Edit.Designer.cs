@@ -120,7 +120,7 @@
             this.subjectTextbox.Size = new System.Drawing.Size(284, 39);
             this.subjectTextbox.TabIndex = 53;
             // 
-            // ReportEdit
+            // AdminReportEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,9 +133,8 @@
             this.Controls.Add(this.subjectLabel);
             this.Controls.Add(this.messageLabel);
             this.Controls.Add(this.reportLabel);
-            this.Name = "ReportEdit";
+            this.Name = "AdminReportEdit";
             this.Text = "ReportEdit";
-            this.Load += new System.EventHandler();
             this.ResumeLayout(false);
             this.PerformLayout();
 
