@@ -113,7 +113,6 @@
             this.homeButton.Size = new System.Drawing.Size(100, 100);
             this.homeButton.Text = "Home";
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.homeButton.Click += new System.EventHandler();
             // 
             // AdminDashboard
             // 
@@ -125,7 +124,6 @@
             this.Name = "AdminDashboard";
             this.Text = "DeltaAdmin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
-            this.Load += new System.EventHandler();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);

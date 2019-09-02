@@ -135,7 +135,6 @@
             this.Controls.Add(this.reportLabel);
             this.Name = "ReportEdit";
             this.Text = "ReportEdit";
-            this.Load += new System.EventHandler();
             this.ResumeLayout(false);
             this.PerformLayout();
 
