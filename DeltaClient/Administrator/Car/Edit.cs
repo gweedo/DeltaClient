@@ -53,7 +53,7 @@ namespace DeltaClient
             }
         }
 
-        //overloaded constructor. in this case the admin add a car
+        //overloaded constructor. in this case the admin is adding a car
         public AdminCarEdit (string Email, string PassHash)
         {
             InitializeComponent();
@@ -64,7 +64,9 @@ namespace DeltaClient
             ModelTextBox.Text = "";
             PlateNumberTextBox.Text = "";
             PlateNumberTextBox.ReadOnly = false;
-            PlateNumberTextBox.ForeColor = Color.White;
+            PlateNumberTextBox.BackColor = Color.White;
+            PlateNumberTextBox.ForeColor = Color.Black;
+            deleteButton.Visible = false;
             for (int i = 1980; i <= DateTime.Now.Year; i++)
             {
                 YearComboBox.Items.Add(i);
@@ -165,6 +167,10 @@ namespace DeltaClient
             listFormChild.Dock = DockStyle.Fill;
             listFormChild.Show();
         }
- 
+
+        private void AdminCarEdit_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

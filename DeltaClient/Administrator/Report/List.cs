@@ -124,5 +124,10 @@ namespace DeltaClient
                 }
             }
         }
+
+        private void AdminReportList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

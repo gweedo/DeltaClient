@@ -87,5 +87,17 @@ namespace DeltaClient
         {
 
         }
+
+        private void AdminDashboard_Load_1(object sender, EventArgs e)
+        {
+
+        }
+        private void killChildren(object sender, EventArgs e) // This may sound a bit wrong
+        {
+            foreach (var child in this.MdiChildren)
+            {
+                child.Close();
+            }
+        }
     }
 }

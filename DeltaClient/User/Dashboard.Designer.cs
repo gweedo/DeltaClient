@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.homeButton = new System.Windows.Forms.ToolStripButton();
             this.profileLabel = new System.Windows.Forms.ToolStripLabel();
             this.bookLabel = new System.Windows.Forms.ToolStripLabel();
             this.reportLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.logoutLabel = new System.Windows.Forms.ToolStripLabel();
-            this.homeButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,19 @@
             this.toolStrip.Size = new System.Drawing.Size(140, 458);
             this.toolStrip.TabIndex = 4;
             this.toolStrip.Text = "toolStrip1";
+            // 
+            // homeButton
+            // 
+            this.homeButton.AutoSize = false;
+            this.homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.homeButton.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
+            this.homeButton.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(100, 100);
+            this.homeButton.Text = "Home";
+            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.homeButton.Click += new System.EventHandler(this.killChildren);
             // 
             // profileLabel
             // 
@@ -94,19 +107,6 @@
             this.logoutLabel.Text = "Esci";
             this.logoutLabel.Click += new System.EventHandler(this.ExitOnClickLabel);
             // 
-            // homeButton
-            // 
-            this.homeButton.AutoSize = false;
-            this.homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.homeButton.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
-            this.homeButton.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(100, 100);
-            this.homeButton.Text = "Home";
-            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.homeButton.Click += new System.EventHandler(this.killChildren);
-            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -116,6 +116,7 @@
             this.Name = "UserDashboard";
             this.Text = "DeltaClient";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.killDelta);
+            this.Load += new System.EventHandler(this.UserDashboard_Load);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);

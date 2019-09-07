@@ -41,7 +41,7 @@ namespace DeltaClient
                 this.UpdateList();
             }catch(Exception exc)
             {
-                MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco.", MessageBoxButtons.OK);
+                MessageBox.Show("Errore nella connessione al server.", exc.ToString(), MessageBoxButtons.OK);
             }
         }
 
@@ -144,5 +144,9 @@ namespace DeltaClient
             }
         }
 
+        private void AdminCarList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -88,5 +88,10 @@ namespace DeltaClient
             login.Show();
             this.Close();
         }
+
+        private void UserDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

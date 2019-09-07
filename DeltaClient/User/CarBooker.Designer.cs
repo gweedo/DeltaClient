@@ -83,6 +83,7 @@ namespace DeltaClient
             this.bookCarTab.Size = new System.Drawing.Size(790, 417);
             this.bookCarTab.TabIndex = 0;
             this.bookCarTab.Text = "Prenota";
+            this.bookCarTab.Click += new System.EventHandler(this.BookCarTab_Click);
             // 
             // button1
             // 
@@ -267,13 +268,13 @@ namespace DeltaClient
             this.returnLabel.Text = "Restituisci auto";
             this.returnLabel.Click += new System.EventHandler(this.Label2_Click);
             // 
-            // CarBooker
+            // UserCarBooker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.Name = "CarBooker";
+            this.Name = "UserCarBooker";
             this.Text = "CarBooker";
             this.tabControl1.ResumeLayout(false);
             this.bookCarTab.ResumeLayout(false);

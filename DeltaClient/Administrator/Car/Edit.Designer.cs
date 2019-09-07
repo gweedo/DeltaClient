@@ -211,7 +211,7 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.DeleteCar);
             // 
-            // EditCarForm
+            // AdminCarEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,8 +231,9 @@
             this.Controls.Add(this.LitersLabel);
             this.Controls.Add(this.KilometersLabel);
             this.Controls.Add(this.MakerLabel);
-            this.Name = "EditCarForm";
+            this.Name = "AdminCarEdit";
             this.Text = "EditCarForm";
+            this.Load += new System.EventHandler(this.AdminCarEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.KilometersUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LitersUpDown)).EndInit();
             this.ResumeLayout(false);

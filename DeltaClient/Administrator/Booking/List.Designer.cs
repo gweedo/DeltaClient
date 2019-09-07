@@ -58,6 +58,7 @@
             this.bookingsListView.Size = new System.Drawing.Size(800, 379);
             this.bookingsListView.TabIndex = 3;
             this.bookingsListView.UseCompatibleStateImageBehavior = false;
+            this.bookingsListView.SelectedIndexChanged += new System.EventHandler(this.BookingsListView_SelectedIndexChanged);
             this.bookingsListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BookingsListView_MouseClick);
             // 
             // labelUser
@@ -108,7 +109,7 @@
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.DeleteBooking);
             // 
-            // BookingsForm
+            // AdminBookingList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,8 +117,9 @@
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.bookingsLabel);
             this.Controls.Add(this.bookingsListView);
-            this.Name = "BookingsForm";
+            this.Name = "AdminBookingList";
             this.Text = "BookingsForm";
+            this.Load += new System.EventHandler(this.AdminBookingList_Load);
             this.bookingMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

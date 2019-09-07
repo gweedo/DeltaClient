@@ -40,7 +40,7 @@ namespace DeltaClient
             }
             catch(Exception exc)
             {
-                MessageBox.Show("Errore nella connessione al server.", "Proprio non riesco.", MessageBoxButtons.OK);
+                MessageBox.Show("Errore nella connessione al server.", exc.ToString(), MessageBoxButtons.OK);
                 this.StopEditing();
             }
 
@@ -144,6 +144,10 @@ namespace DeltaClient
             childBooker.Dock = DockStyle.Fill;
             childBooker.Show();
         }
-       
+
+        private void BookCarTab_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

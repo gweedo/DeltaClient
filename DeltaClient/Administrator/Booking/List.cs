@@ -52,7 +52,7 @@ namespace DeltaClient
         //this function reload the list of all cars
         private void UpdateBookings()
         {
-            bookingsListView.Clear();
+            bookingsListView.Items.Clear();
             try
             {
                 var bookings = bookingManager.GetBookings(this.Email, this.PassHash);
@@ -61,7 +61,6 @@ namespace DeltaClient
                     bookings = bookingManager.GetBookingsForUser(this.UserEmail, this.Email, this.PassHash);
                     labelUser.Text = "di " + this.UserEmail;
                     labelUser.Left = (this.ClientSize.Width - labelUser.Width) / 2;
-
                 }
                 foreach (var SingleBooking in bookings)
                 {
@@ -145,6 +144,16 @@ namespace DeltaClient
                     bookingMenu.Show(Cursor.Position);
                 }
             }
+        }
+
+        private void AdminBookingList_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BookingsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

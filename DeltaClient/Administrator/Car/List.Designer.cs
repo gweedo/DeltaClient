@@ -42,10 +42,10 @@
             // carListView
             // 
             this.carListView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.carListView.Location = new System.Drawing.Point(0, 56);
+            this.carListView.Location = new System.Drawing.Point(0, 71);
             this.carListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.carListView.Name = "carListView";
-            this.carListView.Size = new System.Drawing.Size(711, 304);
+            this.carListView.Size = new System.Drawing.Size(800, 379);
             this.carListView.TabIndex = 0;
             this.carListView.UseCompatibleStateImageBehavior = false;
             this.carListView.DoubleClick += new System.EventHandler(this.EditCar);
@@ -55,9 +55,9 @@
             // 
             this.carLabel.AutoSize = true;
             this.carLabel.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carLabel.Location = new System.Drawing.Point(292, 10);
+            this.carLabel.Location = new System.Drawing.Point(328, 12);
             this.carLabel.Name = "carLabel";
-            this.carLabel.Size = new System.Drawing.Size(79, 41);
+            this.carLabel.Size = new System.Drawing.Size(93, 48);
             this.carLabel.TabIndex = 3;
             this.carLabel.Text = "Auto";
             // 
@@ -65,10 +65,10 @@
             // 
             this.addCar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addCar.BackgroundImage")));
             this.addCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addCar.Location = new System.Drawing.Point(656, 10);
+            this.addCar.Location = new System.Drawing.Point(738, 12);
             this.addCar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addCar.Name = "addCar";
-            this.addCar.Size = new System.Drawing.Size(44, 40);
+            this.addCar.Size = new System.Drawing.Size(50, 50);
             this.addCar.TabIndex = 4;
             this.addCar.UseVisualStyleBackColor = true;
             this.addCar.Click += new System.EventHandler(this.CreateCar);
@@ -80,33 +80,34 @@
             this.manutenzioniToolStripMenuItem,
             this.eliminaToolStripMenuItem});
             this.carMenu.Name = "carMenu";
-            this.carMenu.Size = new System.Drawing.Size(211, 80);
+            this.carMenu.Size = new System.Drawing.Size(234, 68);
             // 
             // manutenzioniToolStripMenuItem
             // 
             this.manutenzioniToolStripMenuItem.Name = "manutenzioniToolStripMenuItem";
-            this.manutenzioniToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.manutenzioniToolStripMenuItem.Size = new System.Drawing.Size(233, 32);
             this.manutenzioniToolStripMenuItem.Text = "Vai a manutenzioni";
             this.manutenzioniToolStripMenuItem.Click += new System.EventHandler(this.CheckServices);
             // 
             // eliminaToolStripMenuItem
             // 
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(233, 32);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.DeleteCar);
             // 
             // AdminCarList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 360);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.addCar);
             this.Controls.Add(this.carLabel);
             this.Controls.Add(this.carListView);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AdminCarList";
             this.Text = "CarForm";
+            this.Load += new System.EventHandler(this.AdminCarList_Load);
             this.carMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
